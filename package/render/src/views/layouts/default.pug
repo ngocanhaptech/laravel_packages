@@ -1,0 +1,14 @@
+include ../commons/mixins
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Page render
+    body
+    include ../components/top.pug
+    include ../components/header
+    h1 Default content
+    block main
+        p main content
+    include ../components/footer

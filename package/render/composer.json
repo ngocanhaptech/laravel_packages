@@ -1,0 +1,26 @@
+{
+    "name": "vccorp/renderpage",
+    "description": "This will render a page to html file",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Lê Ngọc Anh",
+            "email": "anhlengoc@vccorp.vn"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Vccorp\\Render\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Vccorp\\Render\\RenderServiceProvider"
+            ]
+        }
+    }
+}

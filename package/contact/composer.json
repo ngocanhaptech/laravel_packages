@@ -1,0 +1,26 @@
+{
+    "name": "vccorp/contact",
+    "description": "This will send email to admin and save contact query in database",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Lê Ngọc Anh",
+            "email": "anhlengoc@vccorp.vn"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Vccorp\\Contact\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Vccorp\\Contact\\ContactServiceProvider"
+            ]
+        }
+    }
+}
