@@ -10,7 +10,10 @@
         }
     ],
     "minimum-stability": "dev",
-    "require": {},
+    "require": {
+        "erusev/parsedown": "dev-master",        
+        "bkwld/laravel-pug": "^2.0"
+    },
     "autoload": {
         "psr-4": {
             "Vccorp\\Render\\": "src/"

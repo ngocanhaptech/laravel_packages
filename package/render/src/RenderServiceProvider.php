@@ -22,6 +22,5 @@ class RenderServiceProvider extends ServiceProvider
 
     public function register()
     {
-        
     }
 }
