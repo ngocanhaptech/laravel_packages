@@ -1,14 +1,22 @@
-include ../commons/mixins
+include ../variables
+include ../mixins
+
 <!DOCTYPE html>
 html(lang="en")
     head
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        title Page render
+        block title
+            title=page.title
     body
-    include ../components/top.pug
-    include ../components/header
-    h1 Default content
-    block main
-        p main content
-    include ../components/footer
+        block top
+            include ../components/top.pug
+        block header
+            include ../components/header
+        block main
+            h1=(page.title + ' page').toUpperCase()
+            p content Layouts
+            +button('Đăng ký')
+            p Default content
+        block footer
+            include ../components/footer

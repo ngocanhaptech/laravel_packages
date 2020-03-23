@@ -13,4 +13,9 @@ class ThemeController extends Controller
         return view("theme::index");
     }
 
+    public function elements()
+    {
+        return view("theme::elements");
+    }
+
 }

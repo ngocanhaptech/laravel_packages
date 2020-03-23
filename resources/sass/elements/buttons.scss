@@ -1,0 +1,13 @@
+/** BUTTONS */
+.btn {
+    &.btn-solid {
+        background-color: $primary-color;
+        color:$primary-text-color;
+        &:hover, &:active, &:focus {
+            box-shadow: 0 6px 12px -4px $primary-color;
+        }
+    }
+    &.btn-radius {
+        border-radius: 50%;
+    }
+}
