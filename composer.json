@@ -35,7 +35,9 @@
     },
     "autoload": {
         "psr-4": {
-            "App\\": "app/"
+            "App\\": "app/",
+            "Vccorp\\Contact\\": "package/contact/src/",
+            "Vccorp\\Render\\": "package/render/src/"
         },
         "classmap": [
             "database/seeds",
@@ -44,9 +46,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Tests\\": "tests/",
-            "Vccorp\\Contact\\": "package/contact/src/",
-            "Vccorp\\Render\\": "package/render/src/"
+            "Tests\\": "tests/"
         }
     },
     "minimum-stability": "dev",

@@ -10,12 +10,15 @@ class RenderController extends Controller
 {
     public function index()
     {
-        return view('render::index');
-    }
-
-    public function render()
-    {
-        return Render::index('render::index');
+        $exported = [];
+        $staticLink = 'http://localhost:8000/storage/';
+        // dd(config('render.render_views'));
+        $pages = config('render.render_views');
+        foreach ($pages as $template => $view){ 
+            array_push($exported, $staticLink . $template . '.html' );
+            Render::save($view, $template);
+        }
+        return $exported;
     }
 
 }
