@@ -165,6 +165,9 @@ return [
         /*
          * Package Service Providers...
          */
+        \Vccorp\Contact\ContactServiceProvider::class,
+        \Vccorp\Render\RenderServiceProvider::class,
+        \Vccorp\Theme\ThemeServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -174,8 +177,6 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-        \Vccorp\Contact\ContactServiceProvider::class,
-        \Vccorp\Render\RenderServiceProvider::class,
 
     ],
 

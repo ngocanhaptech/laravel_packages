@@ -1,4 +1,6 @@
 //
 body {
    transform: translate(-50%, -50%);
+   transition: all ease .3s;
+   box-shadow: 0 2px 3px #000;
 }

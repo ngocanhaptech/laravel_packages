@@ -1,0 +1,27 @@
+{
+    "name": "vccorp/theme",
+    "description": "This is a template page",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Lê Ngọc Anh",
+            "email": "anhlengoc@vccorp.vn"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+    },
+    "autoload": {
+        "psr-4": {
+            "Vccorp\\Theme\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Vccorp\\Theme\\ThemeServiceProvider"
+            ]
+        }
+    }
+}
