@@ -1,0 +1,4 @@
+mixin link(className, link, text, iconClass, iconSrc)
+    a(class=className, href=link)
+        img(class=iconClass, src=iconSrc, alt=text)
+        !=text

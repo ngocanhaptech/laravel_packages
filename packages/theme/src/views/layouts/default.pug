@@ -11,16 +11,16 @@ html(lang="en")
             link(rel="stylesheet", href="/assets/bootstrap-4.4.1/css/bootstrap.min.css")
     body
         block top
-            include ../components/top.pug
+            include ../commons/top
         block header
-            include ../components/header
+            include ../commons/header
         block main
             h1=(page.title + ' page').toUpperCase()
             p content Layouts
             +button('Đăng ký')
             p Default content
         block footer
-            include ../components/footer
+            include ../commons/footer
         block scripts
             script(src="/assets/jquery/jquery-3.4.1.slim.min.js")
             script(src="/assets/bootstrap-4.4.1/js/bootstrap.min.js")
