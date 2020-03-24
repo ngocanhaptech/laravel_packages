@@ -1,5 +1,6 @@
 {
-    "/js/app.js": "/js/app.js",
-    "/css/app.css": "/css/app.css",
-    "/css/theme.css": "/css/theme.css"
+    "/assets/js/app.js": "/assets/js/app.js",
+    "/assets/css/app.css": "/assets/css/app.css",
+    "/assets/css/theme.css": "/assets/css/theme.css",
+    "/assets/css/pages/elements_layout.css": "/assets/css/pages/elements_layout.css"
 }

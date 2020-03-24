@@ -5,5 +5,9 @@ Author: VCCORP - Devteam
 @import 'variables';
 // ELEMENTS
 @import 'elements/buttons';
-// PAGE
-@import 'pages/theme_layout';
+
+// COMPONENTS
+@import 'components/nav';
+
+@import 'elements/backtotop';
+@import 'commons';

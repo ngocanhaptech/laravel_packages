@@ -9,18 +9,20 @@ html(lang="en")
             title=page.title
         block styles
             link(rel="stylesheet", href="/assets/bootstrap-4.4.1/css/bootstrap.min.css")
+            link(rel="stylesheet", href="/assets/css/theme.css")
     body
         block top
-            include ../commons/top
+            +top
         block header
-            include ../commons/header
+            +header('fix-top', page)
         block main
             h1=(page.title + ' page').toUpperCase()
             p content Layouts
             +button('Đăng ký')
             p Default content
         block footer
-            include ../commons/footer
+            +footer
         block scripts
-            script(src="/assets/jquery/jquery-3.4.1.slim.min.js")
+            script(src="/assets/jquery/jquery-3.2.1.min.js")
             script(src="/assets/bootstrap-4.4.1/js/bootstrap.min.js")
+            script(src="/assets//js/app.js")

@@ -1,16 +1,13 @@
 extends ./layouts/default
 block top
-    +top
-block header
-
+    //- +top
 block main
-    .main Index page
-    +button('Đăng ký')
+    .main
+        .container Index page
 block footer
-    
+
 block append styles
     link(rel="stylesheet", href="/assets/OwlCarousel2/assets/owl.carousel.min.css")
     link(rel="stylesheet", href="/assets/OwlCarousel2/assets/owl.theme.default.min.css")
 block append scripts
-    p='test ' + page.title
     script(src="/assets/OwlCarousel2/owl.carousel.min.js")

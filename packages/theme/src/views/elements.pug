@@ -4,7 +4,38 @@ block top
 block header
 
 block main
-    content Elements
-    +button('btn btn-sm btn-default', 'Đăng ký')
+    +nav
+    .container
+        h1 Elements
+        .ui-title Button 
+        .ui-wrapper 
+            .ui-inline
+                +button('btn btn-primary', 'btn btn-primary')
+            .ui-inline
+                +button('btn btn-primary btn-radius', 'btn btn-primary btn-radius')
+            .ui-inline
+                +button('btn btn-solid', 'btn btn-solid')
+            .ui-inline
+                +button('btn btn-solid btn-radius', 'btn btn-solid btn-radius')
+            .ui-inline
+                +button('btn btn-primary btn-solid btn-radius', 'btn btn-primary btn-solid btn-radius')
+        .ui-wrapper 
+            .ui-inline
+                +button('btn-sm btn-primary', 'btn-sm btn-primary')
+            .ui-inline
+                +button('btn-sm btn-primary btn-radius', 'btn-sm btn-primary btn-radius')
+            .ui-inline
+                +button('btn-sm btn-solid', 'btn-sm btn-solid')
+            .ui-inline
+                +button('btn-sm btn-solid btn-radius', 'btn-sm btn-solid btn-radius')
+            .ui-inline
+                +button('btn-sm btn-primary btn-solid btn-radius', 'btn-sm btn-primary btn-solid btn-radius')
 block footer
+
+block append styles
+    link(rel="stylesheet", href="/assets/OwlCarousel2/assets/owl.carousel.min.css")
+    link(rel="stylesheet", href="/assets/OwlCarousel2/assets/owl.theme.default.min.css")
+    link(rel="stylesheet", href="/assets/css//pages/elements_layout.css")
+block append scripts
+    script(src="/assets/OwlCarousel2/owl.carousel.min.js")
 

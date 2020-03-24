@@ -1,0 +1,17 @@
+/** Theme layout */
+
+.ui-wrapper {
+  padding: 15px;
+  margin-bottom: 15px;
+  border: 1px solid #eaeaea;
+}
+
+.ui-inline {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.ui-title {
+  margin-bottom: 10px;
+}
+

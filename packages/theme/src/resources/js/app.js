@@ -1,1 +1,2 @@
-// require('./bootstrap');
+require('./_backtotop');
+require('./_navigation');

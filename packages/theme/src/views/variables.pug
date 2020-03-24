@@ -1,4 +1,17 @@
 -
     const page = {
-        title: 'BizFly Cloud'
+        title: 'BizFly Cloud',
+        menu: [
+            { title:'<i class="fa fa-home"></i> Trang chủ', className: 'active', url:'/' },
+            { title:'Sản phẩm', className: 'mega-menu', url:'/category.html' ,
+            child: [
+                { title:'Khuyến mãi', className: '', url:'/category.html' },
+                { title:'Hướng dẫn', className: '', url:'/category.html' },
+                { title:'Tin tức', className: '', url:'/category.html' },
+                { title:'Liên hệ', className: '', url:'/single.html' }
+            ] },
+            { title:'Giới thiệu', className: '', url:'./single.html' },
+            { title:'Liên hệ', className: '', url:'/single.html' },
+            
+        ]        
     }

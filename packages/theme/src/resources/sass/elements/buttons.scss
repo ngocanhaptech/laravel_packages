@@ -1,13 +1,61 @@
 /** BUTTONS */
+/** Button style */ 
+.btn-primary {
+  -webkit-appearance: none ; 
+  background: -webkit-gradient(to right,$primary-color 0%,$dark-primary-color 50%,$light-primary-color 100%);
+  background: linear-gradient(to right,$primary-color 0%,$dark-primary-color 50%,$light-primary-color 100%);
+  background-size: 500%;
+  border: none;
+  border-radius: 5rem;
+  box-shadow: 0 .05rem .1rem rgba(0,0,0,.15);
+  color: $white;
+  cursor: pointer;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; 
+  &:hover {
+    outline: none;
+    animation-name: gradient;
+    -webkit-animation-name: gradient;
+    animation-duration: 2s;
+    -webkit-animation-duration: s;
+    animation-iteration-count: 1;
+    -webkit-animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+    }
+}
+    
+@keyframes gradient {
+  0% { background-position: 0% 50% }
+  100% { background-position: 100% }    
+}
+
 .btn {
+    &.text-bold {
+        font-weight: 500;
+    }
+    &.btn-sm {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    &.btn-primary {
+        border: none;
+    }
     &.btn-solid {
         background-color: $primary-color;
         color:$primary-text-color;
-        &:hover, &:active, &:focus {
+        &:hover, &:active, &:focus {            
+            color:$primary-text-color;
             box-shadow: 0 6px 12px -4px $primary-color;
         }
     }
     &.btn-radius {
-        border-radius: 50%;
+        border-radius: 5rem;
     }
 }

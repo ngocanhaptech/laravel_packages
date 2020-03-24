@@ -5,6 +5,74 @@ Author: VCCORP - Devteam
 
 /** BUTTONS */
 
+/** Button style */
+
+.btn-primary {
+  -webkit-appearance: none;
+  background: -webkit-gradient(to right, #427cff 0%, #7235c3 50%, #42cbff 100%);
+  background: -o-linear-gradient(left, #427cff 0%, #7235c3 50%, #42cbff 100%);
+  background: linear-gradient(to right, #427cff 0%, #7235c3 50%, #42cbff 100%);
+  background-size: 500%;
+  border: none;
+  border-radius: 5rem;
+  box-shadow: 0 0.05rem 0.1rem rgba(0, 0, 0, 0.15);
+  color: #fff;
+  cursor: pointer;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.btn-primary:hover {
+  outline: none;
+  animation-name: gradient;
+  -webkit-animation-name: gradient;
+  animation-duration: 2s;
+  -webkit-animation-duration: s;
+  animation-iteration-count: 1;
+  -webkit-animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  100% {
+    background-position: 100%;
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  100% {
+    background-position: 100%;
+  }
+}
+
+.btn.text-bold {
+  font-weight: 500;
+}
+
+.btn.btn-sm {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.btn.btn-primary {
+  border: none;
+}
+
 .btn.btn-solid {
   background-color: #427cff;
   color: #fff;
@@ -13,22 +81,31 @@ Author: VCCORP - Devteam
 .btn.btn-solid:hover,
 .btn.btn-solid:active,
 .btn.btn-solid:focus {
+  color: #fff;
   box-shadow: 0 6px 12px -4px #427cff;
 }
 
 .btn.btn-radius {
-  border-radius: 50%;
+  border-radius: 5rem;
 }
 
-/** Theme layout */
+/** NAV COMPONENTS */
 
-.ui-wrapper {
-  padding: 15px;
-  border: 1px solid #eaeaea;
-}
-
-.ui-inline {
-  display: inline-block;
-  margin-right: 10px;
+nav {
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #fff;
+  box-shadow: 0 0.125rem 0.1875rem 0 rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 0 auto;
+  padding: 1.5rem;
+  z-index: 2;
 }
 

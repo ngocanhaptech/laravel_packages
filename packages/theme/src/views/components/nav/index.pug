@@ -1,0 +1,41 @@
+mixin child(item)
+    if (item.url === '')
+        span: span.nav-text!= item.title
+    else
+        a(href=item.url): span.nav-text!= item.title
+mixin navigation(className, _arrayMenu)
+    if !className
+        -var className = 'navigation'
+    -
+        var defaultMenu = [
+            { title:'<i class="fa fa-home"></i> Trang chủ', className: 'active', url:'/' },
+            { title:'Giới thiệu', className: '', url:'./single.html' },
+            { title:'Hướng dẫn', className: 'mega-menu', url:'/category.html' ,
+            child: [
+                { title:'Khuyến mãi', className: '', url:'/category.html' },
+                { title:'Hướng dẫn', className: '', url:'/category.html' },
+                { title:'Tin tức', className: '', url:'/category.html' },
+                { title:'Liên hệ', className: '', url:'/single.html' }
+            ] },
+            { title:'Liên hệ', className: '', url:'/single.html' },
+            
+        ]        
+    -var menu = _arrayMenu || defaultMenu
+    
+    // NAVIGATION 
+    div(class=className)
+        ul
+            each item in menu
+                li(class=item.className, id=item.id)
+                    +child(item)
+                    if (item.child)
+                        ul
+                            each childitem in item.child
+                                li(class=childitem.className, id=childitem.id)
+                                    +child(childitem)
+mixin nav(className, _arrayMenu, classNav)
+    nav(class=classNav || '')
+        .brand
+            a.logo: img(src="/assets/images/BizFly-Cloud.svg", alt="Bizfly-Cloud")
+            +navigation(className, _arrayMenu)
+        block
