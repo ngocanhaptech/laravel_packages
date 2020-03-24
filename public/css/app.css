@@ -1,9 +1,0 @@
-body {
-  -webkit-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  -o-transition: all ease 0.3s;
-  transition: all ease 0.3s;
-  box-shadow: 0 2px 3px #000;
-}
-

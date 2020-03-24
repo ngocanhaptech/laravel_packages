@@ -112,7 +112,7 @@ nav {
   }
   /* PC
   */
-  @media (min-width: 768px) {   
+  @media (min-width: $screen-sm) {   
     /* BEFORE HEIGHT TO PADDING */
     .navigation > ul > li.hasSub { position: relative; }
     .navigation > ul > li.hasSub:hover:before {
@@ -223,7 +223,7 @@ nav {
   /* ----------------
       Mobile
    ------------------*/
-  @media (max-width: 768px) {
+  @media (max-width: $screen-sm) {
     .navigation .navigation_icon {
       display: block;
       position: fixed;
@@ -349,7 +349,7 @@ nav {
     bottom: 0;
     z-index: 9999;
   }
-  @media (min-width: 768px) {
+  @media (min-width: $screen-sm) {
     .navigation ul > li .sub-icon {
       display: none;
     }
@@ -375,7 +375,7 @@ nav {
       border-left: 4px solid transparent;
     }
   }
-  @media (max-width: 768px) {
+  @media (max-width: $screen-sm) {
     .navigation > ul > li:first-child {
       border-top: 1px solid #eaeaea;
     }
@@ -414,7 +414,7 @@ nav {
       color: #666;
     }
   }
-  @media (max-width: 768px) { 
+  @media (max-width: $screen-sm) { 
     .navi-wrapper .container {
         position: relative;
         z-index: 9;
@@ -422,7 +422,7 @@ nav {
   }
   
   // NAVIGATION Style layout
-  @media (min-width: 768px) {
+  @media (min-width: $screen-sm) {
     .navi-wrapper .container {
       position: relative;
       z-index: 9;
@@ -465,13 +465,12 @@ nav {
       .navigation > ul > li.hasSub.mega-menu {
         // position: static;
         >ul {
-          left: 0;
-          width: 400px;
-          // min-height: 60px;
+          width: 580px;
+          padding: 25px;
           >li {
             display: block;
             float: left;
-            width: #{'calc(200px - 0px)'};
+            width: #{'calc(260px - 0px)'};
           }
         }
         &.three-items-menu {
@@ -486,7 +485,7 @@ nav {
   }
   
   
-@media (min-width: 768px) {
+@media (min-width: $screen-sm) {
   .navigation > ul > li  a,
   .navigation > ul > li  span {
     color: #333;
@@ -504,6 +503,16 @@ nav {
       }
     }
   }
+  .navigation  li.mega-menu > ul > li {    
+    & {
+      &:hover {
+        >a, >span {          
+            border-radius: .25rem;
+        }
+      }
+    }
+  }
+
   .navigation > ul > li > a:hover,
   .navigation > ul > li > span:hover {
     color: #666;
@@ -517,7 +526,7 @@ nav {
     font-size: 13px;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: $screen-sm) {
   .navigation > ul > li > a,
   .navigation > ul > li > span {
     padding: 8px 5px;

@@ -630,14 +630,14 @@ nav {
   }
 
   .navigation > ul > li.hasSub.mega-menu > ul {
-    left: 0;
-    width: 400px;
+    width: 580px;
+    padding: 25px;
   }
 
   .navigation > ul > li.hasSub.mega-menu > ul > li {
     display: block;
     float: left;
-    width: calc(200px - 0px);
+    width: calc(260px - 0px);
   }
 
   .navigation > ul > li.hasSub.mega-menu.three-items-menu > ul {
@@ -674,6 +674,11 @@ nav {
   .navigation > ul > li > ul > li:hover > span a,
   .navigation > ul > li > ul > li:hover > span span {
     color: #fff;
+  }
+
+  .navigation li.mega-menu > ul > li:hover > a,
+  .navigation li.mega-menu > ul > li:hover > span {
+    border-radius: 0.25rem;
   }
 
   .navigation > ul > li > a:hover,
