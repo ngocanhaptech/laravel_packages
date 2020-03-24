@@ -36,9 +36,9 @@
     "autoload": {
         "psr-4": {
             "App\\": "app/",
-            "Vccorp\\Contact\\": "package/contact/src/",
-            "Vccorp\\Render\\": "package/render/src/",
-            "Vccorp\\Theme\\": "package/theme/src/"
+            "Vccorp\\Contact\\": "packages/contact/src/",
+            "Vccorp\\Render\\": "packages/render/src/",
+            "Vccorp\\Theme\\": "packages/theme/src/"
         },
         "classmap": [
             "database/seeds",
