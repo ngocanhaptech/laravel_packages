@@ -14,4 +14,5 @@ const mix = require('laravel-mix');
 mix
     .js('packages/theme/src/resources/js/app.js', 'public/js')
     .sass('packages/theme/src/resources/sass/app.scss', 'public/css')
-    .sass('packages/theme/src/resources/sass/theme.scss', 'public/css');
+    .sass('packages/theme/src/resources/sass/theme.scss', 'public/css')
+    .copyDirectory('packages/theme/src/assets', 'public/assets');
