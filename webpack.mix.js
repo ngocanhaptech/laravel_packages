@@ -16,4 +16,5 @@ mix
     .sass('packages/theme/src/resources/sass/app.scss', 'public/assets/css')
     .sass('packages/theme/src/resources/sass/theme.scss', 'public/assets/css')
     .sass('packages/theme/src/resources/sass/pages/elements_layout.scss', 'public/assets/css/pages/')
+    .sourceMaps()
     .copyDirectory('packages/theme/src/assets', 'public/assets');

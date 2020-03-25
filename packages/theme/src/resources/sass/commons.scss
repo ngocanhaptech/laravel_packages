@@ -1,15 +1,22 @@
 body {
     min-height: 300vh;
+    font-family: 'Roboto', sans-serif;
+    font-size: 13px;
 }
-.fix-top.isfixed {
-    position: fixed;
-    top:0;
-    left: 0;
-    right: 0;
-    z-index: 99;
-    .logo {
-        margin: 8px 0;
-        max-width: 160px;
+.fix-top {
+    &, .logo {
+        transition: all ease .3s;
+    }
+    &.isfixed {
+        position: fixed;
+        top:0;
+        left: 0;
+        right: 0;
+        z-index: 99;
+        .logo {
+            margin: 8px 0;
+            max-width: 160px;
+        }
     }
 }
 nav.fix-top.isfixed {

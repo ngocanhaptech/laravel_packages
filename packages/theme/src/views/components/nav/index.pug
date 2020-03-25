@@ -3,6 +3,11 @@ mixin child(item)
         span: span.nav-text!= item.title
     else
         a(href=item.url): span.nav-text!= item.title
+    if (item.child)
+                        ul
+                            each childitem in item.child
+                                li(class=childitem.className, id=childitem.id)
+                                    +child(childitem)
 mixin navigation(className, _arrayMenu)
     if !className
         -var className = 'navigation'
@@ -12,7 +17,8 @@ mixin navigation(className, _arrayMenu)
             { title:'Giới thiệu', className: '', url:'./single.html' },
             { title:'Hướng dẫn', className: 'mega-menu', url:'/category.html' ,
             child: [
-                { title:'Khuyến mãi', className: '', url:'/category.html' },
+                { title:'Khuyến mãi', className: '', url:'/category.html',child: [
+                { title:'Sub child', className: '', url:'/category.html' }] },
                 { title:'Hướng dẫn', className: '', url:'/category.html' },
                 { title:'Tin tức', className: '', url:'/category.html' },
                 { title:'Liên hệ', className: '', url:'/single.html' }
@@ -27,12 +33,7 @@ mixin navigation(className, _arrayMenu)
         ul
             each item in menu
                 li(class=item.className, id=item.id)
-                    +child(item)
-                    if (item.child)
-                        ul
-                            each childitem in item.child
-                                li(class=childitem.className, id=childitem.id)
-                                    +child(childitem)
+                    +child(item)                    
 mixin nav(className, _arrayMenu, classNav)
     nav(class=classNav || '')
         .brand

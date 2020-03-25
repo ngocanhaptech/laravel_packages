@@ -1,5 +1,5 @@
 (function($){
-    $('body').append('<a class="backtotop btn btn-raised btn-primary" href="#0"><span>Top</span></a>');   
+    $('body').append('<a class="backtotop btn btn-solid btn-primary" href="#0"><span>Top</span></a>');   
     // browser window scroll (in pixels) after which the "back to top" link is shown
     var offset = 300,
         //browser window scroll (in pixels) after which the "back to top" link opacity is reduced

@@ -1,17 +1,18 @@
 $backtotop-bg: $primary-color;
 $backtotop-color: #fff;
+$fixTopHeight: 32px;
 .backtotop {
     position: fixed;
     bottom: 15px;
     right: 15px;
     display: block;
-    width: 30px;
-    height: 30px;
+    width: $fixTopHeight;
+    height: $fixTopHeight;
     background-color:$backtotop-bg !important;
     border-radius: 100%;
     font-size: 10px;
     color: $backtotop-color !important;
-    line-height: 30px;
+    line-height: $fixTopHeight;
     text-align: center;
     padding: 0;
     margin: 0;
@@ -19,7 +20,7 @@ $backtotop-color: #fff;
     &::after {
         content: '';
         display: block;
-        width: 10px;
+        width: 9px;
         height: 1px;
         background: $backtotop-color;
         position: absolute;
