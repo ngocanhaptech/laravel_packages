@@ -843,7 +843,7 @@ nav {
 body {
   min-height: 300vh;
   font-family: "Roboto", sans-serif;
-  font-size: 13px;
+  font-size: 0.875rem;
 }
 
 .fix-top,
@@ -862,7 +862,7 @@ body {
 
 .fix-top.isfixed .logo {
   margin: 8px 0;
-  max-width: 160px;
+  max-width: 128px;
 }
 
 nav.fix-top.isfixed {
