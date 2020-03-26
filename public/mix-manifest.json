@@ -2,5 +2,6 @@
     "/assets/js/app.js": "/assets/js/app.js",
     "/assets/css/app.css": "/assets/css/app.css",
     "/assets/css/theme.css": "/assets/css/theme.css",
-    "/assets/css/pages/elements_layout.css": "/assets/css/pages/elements_layout.css"
+    "/assets/css/pages/elements_layout.css": "/assets/css/pages/elements_layout.css",
+    "/assets/css/pages/home_page.css": "/assets/css/pages/home_page.css"
 }

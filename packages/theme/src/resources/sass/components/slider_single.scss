@@ -1,0 +1,27 @@
+/* Slider single */
+.slider_single {
+    background-color: #eaeaea;
+    /* Slide content */
+    .cover {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        height: 100%;
+        width: 100%;
+        display: block;
+        img, svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            height: 100%;
+            width: 100%;
+            display: block;
+        }
+    }
+    .slide-content {
+        position: relative;
+        z-index: 1;
+    }
+}

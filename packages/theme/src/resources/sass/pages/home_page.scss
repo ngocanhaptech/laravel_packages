@@ -1,0 +1,18 @@
+@import '../variables';
+
+.home-slider {
+    .slide-content {
+        pointer-events: none;
+    }
+
+    @media (max-width: $screen-sm) {
+        .slide-content img {
+            max-width: 60%;
+            margin: auto;
+        }
+    }
+}
+
+.list-services {
+    padding: 30px;
+}

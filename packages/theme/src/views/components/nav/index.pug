@@ -37,6 +37,6 @@ mixin navigation(className, _arrayMenu)
 mixin nav(className, _arrayMenu, classNav)
     nav(class=classNav || '')
         .brand
-            a.logo: img(src="/assets/images/BizFly-Cloud.svg", alt="Bizfly-Cloud")
+            a(href="/").logo: img(src="/assets/images/BizFly-Cloud.svg", alt="Bizfly-Cloud")
             +navigation(className, _arrayMenu)
         block

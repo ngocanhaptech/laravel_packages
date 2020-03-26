@@ -1,0 +1,12 @@
+mixin block_content(className, _item)
+    -
+        const item = _item || {
+            title: 'BizFly Cloud Server',
+            description: 'Khởi tạo nhanh chóng, cấu hình mạnh mẽ, thay đổi linh hoạt, cung cấp toàn quyền điều khiển cho người dùng.',
+            icon: '/assets/images/logo-servies/cloud-service.png'
+        }
+    .block-content(class=className)
+        a(href="/cloud-server").cover: img( src=item.icon alt=item.title)
+        a(href="/cloud-server").title=item.title
+        p=item.description
+        +button('col btn-solid', 'Tìm hiểu thêm')

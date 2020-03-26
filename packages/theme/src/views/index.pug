@@ -2,12 +2,64 @@ extends ./layouts/default
 block top
     //- +top
 block main
-    .main
-        .container Index page
+    .slider-section.home-slider
+        mixin home-mainslide-1     
+            .row
+                .col-sm-6
+                    img(src="/assets/images/banner_home/thang-3-ruc-ro.svg", alt="thang-3-ruc-ro")
+                .col-sm-6.d-none.d-sm-block
+                    img(src="/assets/images/banner_home/thang-3-ruc-ro-2.svg", alt="thang-3-ruc-ro")
+        mixin home-mainslide-2   
+            .row
+                .col-sm-6
+                    img(src="/assets/images/banner_home/ra-mat-tinh-nang-ipv6.svg", alt="ra-mat-tinh-nang-ipv6")
+                .col-sm-6.d-none.d-sm-block
+                    img(src="/assets/images/banner_home/ra-mat-tinh-nang-ipv6-2.svg", alt="ra-mat-tinh-nang-ipv6")    
+        mixin home-mainslide-3
+            .row
+                .col-sm-6
+                    img(src="/assets/images/banner_home/pay-as-you-go.svg", alt="pay-as-you-go")
+                .col-sm-6.d-none.d-sm-block
+                    img(src="/assets/images/banner_home/pay-as-you-go-2.svg", alt="pay-as-you-go")
+        mixin home-mainslide-4
+            .row
+                .col-sm-6
+                    img(src="/assets/images/banner_home/pay-as-you-go.svg", alt="pay-as-you-go")
+                .col-sm-6.d-none.d-sm-block
+                    img(src="/assets/images/banner_home/pay-as-you-go-2.svg", alt="pay-as-you-go")
+        - 
+            const HOME_SLIDER = [
+                { link: '', type: 'css', cover: '/assets/images/banner_home/thang-3-ruc-ro-bg.png', unique_block: 'home-mainslide-1' },
+                { link: '', type: 'css', cover: '/assets/images/banner_home/ra-mat-tinh-nang-ipv6-bg.svg', unique_block: 'home-mainslide-2' },
+                { link: '', type: 'css', cover: '/assets/images/banner_home/pay-as-you-go-bg.png', unique_block: 'home-mainslide-3' },
+                { link: '', type: 'css', cover: '/assets/images/banner_home/pay-as-you-go-bg.png', unique_block: 'home-mainslide-4' }
+            ]
+        +slider_single(HOME_SLIDER, 'owl-theme','layout-slide-item', 'container slide-item')
+    section.section
+        h2.section-title.text-center.gap-line: span Dịch vụ của chúng tôi
+        .container.list-services
+            .row
+                -
+                    const services = [
+                        {
+                            title: 'BizFly Cloud Server',
+                            description: 'Khởi tạo nhanh chóng, cấu hình mạnh mẽ, thay đổi linh hoạt, cung cấp toàn quyền điều khiển cho người dùng.',
+                            icon: '/assets/images/logo-servies/cloud-service.png'
+                        },
+                        {
+                            title: 'BizFly CDN',
+                            description: 'Mạng lưới server mạnh mẽ đặt tại data center Hà Nội, TP.HCM, Đà Nẵng và Viettel.Tăng giúp cache files, tăng tốc độ truy cập giảm tải file đến hơn 80%.',
+                            icon: '/assets/images/logo-servies/cdn-service.png'
+                        }
+                    ]
+                .row.d-flex.align-items-stretch
+                    each item in services
+                        +block_content('col-sm-4 text-center', item)
 block footer
 
 block append styles
     link(rel="stylesheet", href="/assets/OwlCarousel2/assets/owl.carousel.min.css")
     link(rel="stylesheet", href="/assets/OwlCarousel2/assets/owl.theme.default.min.css")
+    link(rel="stylesheet", href="/assets/css/pages/home_page.css")
 block append scripts
     script(src="/assets/OwlCarousel2/owl.carousel.min.js")

@@ -1,8 +1,10 @@
 mixin header(className, page)
     +nav('navigation nav-left', page.menu, className)
-        .header-right
+        .header-right.d-none.d-sm-block
             -
                 const hotline = '<span type="button" data-toggle="modal" data-target=".bs-example-modal-sm">(024/028) 7302 8888</span>'
-            +button('hidden-xs-down btn-sm btn-default btn-radius text-bold', hotline)
-            +button('btn-sm btn-default btn-radius text-bold', 'Đăng nhập')
+            +button('hidden-xs-down btn-sm btn-default btn-radius text-bold text-primary', hotline)
+                +icon('md', '/assets/images/icons/icon-hotline.svg')
+            +button('btn-sm btn-default btn-radius text-bold text-primary', 'Đăng nhập')                
+                +icon('md', '/assets/images/icons/icon-user.svg')
             +button('btn-sm btn-primary btn-solid btn-radius text-bold', 'Đăng ký dùng thử')

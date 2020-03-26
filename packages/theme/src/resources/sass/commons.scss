@@ -3,7 +3,13 @@ body {
     font-family: 'Roboto', sans-serif;
     font-size: .875rem;
 }
+.logo  img {
+    @media (min-width: $screen-sm) {
+        transform: translateY(-6px);
+    }
+}
 .fix-top {
+    position: relative;
     &, .logo {
         transition: all ease .3s;
     }
@@ -21,5 +27,176 @@ body {
 }
 nav.fix-top.isfixed {
     padding: .5rem 1.5rem;
+}
+/* ICONS LAYOUT */
+.bf-icon {
+    margin-right: 4px;
+    margin-top: -4px;
+}
+.nav-text .bf-icon {
+    margin-left: -8px;
+}
+.mega-menu >ul >li >ul >li {
+    >a, >span {
+        padding-left: 35px;
+    }
+}
+/* OWL THEME */
+.owl-theme .owl-nav { margin-top:  0; }
+.owl-dots {
+    margin-top: -26px;
+    position: relative;
+    z-index: 2;
+}
+.owl-carousel .owl-nav button,
+.owl-carousel .owl-nav button{
+    &.owl-prev,
+    &.owl-next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 16px;
+        line-height: 33px;
+        width: 40px;
+        height: 40px;
+        color: #666;
+        background: #fff;
+        border: 1px solid #fff;
+        border-radius: .145rem;
+        box-shadow: 0 2px 3px #0000002e;
+        opacity: 1;
+        margin-top: 0px;
+        &:before {
+            content: " ";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            margin: auto;
+            top: auto;
+            height: 100%;
+            border-radius: .145rem;
+            background: #fff;            
+            background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 0%, rgba(0,0,0,0.1) 0%, rgba(255,255,255,1) 100%);
+            opacity: .3;
+            transition: all .3s ease;
+        }
+        &:active, &:focus {
+            outline: none;
+        }
+        &:hover {
+            opacity: 1;
+            border: 1px solid #75a163;
+        }
+        &.disabled {
+            display: none;
+        }
+    }
+    &.owl-prev {
+        left: 0;
+    }
+    &.owl-next {
+        right: 0;
+    }
+    @media (min-width: $screen-sm) {
+        &.owl-prev {
+            left: 30px;
+        }
+        &.owl-next {
+            right: 30px;
+        }
+    }
+}
+/* SLIDE OWL */
+.slide-categories-carousel {
+    .owl-item {
+        a { display: block; }
+    }
+}
+.slide-categories-carousel .owl-dots {
+    margin-top: -36px;
+    text-align: right;
+    padding-right: 64px;
+}
+.slide-categories-carousel.owl-carousel {
+    .owl-nav button.owl-prev, .owl-nav button.owl-next {
+        top: #{'calc(100% - 36px)'}; 
+        font-size: 12px;
+        line-height: 30px;
+        width: 30px;
+        height: 30px;
+        color: #353535;
+        background: #ececec;
+        border-radius: 0;
+        box-shadow: none;
+        transform: none;
+        left: auto;
+        opacity: .3;
+        &:hover {
+            opacity: 1;
+        }
+    }
+    .owl-nav button.owl-next {
+        right: -5px;
+    }
+    .owl-nav button.owl-prev {
+        right: 26px;
+    }
+    .owl-dot {
+        z-index: 1;
+        position: relative;
+    }
+}
+/* Button next slide */
+.owl-theme .owl-nav [class*=owl-]:hover {
+    background: $primary-color;
+    color: #FFF;
+    text-decoration: none;
+}
+/* SLIDE LAYOUT */
+.slider-section {
+    position: relative;
+    background-color: #f3f3f3;
+}
+.layout-slide-item {    
+    min-height: 40vh;
+    background-color: fade($primary-color, .25);
+    display: flex;
+    align-items: center;
+    .slide-item {        
+        background-color: fade($primary-color, .5);
+        min-height: 50px;
+    }
+}
+.home-slider .layout-slide-item {
+    min-height:  60vh;
+    @media (max-width: $screen-sm) {
+        min-height: 45vw;
+    }
+}
+/* UTILITYS */
+.hd-landscape {
+    position: relative;
+    padding-bottom: 9/16 * 100%;
+}
+
+/* TYPO */
+section {
+    padding: 80px 0;
+}
+.section-title {
+    font-size: 26px;
+    color: $primary-color;
+    &.gap-line {
+        &::after {
+            content: '';
+            display: block;
+            width: 30px;
+            margin: 15px auto;
+            height: 2px;
+            background-color: $primary-color;
+        }
+    }
 }
 

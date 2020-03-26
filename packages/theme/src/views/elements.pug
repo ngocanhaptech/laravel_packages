@@ -1,35 +1,48 @@
 extends ./layouts/default
 block top
 
-block header
+block append header
 
 block main
-    +nav
-    .container
-        h1 Elements
-        .ui-title Button 
-        .ui-wrapper 
-            .ui-inline
-                +button('btn btn-primary', 'btn btn-primary')
-            .ui-inline
-                +button('btn btn-primary btn-radius', 'btn btn-primary btn-radius')
-            .ui-inline
-                +button('btn btn-solid', 'btn btn-solid')
-            .ui-inline
-                +button('btn btn-solid btn-radius', 'btn btn-solid btn-radius')
-            .ui-inline
-                +button('btn btn-primary btn-solid btn-radius', 'btn btn-primary btn-solid btn-radius')
-        .ui-wrapper 
-            .ui-inline
-                +button('btn-sm btn-primary', 'btn-sm btn-primary')
-            .ui-inline
-                +button('btn-sm btn-primary btn-radius', 'btn-sm btn-primary btn-radius')
-            .ui-inline
-                +button('btn-sm btn-solid', 'btn-sm btn-solid')
-            .ui-inline
-                +button('btn-sm btn-solid btn-radius', 'btn-sm btn-solid btn-radius')
-            .ui-inline
-                +button('btn-sm btn-primary btn-solid btn-radius', 'btn-sm btn-primary btn-solid btn-radius')
+    .ui-main-page
+        .container
+            h1 Elements
+            .ui-title Button 
+            .ui-wrapper 
+                .ui-inline
+                    +button('btn btn-primary', 'btn btn-primary')
+                .ui-inline
+                    +button('btn btn-primary btn-radius', 'btn btn-primary btn-radius')
+                .ui-inline
+                    +button('btn btn-solid', 'btn btn-solid')
+                .ui-inline
+                    +button('btn btn-solid btn-radius', 'btn btn-solid btn-radius')
+                .ui-inline
+                    +button('btn btn-primary btn-solid btn-radius', 'btn btn-primary btn-solid btn-radius')
+            .ui-wrapper 
+                .ui-inline
+                    +button('btn-sm btn-primary', 'btn-sm btn-primary')
+                .ui-inline
+                    +button('btn-sm btn-primary btn-radius', 'btn-sm btn-primary btn-radius')
+                .ui-inline
+                    +button('btn-sm btn-solid', 'btn-sm btn-solid')
+                .ui-inline
+                    +button('btn-sm btn-solid btn-radius', 'btn-sm btn-solid btn-radius')
+                .ui-inline
+                    +button('btn-sm btn-primary btn-solid btn-radius', 'btn-sm btn-primary btn-solid btn-radius')
+            .ui-title ICONS 
+            .ui-wrapper 
+                .ui-inline: +icon('md', '/assets/images/icons/icon-hotline.svg')
+                .ui-inline: +icon('sm', '/assets/images/icons/icon-hotline.svg')
+            .ui-title Navigation 
+            .ui-wrapper 
+                +nav
+            .ui-title Slider 
+            .ui-wrapper 
+                +slider_single(false, 'owl-theme','layout-slide-item', 'container slide-item')
+            .ui-title Block content
+            .ui-wrapper 
+                +block_content('text-center')
 block footer
 
 block append styles

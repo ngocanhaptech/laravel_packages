@@ -1,0 +1,26 @@
+mixin slider_single(dataArray, className= 'owl-theme', classItem = '', slideContentClass = 'container')
+    -
+        const thumbCover = '<svg class="bd-placeholder-img bd-placeholder-img-lg img-fluid" width="100%" height="250" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Responsive image"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"></rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em">Responsive image</text></svg>';
+    -    
+        const demoData = [
+            { type: 'css', cover: '/assets/images/banner_home/WEB-Container-01.jpg', title: 'title 1', link: ''},
+            { cover: '/assets/images/banner_home/demo.png', title: 'title 2', link: ''},
+            { cover: '', title: 'title 1', link: '' }
+        ];
+    mixin slide_item(item)
+        div(class=classItem)
+            div(class=slideContentClass)
+                if (item && item.cover && item.type === 'css')
+                    a.cover(href=item.link || '#', style='background: transparent url('+ (item.cover || thumbCover) +'); background-size: 100% 100%;')
+                else if (item && item.cover)
+                    a.cover(href=item.link || '#'): img.img-fluid(src=item.cover, alt= item.title || 'title image')
+                else
+                    a.cover(href=item.link || '#')!=thumbCover
+                block
+
+    .slider_single.owl-carousel(class=className)
+        each item in dataArray || demoData
+            +slide_item(item)
+                if (item.unique_block)
+                    .slide-content
+                        +#{item.unique_block}

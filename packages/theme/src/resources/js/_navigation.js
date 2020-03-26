@@ -69,10 +69,12 @@ $(function (){
 		var nav_toggle = function (nav_menu) {
 			if (!navigation_element.hasClass('nav-open')){
 				navigation_element.addClass('nav-open');
+				$('body').addClass('page-nav-open');
 				backdrop.show(); 
 			}
 			else {
 				navigation_element.removeClass('nav-open');
+				$('body').removeClass('page-nav-open');
 				backdrop.hide(); 
 			}
 		}; 

@@ -1,42 +1,61 @@
 -
+    const icon = {
+        cl: '<div class="bf-icon"><img src="/assets/images/logo-servies/cloud-service.png" alt="cloud-service"></div>',
+        cn: '<div class="bf-icon"><img src="/assets/images/logo-servies/cdn-service.png" alt="cdn-service"></div>',
+        be: '<div class="bf-icon"><img src="/assets/images/logo-servies/icon-email.png" alt="businness-emai"></div>',
+        ss: '<div class="bf-icon"><img src="/assets/images/logo-servies/logo-simple.png" alt="simple-storage"></div>',
+        lb: '<div class="bf-icon"><img src="/assets/images/logo-servies/logo-load-balancer.png" alt="load-balancer"></div>',
+        pb: '<div class="bf-icon"><img src="/assets/images/logo-servies/logo-prebuild.png" alt="prebuild"></div>',
+        vp: '<div class="bf-icon"><img src="/assets/images/logo-servies/icon-VPN.png" alt="VPN"></div>',
+        cr: '<div class="bf-icon"><img src="/assets/images/logo-servies/container-registry.png" alt="container-registry"></div>',
+        cc: '<div class="bf-icon"><img src="/assets/images/logo-servies/call-center.png" alt="call-center"></div>'
+    }
+-
     const page = {
         title: 'BizFly Cloud',
         menu: [
-            { title:'Sản phẩm', className: 'active mega-menu', url:'#' ,
-            child: [
-                { title:'BizFly Cloud Server', className: '', url:'#', child: [
-                    { title:'Bảng giá', className: '', url:'#' }
-                ] },
-                { title:'BizFly CDN', className: '', url:'#', child: [
-                    { title:'Bảng giá', className: '', url:'#' }
-                ] },
-                { title:'BizFly Business Email', className: '', url:'#', child: [
-                    { title:'Bảng giá', className: '', url:'#' }
-                ] },
-                { title:'BizFly Pre-built application', className: '', url:'#', child: [
-                    { title:'Bảng giá', className: '', url:'#' }
-                ] },
-                { title:'BizFly VPN', className: '', url:'#', child: [
-                    { title:'Bảng giá', className: '', url:'#' }
-                ] },
-                { title:'BizFly Container Registry', className: '', url:'#', child: [
-                    { title:'Bảng giá', className: '', url:'#' }
-                ] },
-                { title:'BizFly Call Center', className: '', url:'#' }
-            ] },
+            { title:'Sản phẩm', className: 'active mega-menu', url:'' ,
+                child: [
+                    { title: icon.cl +'BizFly Cloud Server', className: '', url:'#', child: [
+                        { title:'Bảng giá', className: '', url:'#' }
+                    ] },
+                    { title: icon.cn + 'BizFly CDN', className: '', url:'#', child: [
+                        { title:'Bảng giá', className: '', url:'#' }
+                    ] },
+                    { title: icon.be + 'BizFly Business Email', className: '', url:'#', child: [
+                        { title:'Bảng giá', className: '', url:'#' }
+                    ] },
+                    { title: icon.lb + 'BizFly Load Balancer', className: '', url:'#', child: [
+                        { title:'Bảng giá', className: '', url:'#' }
+                    ] },
+                    { title: icon.ss + 'BizFly Simple Storage', className: '', url:'#', child: [
+                        { title:'Bảng giá', className: '', url:'#' }
+                    ] },
+                    { title: icon.pb + 'BizFly Pre-built application', className: '', url:'#', child: [
+                        { title:'Bảng giá', className: '', url:'#' }
+                    ] },
+                    { title: icon.vp + 'BizFly VPN', className: '', url:'#', child: [
+                        { title:'Bảng giá', className: '', url:'#' }
+                    ] },
+                    { title: icon.cr + 'BizFly Container Registry', className: '', url:'#', child: [
+                        { title:'Bảng giá', className: '', url:'#' }
+                    ] },
+                    { title: icon.cc + 'BizFly Call Center', className: '', url:'#' }
+                ]
+            },
             { title:'<i class="fa fa-home"></i> Khách hàng', className: '', url:'/' },  
             { title:'Tech Blog', className: '', url:'.#' },          
             { title:'Hỗ trợ', className: '', url:'#' ,
-            child: [
-                { title:'Tài liệu', className: '', url:'#', child: [
-                    { title:'Hướng dẫn Cloud server', className: '', url:'#' }
-                ] },
-                { title:'FAQ', className: '', url:'#' },
-                { title:'Tin tức', className: '', url:'#' },
-                { title:'Liên hệ', className: '', url:'#' }
-            ] },
+                child: [
+                    { title:'Tài liệu', className: '', url:'#', child: [
+                        { title:'Cách cài đặt', className: '', url:'#' }
+                    ] },
+                    { title:'FAQ', className: '', url:'#' },
+                    { title:'Tin tức', className: '', url:'#' },
+                    { title:'Elements', className: '', url:'/elements' }
+                ]
+            },
             { title:'Giới thiệu', className: '', url:'.#' },
-            { title:'Liên hệ', className: '', url:'#' },
-            
-        ]        
+            { title:'Liên hệ', className: '', url:'#' },            
+        ]
     }
