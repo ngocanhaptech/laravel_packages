@@ -184,6 +184,9 @@ nav.fix-top.isfixed {
 /* TYPO */
 section {
     padding: 80px 0;
+    &.section-gray {
+        background-color: $bg-gray-color;
+    }
 }
 .section-title {
     font-size: 26px;
@@ -200,3 +203,11 @@ section {
     }
 }
 
+.light-text {
+    &, .section-title {
+        color: $white;
+        &.gap-line::after {
+            background-color: $white;
+        }
+    }
+}

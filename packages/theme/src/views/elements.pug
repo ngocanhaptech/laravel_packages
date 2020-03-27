@@ -30,6 +30,17 @@ block main
                     +button('btn-sm btn-solid btn-radius', 'btn-sm btn-solid btn-radius')
                 .ui-inline
                     +button('btn-sm btn-primary btn-solid btn-radius', 'btn-sm btn-primary btn-solid btn-radius')
+            .ui-wrapper.light-text(style="background-color: #333")
+                .ui-inline
+                    +button('btn-sm btn-primary', 'btn-sm btn-primary')
+                .ui-inline
+                    +button('btn-sm btn-primary btn-radius', 'btn-sm btn-primary btn-radius')
+                .ui-inline
+                    +button('btn-sm btn-solid', 'btn-sm btn-solid')
+                .ui-inline
+                    +button('btn-sm btn-solid btn-radius', 'btn-sm btn-solid btn-radius')
+                .ui-inline
+                    +button('btn-sm btn-primary btn-solid btn-radius', 'btn-sm btn-primary btn-solid btn-radius')
             .ui-title ICONS 
             .ui-wrapper 
                 .ui-inline: +icon('md', '/assets/images/icons/icon-hotline.svg')
@@ -41,8 +52,14 @@ block main
             .ui-wrapper 
                 +slider_single(false, 'owl-theme','layout-slide-item', 'container slide-item')
             .ui-title Block content
-            .ui-wrapper 
-                +block_content('text-center')
+            .container
+                .row
+                    .col.ui-wrapper 
+                        +block_content('text-center')
+                            +button('col btn-solid', 'Tìm hiểu thêm')
+                    .col.ui-wrapper 
+                        +block_content('text-left')
+            .ui-wrapper: +block_floaticon('')
 block footer
 
 block append styles

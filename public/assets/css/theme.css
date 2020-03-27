@@ -89,6 +89,38 @@ Author: VCCORP - Devteam
   border-radius: 5rem;
 }
 
+.light-text .btn.btn-solid {
+  background-color: #fff;
+  color: #427cff;
+}
+
+.light-text .btn.btn-solid:hover,
+.light-text .btn.btn-solid:active,
+.light-text .btn.btn-solid:focus {
+  color: #427cff;
+  box-shadow: 0 6px 12px -4px #427cff;
+}
+
+.light-text .btn.btn-primary {
+  -webkit-appearance: none;
+  background: -o-linear-gradient(left, #ffffff 0%, #eddfff 50%, #e8f9ff 100%);
+  background: linear-gradient(to right, #ffffff 0%, #eddfff 50%, #e8f9ff 100%);
+  background-size: 500%;
+  color: #427cff;
+}
+
+.light-text .btn.btn-primary:hover {
+  outline: none;
+  animation-name: gradient;
+  -webkit-animation-name: gradient;
+  animation-duration: 2s;
+  -webkit-animation-duration: s;
+  animation-iteration-count: 1;
+  -webkit-animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+}
+
 /* ICON */
 
 .bf-icon {
@@ -877,9 +909,15 @@ nav {
 /* Block content */
 
 .block-content {
-  border: 1px solid #eaeaea;
   padding: 15px;
+  padding-top: 30px;
   margin-bottom: 30px;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .block-content .cover {
@@ -894,6 +932,31 @@ nav {
   padding: 30px 0;
   color: #427cff;
   text-transform: uppercase;
+  font-weight: 700;
+}
+
+.block_floaticon {
+  padding: 15px;
+  padding-top: 30px;
+  margin-bottom: 30px;
+}
+
+.block_floaticon .icon {
+  margin: auto;
+  display: block;
+  text-align: center;
+}
+
+.block_floaticon .icon svg {
+  max-width: 60px;
+}
+
+.block_floaticon .title {
+  font-size: 18px;
+  margin: auto;
+  display: block;
+  padding: 15px 0;
+  color: #333;
   font-weight: 700;
 }
 
@@ -1223,6 +1286,10 @@ section {
   padding: 80px 0;
 }
 
+section.section-gray {
+  background-color: #f6f9f5;
+}
+
 .section-title {
   font-size: 26px;
   color: #427cff;
@@ -1235,5 +1302,15 @@ section {
   margin: 15px auto;
   height: 2px;
   background-color: #427cff;
+}
+
+.light-text,
+.light-text .section-title {
+  color: #fff;
+}
+
+.light-text.gap-line::after,
+.light-text .section-title.gap-line::after {
+  background-color: #fff;
 }
 

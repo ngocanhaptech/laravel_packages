@@ -1,8 +1,10 @@
 /* Block content */
 .block-content {
-    border: 1px solid #eaeaea;
     padding: 15px;
+    padding-top: 30px;
     margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
     .cover {
         margin: auto;
         display: block;
@@ -14,6 +16,27 @@
         padding: 30px 0;
         color: $primary-color;
         text-transform: uppercase;
+        font-weight: 700;
+    }
+}
+.block_floaticon {
+    padding: 15px;
+    padding-top: 30px;
+    margin-bottom: 30px;
+    .icon {
+        margin: auto;
+        display: block;
+        text-align: center;
+        svg {
+            max-width: 60px;
+        }
+    }
+    .title {
+        font-size: 18px;
+        margin: auto;
+        display: block;
+        padding: 15px 0;
+        color: #333; 
         font-weight: 700;
     }
 }

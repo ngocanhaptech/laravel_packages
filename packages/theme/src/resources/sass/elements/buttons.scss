@@ -59,3 +59,30 @@
         border-radius: 5rem;
     }
 }
+.light-text {
+    .btn.btn-solid {
+        background-color: $primary-text-color;
+        color: $primary-color;
+        &:hover, &:active, &:focus {            
+            color: $primary-color;
+            box-shadow: 0 6px 12px -4px $primary-color;
+        }
+    }
+    .btn.btn-primary {
+        -webkit-appearance: none ; 
+        background: linear-gradient(to right, #ffffff 0%, #eddfff 50%, #e8f9ff 100%);
+        background-size: 500%;
+        color: $primary-color;        
+        &:hover {
+            outline: none;
+            animation-name: gradient;
+            -webkit-animation-name: gradient;
+            animation-duration: 2s;
+            -webkit-animation-duration: s;
+            animation-iteration-count: 1;
+            -webkit-animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+            -webkit-animation-fill-mode: forwards;
+        }
+    }
+}

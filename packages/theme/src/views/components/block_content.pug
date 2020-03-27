@@ -6,7 +6,50 @@ mixin block_content(className, _item)
             icon: '/assets/images/logo-servies/cloud-service.png'
         }
     .block-content(class=className)
-        a(href="/cloud-server").cover: img( src=item.icon alt=item.title)
-        a(href="/cloud-server").title=item.title
-        p=item.description
-        +button('col btn-solid', 'Tìm hiểu thêm')
+        .block-head.p2
+            if(item.icon)
+                a(href="/cloud-server").cover: img( src=item.icon alt=item.title)
+        .block-body.p2
+            a(href="/cloud-server").title=item.title
+            p=item.description
+        .block-footer.p2.mt-auto
+            block
+mixin block_floaticon(className, _item)
+    -
+        const item = _item || {
+            title: 'Hạ tầng mạnh mẽ',
+            description: 'Ổ SSD tiêu chuẩn Data Center Tier III, mạng kết nối 10Gbps..',
+            icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 47 47">
+                <defs>
+                  <style>
+                    .a {
+                      fill: none;
+                      stroke: #000;
+                      stroke-linecap: round;
+                      stroke-linejoin: round;
+                      stroke-width: 2px;
+                    }
+                  </style>
+                </defs>
+                <title>Asset 1</title>
+                <rect class="a" x="15.5" y="15.5" width="16" height="16" rx="2" ry="2"></rect>
+                <rect class="a" x="20.5" y="20.5" width="6" height="6"></rect>
+                <line class="a" x1="20.5" y1="12.5" x2="20.5" y2="15.5"></line>
+                <line class="a" x1="26.5" y1="12.5" x2="26.5" y2="15.5"></line>
+                <line class="a" x1="20.5" y1="31.5" x2="20.5" y2="34.5"></line>
+                <line class="a" x1="26.5" y1="31.5" x2="26.5" y2="34.5"></line>
+                <line class="a" x1="31.5" y1="20.5" x2="34.5" y2="20.5"></line>
+                <line class="a" x1="31.5" y1="25.5" x2="34.5" y2="25.5"></line>
+                <line class="a" x1="12.5" y1="20.5" x2="15.5" y2="20.5"></line>
+                <line class="a" x1="12.5" y1="25.5" x2="15.5" y2="25.5"></line>
+                <circle class="a" cx="23.5" cy="23.5" r="22.5"></circle>
+              </svg>'
+        }
+    .block_floaticon(class=className).row
+            .col-3.block-head.align-self-center
+                if(item.icon)
+                    a(href="/cloud-server").icon!=item.icon
+            .col-9.block-body
+                a(href="/cloud-server").title=item.title
+                p=item.description
+                block

@@ -4,25 +4,25 @@ block top
 block main
     .slider-section.home-slider
         mixin home-mainslide-1     
-            .row
+            .row.align-items-center
                 .col-sm-6
                     img(src="/assets/images/banner_home/thang-3-ruc-ro.svg", alt="thang-3-ruc-ro")
                 .col-sm-6.d-none.d-sm-block
                     img(src="/assets/images/banner_home/thang-3-ruc-ro-2.svg", alt="thang-3-ruc-ro")
         mixin home-mainslide-2   
-            .row
+            .row.align-items-center
                 .col-sm-6
                     img(src="/assets/images/banner_home/ra-mat-tinh-nang-ipv6.svg", alt="ra-mat-tinh-nang-ipv6")
                 .col-sm-6.d-none.d-sm-block
                     img(src="/assets/images/banner_home/ra-mat-tinh-nang-ipv6-2.svg", alt="ra-mat-tinh-nang-ipv6")    
         mixin home-mainslide-3
-            .row
+            .row.align-items-center
                 .col-sm-6
                     img(src="/assets/images/banner_home/pay-as-you-go.svg", alt="pay-as-you-go")
                 .col-sm-6.d-none.d-sm-block
                     img(src="/assets/images/banner_home/pay-as-you-go-2.svg", alt="pay-as-you-go")
         mixin home-mainslide-4
-            .row
+            .row.align-items-center
                 .col-sm-6
                     img(src="/assets/images/banner_home/pay-as-you-go.svg", alt="pay-as-you-go")
                 .col-sm-6.d-none.d-sm-block
@@ -50,11 +50,88 @@ block main
                             title: 'BizFly CDN',
                             description: 'Mạng lưới server mạnh mẽ đặt tại data center Hà Nội, TP.HCM, Đà Nẵng và Viettel.Tăng giúp cache files, tăng tốc độ truy cập giảm tải file đến hơn 80%.',
                             icon: '/assets/images/logo-servies/cdn-service.png'
+                        },
+                        {
+                            title: 'BizFly Cloud Server',
+                            description: 'Khởi tạo nhanh chóng, cấu hình mạnh mẽ, thay đổi linh hoạt, cung cấp toàn quyền điều khiển cho người dùng.',
+                            icon: '/assets/images/logo-servies/cloud-service.png'
+                        },
+                        {
+                            title: 'BizFly CDN',
+                            description: 'Mạng lưới server mạnh mẽ đặt tại data center Hà Nội, TP.HCM, Đà Nẵng và Viettel.Tăng giúp cache files, tăng tốc độ truy cập giảm tải file đến hơn 80%.',
+                            icon: '/assets/images/logo-servies/cdn-service.png'
+                        },
+                        {
+                            title: 'BizFly Cloud Server',
+                            description: 'Khởi tạo nhanh chóng, cấu hình mạnh mẽ, thay đổi linh hoạt, cung cấp toàn quyền điều khiển cho người dùng.',
+                            icon: '/assets/images/logo-servies/cloud-service.png'
+                        },
+                        {
+                            title: 'BizFly CDN',
+                            description: 'Mạng lưới server mạnh mẽ đặt tại data center Hà Nội, TP.HCM, Đà Nẵng và Viettel.Tăng giúp cache files, tăng tốc độ truy cập giảm tải file đến hơn 80%.',
+                            icon: '/assets/images/logo-servies/cdn-service.png'
+                        },
+                        {
+                            title: 'BizFly Cloud Server',
+                            description: 'Khởi tạo nhanh chóng, cấu hình mạnh mẽ, thay đổi linh hoạt, cung cấp toàn quyền điều khiển cho người dùng.',
+                            icon: '/assets/images/logo-servies/cloud-service.png'
+                        },
+                        {
+                            title: 'BizFly CDN',
+                            description: 'Mạng lưới server mạnh mẽ đặt tại data center Hà Nội, TP.HCM, Đà Nẵng và Viettel.Tăng giúp cache files, tăng tốc độ truy cập giảm tải file đến hơn 80%.',
+                            icon: '/assets/images/logo-servies/cdn-service.png'
+                        },
+                        {
+                            title: 'BizFly CDN',
+                            description: 'Mạng lưới server mạnh mẽ đặt tại data center Hà Nội, TP.HCM, Đà Nẵng và Viettel.Tăng giúp cache files, tăng tốc độ truy cập giảm tải file đến hơn 80%.',
+                            icon: '/assets/images/logo-servies/cdn-service.png'
                         }
                     ]
                 .row.d-flex.align-items-stretch
                     each item in services
                         +block_content('col-sm-4 text-center', item)
+                            +button('col btn-solid', 'Tìm hiểu thêm')
+    section.section.section-gray
+        h2.section-title.text-center.gap-line: span Tại sao nên chọn BizFly Cloud?
+        .container.why-us
+            .row
+                .col-sm-4.why-us-left
+                    +block_floaticon('', false)
+                    +block_floaticon('', false)
+                    +block_floaticon('', false)
+                .col-sm-4.center-image
+                    img(src="/assets/images/homepage/vccloud-hatang.svg", alt="vccloud-hatang")
+                .col-sm-4
+                    +block_floaticon('', false)
+                    +block_floaticon('', false)
+                    +block_floaticon('', false)
+    section.section
+        h2.section-title.text-center.gap-line: span Kiểm tra tốc độ kết nối đến hệ thống BizFly Cloud
+        .container.test-connecttion.text-center
+            img(src="/assets/images/homepage/speedtest2.gif", alt="speedtest2")
+        .text-center
+            +button('btn-md btn-solid', 'Tới trang kiểm tra')
+    section.section.section-gradient-1.light-text
+        h2.section-title.text-center.gap-line: span Đăng ký trải nghiệm dịch vụ miễn phí
+        .container.register-section.text-center
+            p Dùng thử BizFly Cloud Server trong 3 ngày với cấu hình <strong>2 Core - 2 GB RAM - 100GB HDD + 60GB SSD</strong>
+            p Dùng thử BizFly CDN miễn phí <strong>100GB dung lượng trong vòng 30 ngày</strong>
+        .text-center
+            +button('btn-md btn-solid', 'Đăng ký dùng thử ngay')
+    section.section
+        h2.section-title.text-center.gap-line: span Được tin dùng bởi
+        .container.our-partners
+            .row
+                each item in partners || [ { link: '/partner/dan-tri', img: '/assets/images/partners/dantri-logo.jpg', title: 'Dân trí'} ]
+                    .col-sm-3
+                        a.link(href=item.link)
+                            img(src=item.img || "/assets/images/partners/topica-logo.jpg", alt=item.title || "topica")
+    section.section.section-gradient-1.light-text
+        h2.section-title.text-center.gap-line: span Testimonial
+        .container.testimonial-section
+            .testimonial-block
+                p.testimonial_para
+
 block footer
 
 block append styles
