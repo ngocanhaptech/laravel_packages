@@ -23,4 +23,4 @@ mixin slider_single(dataArray, className= 'owl-theme', classItem = '', slideCont
             +slide_item(item)
                 if (item.unique_block)
                     .slide-content
-                        +#{item.unique_block}
+                        +#{item.unique_block}(false, item)

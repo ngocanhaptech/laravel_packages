@@ -1,4 +1,6 @@
-mixin testimonial_block(className='testimonial-stylesimple', _testimonial)
+mixin testimonial_block(className, _testimonial)
+    if (!className)
+        - className='testimonial-stylesimple'
     .testimonial_block(class=className)
         - 
             const testimonial =  _testimonial || {
