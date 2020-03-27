@@ -1,0 +1,105 @@
+// FOOTER
+.copyright {
+    border-top: 1px solid #dcdcdc;
+    padding: 10px 0;
+    font-size: small;
+    color: #999999;
+}
+footer, .footer {
+    padding-top: 40px;
+    &, a {
+        color: #666;
+    }
+    a{
+        &:hover {
+            color: #ccc;
+        }
+    }
+    .social-icon {
+        background: #666;
+        border-radius: 100%;
+        overflow: hidden;
+        cursor: pointer;
+        &, a {
+            color: #fff;
+        }
+        i {
+            padding: 4px 8px;
+            width: 36px;
+            font-size: 18px;
+            line-height: 28px;
+            text-align: center;
+        }
+    }
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        margin-bottom: 15px;
+        li {
+            >span, >a {
+                padding: 8px 0px;
+                display: block; 
+                font-size: 14px;
+                i.material-icons.list-style {
+                    font-size: 6px;
+                    line-height: 20px;
+                    display: inline-block;
+                    margin: 0 10px 0px 0;
+                    vertical-align: top;
+                }
+            }
+            &:last-child {
+                >span, >a {
+                    border-bottom: none;
+                }
+            }
+        }
+    }
+    .title { 
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 1.05;
+        color: #333;
+        text-transform: uppercase;
+        margin: 10px 0 15px;
+        padding-bottom: 10px;
+        position: relative; 
+        &.divider-bottom {
+            &::before {
+                content: ' ';
+                height: 2px;
+                background: #8a8a8a8a;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 40px;
+            }
+        }
+    }
+    &.dark {
+        background: darken($primary-color, 0);
+        &,a {
+            color: #d8cf9d;
+        }
+        .divider-bottom {
+            &::before { background: #fff; }
+        }
+        .social-icon {
+            background: #fff;
+            border-radius: 100%;
+            overflow: hidden;
+            cursor: pointer;
+            &, a {
+                color: $primary-color;
+                &:hover {
+                    color: #fff;
+                }
+            }
+        }
+        .copyright {
+            border-top: 1px solid #dcdcdc33;
+            color: #97c0cc;
+        }
+    }
+}

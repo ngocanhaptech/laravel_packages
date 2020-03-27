@@ -1,3 +1,61 @@
+mixin contact_column(_data)
+    -
+        const contact = _data || {
+            title: 'Văn phòng',
+            address: 'Đại chỉ văn phòng số 2, phường AB',
+            address2: 'Nội dung thông tin văn phòng',
+            phone: '+84 986 242 299',
+            email: 'domain@gmail.com'
+        }
+    .contact-column
+        .block
+            .block-content
+                if contact.title
+                    .title-block=contact.title
+                .contact-content
+                    .data
+                    .data
+                        i(class="fa fa-chess-queen" aria-hidden="true")
+                        .inline
+                            span.label-content.text-uppercase Văn phòng trụ sở:  
+                        .block-line
+                            a(href="#")=contact.address2
 mixin footer
     footer
-        p footer content
+        .footer-main
+            .container
+                .row             
+                    .col-sm-5
+                        .title.text-uppercase BizFly Cloud
+                        .contact-column
+                                .block-content
+                                    .contact-content
+                                        .data
+                                            <i class="fa fa-globe" aria-hidden="true"></i>
+                                            <b class="label-content">Giấy phép kinh doanh số:</b>
+                                            .content-data
+                                                span 012345678910 do phòng Kinh doanh sở KH&amp;ĐT  &nbsp;&nbsp; TP.Hà Nội cấp ngày: 01/02/2012
+                        br
+                    .col-sm-4
+                        .title.text-uppercase Fanpage
+                        img(src="/assets/images/fanpage.png", alt="")
+                    .col-sm-3
+                        .title.text-uppercase Hỗ trợ
+                        -
+                            const support_link = [
+                                { title: 'Giới thiệu', link: '#' },
+                                { title: 'Tuyển dụng', link: '#' },
+                                { title: 'Khách hàng', link: '#' },
+                                { title: 'Tin tức', link: '#' },
+                                { title: 'Chính Sách Bảo Mật', link: '#bao-mat' },
+                                { title: 'Hỗ trợ khác', link: '#khac' }
+                            ]
+                        ul.list
+                            -for(i=1; i<6; i++)
+                                li
+                                    a(href=support_link[i-1].link)
+                                        | <span class="fa fa-circle"></span>
+                                        span=support_link[i-1].title   
+        .copyright
+            .container
+                | &copy; Copyright 2019. - Bản quyền thuộc về <strong>BizFly Cloud</strong>. Mọi sự sao chép đều phải ghi nguồn và được sự cho phép bằng văn bản của chúng tôi.
