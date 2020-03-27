@@ -1,61 +1,87 @@
-mixin contact_column(_data)
-    -
-        const contact = _data || {
-            title: 'Văn phòng',
-            address: 'Đại chỉ văn phòng số 2, phường AB',
-            address2: 'Nội dung thông tin văn phòng',
-            phone: '+84 986 242 299',
-            email: 'domain@gmail.com'
-        }
-    .contact-column
-        .block
-            .block-content
-                if contact.title
-                    .title-block=contact.title
-                .contact-content
-                    .data
-                    .data
-                        i(class="fa fa-chess-queen" aria-hidden="true")
-                        .inline
-                            span.label-content.text-uppercase Văn phòng trụ sở:  
-                        .block-line
-                            a(href="#")=contact.address2
 mixin footer
-    footer
-        .footer-main
-            .container
-                .row             
-                    .col-sm-5
-                        .title.text-uppercase BizFly Cloud
-                        .contact-column
-                                .block-content
-                                    .contact-content
-                                        .data
-                                            <i class="fa fa-globe" aria-hidden="true"></i>
-                                            <b class="label-content">Giấy phép kinh doanh số:</b>
-                                            .content-data
-                                                span 012345678910 do phòng Kinh doanh sở KH&amp;ĐT  &nbsp;&nbsp; TP.Hà Nội cấp ngày: 01/02/2012
-                        br
-                    .col-sm-4
-                        .title.text-uppercase Fanpage
-                        img(src="/assets/images/fanpage.png", alt="")
-                    .col-sm-3
-                        .title.text-uppercase Hỗ trợ
+    section.section-info
+        .container
+            .row.align-items-center
+                .col-12.col-sm-3
+                    .contact-card
+                        .label Hotline
+                        .info 
+                            a(href="tel: 02473028888") (024) 7302 8888
+                            span -
+                            a(href="tel: 02873028888") (028) 7302 8888
+                .col-12.col-sm-3
+                    .contact-card
+                        .label Hỗ trợ kỹ thuật
+                        .info 
+                            a(href="mailto: support@bizflycloud.vn") support@bizflycloud.vn
+                .col-12.col-sm-3
+                    .contact-card
+                        .label Kinh doanh, CSKH
+                        .info 
+                            a(href="mailto: support@bizflycloud.vn") sales@bizflycloud.vn
+                .col-auto
+                    .social-inline
                         -
-                            const support_link = [
-                                { title: 'Giới thiệu', link: '#' },
-                                { title: 'Tuyển dụng', link: '#' },
-                                { title: 'Khách hàng', link: '#' },
-                                { title: 'Tin tức', link: '#' },
-                                { title: 'Chính Sách Bảo Mật', link: '#bao-mat' },
-                                { title: 'Hỗ trợ khác', link: '#khac' }
+                            const socialIcon = [
+                                { className: 'size32', img: '/assets/images/icons/icon-facebook.svg', text: ''},
+                                { className: 'size32', img: '/assets/images/icons/icon-youtube.svg', text: ''},
+                                { className: 'size32', img: '/assets/images/icons/icon-linkedin.svg', text: ''}
                             ]
-                        ul.list
-                            -for(i=1; i<6; i++)
-                                li
-                                    a(href=support_link[i-1].link)
-                                        | <span class="fa fa-circle"></span>
-                                        span=support_link[i-1].title   
+                        each social in socialIcon
+                            a(href="").social-icon: +icon(social.className, social.img, social.tex)
+    footer
+        .section-footermain
+            .container
+                .row
+                    .col-sm-4
+                        a(href="/").footer-logo: img(src="/assets/images/BizFly-Cloud.svg", alt="BizFly Cloud")
+                        div.img-label
+                            a(href='/')
+                                img(src='/assets/images/logo-vccorp.svg')
+                        div.img-label
+                            a(href='http://online.gov.vn/Home/WebDetails/61825', target='_blank')
+                                img.da-thong-bao(src='http://online.gov.vn/Content/EndUser/LogoCCDVSaleNoti/logoSaleNoti.png')
+                        h5.strong Công ty cổ phần VCCorp
+                        ul.company-info
+                            li
+                                div Số 1 Nguyễn Huy Tưởng,
+                                div P. Thanh Xuân Trung, Q. Thanh Xuân,
+                                div TP Hà Nội.
+                            li 
+                                div MST/ĐKKD: 0101871229 do
+                                div Sở Kế hoạch và Đầu tư
+                                div cấp ngày 27/8/2015
+                    .col-sm-8
+                        .row
+                            .col-sm-4
+                                .footer-title SẢN PHẨM
+                                ul.footer-list
+                                    each item in page.menu[0].child
+                                        li: a(href=item.url)!=item.title.replace(/(<([^>]+)>)/ig, "")
+                            .col-sm-4
+                                .footer-title VỀ BIZFLY CLOUD
+                                ul.footer-list
+                                    li: a(href="#") Giới thiệu
+                                    li: a(href="#") Tuyển dụng
+                                    li: a(href="#") Khách hàng
+                                    li: a(href="#") Tin tức
+                                    li: a(href="#") Chính sách bảo mật
+                                    li: a(href="#") Chính sách thanh toán
+                                    li: a(href="#") Tài liệu hướng dẫn
+                                    li: a(href="#") Hướng dẫn thanh toán
+                                    li: a(href="#") Cách tính phí và gói cước
+                            .col-sm-4
+                                .footer-title TECH BLOG
+                                .img-320
+                                    a(href="http://tech.bizflycloud.vn", target="_blank")
+                                        img(src="/assets/images/tech.bizflycloud.vn.png", alt="tech.bizflycloud.vn")
+                                +button('btn-solid btn-block text-uppercase', 'Đọc tin')
         .copyright
             .container
-                | &copy; Copyright 2019. - Bản quyền thuộc về <strong>BizFly Cloud</strong>. Mọi sự sao chép đều phải ghi nguồn và được sự cho phép bằng văn bản của chúng tôi.
+                span © 2014 BizFly Cloud. All Rights Reserved 
+                span.rules 
+                    a(href="https://support.bizflycloud.vn/knowledge-base/dieu-khoan-su-dung/") Điều khoản sử dụng 
+                    span &nbsp;| 
+                    a(href="https://support.bizflycloud.vn/knowledge-base/cam-ket-chat-luong-dich-vu-sla/") Cam kết chất lượng dịch vụ - SLA
+
+        

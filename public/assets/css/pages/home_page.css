@@ -37,6 +37,10 @@
 }
 
 @media (min-width: 768px) {
+  .why-us .why-us-left {
+    text-align: right;
+  }
+
   .why-us .why-us-left .block_floaticon .block-head {
     -webkit-order: 1;
         -ms-flex-order: 1;
