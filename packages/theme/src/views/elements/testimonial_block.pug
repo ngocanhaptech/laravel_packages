@@ -1,0 +1,15 @@
+mixin testimonial_block(className='testimonial-stylesimple', _testimonial)
+    .testimonial_block(class=className)
+        - 
+            const testimonial =  _testimonial || {
+                name: 'Anh Nguyễn Mạnh',
+                position: 'Enbac.com',
+                avartar: '/assets/images/testimonials/manh_nguyen_enbac.jpg',
+                para: 'BizFly Cloud server tốt nhất và đơn giản nhất cho dự án của tôi. Chưa bao giờ thiết lập server của tôi dễ dàng tới vậy.'
+            }
+        p.testimonial-para=testimonial.para
+        .blog-info
+            .avatar: img(src==testimonial.avartar, alt=testimonial.name) 
+            .blog-content
+                .name=testimonial.name
+                .position=testimonial.position

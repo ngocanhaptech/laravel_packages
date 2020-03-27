@@ -141,6 +141,70 @@ Author: VCCORP - Devteam
   max-width: 100%;
 }
 
+/* TESTIMONIAL BLOCK */
+
+.testimonial_block .avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+}
+
+.testimonial_block.testimonial-stylesimple .testimonial-para {
+  text-align: center;
+  font-size: larger;
+  font-style: italic;
+  display: block;
+  min-height: 6em;
+}
+
+.testimonial_block.testimonial-stylesimple .testimonial-para::before {
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 18px;
+  background-image: url(/assets/images/testimonials/quote.svg);
+  background-size: 100% 100%;
+  margin-right: 15px;
+  -webkit-transform: rotate(180deg) translateY(2px);
+      -ms-transform: rotate(180deg) translateY(2px);
+          transform: rotate(180deg) translateY(2px);
+}
+
+.testimonial_block.testimonial-stylesimple .testimonial-para::after {
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 18px;
+  background-image: url(/assets/images/testimonials/quote.svg);
+  background-size: 100% 100%;
+  margin-left: 15px;
+  -webkit-transform: rotate(0deg) translateY(8px);
+      -ms-transform: rotate(0deg) translateY(8px);
+          transform: rotate(0deg) translateY(8px);
+}
+
+.testimonial_block.testimonial-stylesimple .avatar {
+  display: block;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 4px solid #427cff;
+  overflow: hidden;
+  margin: 30px auto;
+}
+
+.testimonial_block.testimonial-stylesimple .blog-content {
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+.testimonial_block.testimonial-stylesimple .name {
+  font-size: 20px;
+  font-weight: 700;
+  color: #427cff;
+  margin-top: 10px;
+}
+
 /** NAV COMPONENTS */
 
 nav {
@@ -617,7 +681,8 @@ nav {
     display: flex;
   }
 
-  li.hasSub > a:after {
+  li.hasSub > a:after,
+  li.hasSub > span:after {
     content: "";
     position: relative;
     right: 0px;
@@ -876,7 +941,7 @@ nav {
 /* Slider single */
 
 .slider_single {
-  background-color: #eaeaea;
+  background-color: transparent;
   /* Slide content */
 }
 

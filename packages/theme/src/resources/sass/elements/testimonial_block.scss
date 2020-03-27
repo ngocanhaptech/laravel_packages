@@ -1,0 +1,56 @@
+/* TESTIMONIAL BLOCK */
+.testimonial_block {
+    .avatar {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+    }
+    &.testimonial-stylesimple {
+        .testimonial-para {
+            text-align: center;
+            font-size: larger;
+            font-style: italic;
+            display: block;
+            min-height: 6em;
+            &::before {
+                content: "";
+                display: inline-block;
+                width: 16px;
+                height: 18px;
+                background-image: url(/assets/images/testimonials/quote.svg);
+                background-size: 100% 100%;
+                margin-right: 15px;
+                transform: rotate(180deg) translateY(2px);
+            }
+            &::after {
+                content: "";
+                display: inline-block;
+                width: 16px;
+                height: 18px;
+                background-image: url(/assets/images/testimonials/quote.svg);
+                background-size: 100% 100%;
+                margin-left: 15px;
+                transform: rotate(0deg) translateY(8px);
+            }
+        }
+        .avatar {
+            display: block;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 4px solid $primary-color;
+            overflow: hidden;
+            margin: 30px auto;
+        }
+        .blog-content {
+            text-align: center;
+            padding-bottom: 30px;
+        }
+        .name {
+            font-size: 20px;
+            font-weight: 700;
+            color: $primary-color;
+            margin-top: 10px;
+        }
+    }
+}

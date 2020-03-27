@@ -391,7 +391,8 @@ $nav-width-mob:  275px;
     position: relative;
     display: flex;
   }
-  li.hasSub > a:after {
+  li.hasSub > a:after,
+  li.hasSub > span:after {
     content: "";
     position: relative;
     right: 0px;

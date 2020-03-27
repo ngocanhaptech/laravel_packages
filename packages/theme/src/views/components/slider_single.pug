@@ -14,7 +14,7 @@ mixin slider_single(dataArray, className= 'owl-theme', classItem = '', slideCont
                     a.cover(href=item.link || '#', style='background: transparent url('+ (item.cover || thumbCover) +'); background-size: 100% 100%;')
                 else if (item && item.cover)
                     a.cover(href=item.link || '#'): img.img-fluid(src=item.cover, alt= item.title || 'title image')
-                else
+                elseif (item && item.cover && item.type === 'svg')
                     a.cover(href=item.link || '#')!=thumbCover
                 block
 

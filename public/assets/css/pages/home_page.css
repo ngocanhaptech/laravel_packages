@@ -66,6 +66,12 @@
   position: relative;
 }
 
+.section-gradient-2 {
+  background-image: -o-linear-gradient(top, #5068ee 0%, #0d0719 100%);
+  background-image: linear-gradient(to bottom, #5068ee 0%, #0d0719 100%);
+  position: relative;
+}
+
 /* CONTENT SECTION LAYOUT */
 
 .register-section,
@@ -104,5 +110,29 @@
 
 .test-connecttion img {
   max-width: 100%;
+}
+
+/* TESTIMONAIL */
+
+.testimonial-section {
+  padding: 30px 15px;
+}
+
+.testimonial-section .owl-nav {
+  display: none;
+}
+
+.link-stories {
+  color: #f1c40f;
+  font-weight: 700;
+  padding: 30px;
+  display: block;
+  text-decoration: underline;
+}
+
+.link-stories:hover,
+.link-stories:active,
+.link-stories:focus {
+  color: #f90;
 }
 
