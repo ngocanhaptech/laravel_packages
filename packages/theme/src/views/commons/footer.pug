@@ -76,6 +76,54 @@ mixin footer
                                     a(href="http://tech.bizflycloud.vn", target="_blank")
                                         img(src="/assets/images/tech.bizflycloud.vn.png", alt="tech.bizflycloud.vn")
                                 +button('btn-solid btn-block text-uppercase', 'Đọc tin')
+        .footer-office
+            .container
+                .row
+                    -
+                        const offices = [
+                            {
+                                title: 'Trụ sở chính',
+                                items: [
+                                    {
+                                        icon: { className: 'sm', mediaSrc: '/assets/images/icons/marker.svg', text: ''},
+                                        label : 'Địa chỉ:',
+                                        value: 'Tầng 4, Tòa 21T2 Hapulico Complex, Số 83 Vũ Trọng Phụng , Thanh Xuân, Hà Nội.'
+                                    }
+                                ]
+                            },
+                            {
+                                title: 'Chi nhánh TP.Hồ Chí Minh:',
+                                items: [
+                                    {
+                                        icon: { className: 'sm', mediaSrc: '/assets/images/icons/marker.svg', text: ''},
+                                        label : 'Địa chỉ:',
+                                        value: 'Toà nhà Báo Người lao động, Số 123 Võ Văn Tần, Quận 3, TP. HCM.'
+                                    }
+                                ]
+                            },
+                            {
+                                title: 'Chi nhánh TP.Đà Nẵng:',
+                                items: [
+                                    {
+                                        icon: { className: 'sm', mediaSrc: '/assets/images/icons/marker.svg', text: ''},
+                                        label : 'Địa chỉ:',
+                                        value: '21 Hàm Nghi, Quận Thanh Khê, TP. Đà Nẵng.'
+                                    }
+                                ]
+                            },
+                            {
+                                title: 'Chi nhánh TP.Hải Phòng:',
+                                items: [
+                                    {
+                                        icon: { className: 'sm', mediaSrc: '/assets/images/icons/marker.svg', text: ''},
+                                        label : 'Địa chỉ:',
+                                        value: '310 Hai Bà Trưng, Quận Lê Chân, TP. Hải Phòng.'
+                                    }
+                                ]
+                            }
+                        ]
+                    each item in offices
+                        .col-12.col-sm-auto: +office_block(item)
         .copyright
             .container
                 span © 2014 BizFly Cloud. All Rights Reserved 

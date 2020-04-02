@@ -223,6 +223,23 @@ Author: VCCORP - Devteam
   margin-top: 10px;
 }
 
+/* OFFICE BLOCK */
+
+.office_block .title {
+  font-weight: 600;
+  padding: 15px 0;
+}
+
+.office_block .label {
+  display: inline-block;
+  font-weight: 600;
+  margin-right: 10px;
+}
+
+.office_block .office-attr {
+  margin-bottom: 10px;
+}
+
 /** NAV COMPONENTS */
 
 nav {
@@ -1165,6 +1182,11 @@ nav {
 .section-footermain ul > li > span {
   display: block;
   padding: 10px 0;
+}
+
+.footer-office {
+  border-top: 1px solid #c7c7c7;
+  padding: 15px;
 }
 
 .backtotop {
