@@ -276,6 +276,36 @@ $(function () {
 
 /***/ }),
 
+/***/ "./packages/theme/src/resources/js/_slider_partners.js":
+/*!*************************************************************!*\
+  !*** ./packages/theme/src/resources/js/_slider_partners.js ***!
+  \*************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+$(function () {
+  $('.slider_partners').owlCarousel({
+    loop: true,
+    margin: 0,
+    nav: true,
+    dots: false,
+    items: 1,
+    responsive: {
+      0: {
+        items: 3
+      },
+      600: {
+        items: 6
+      },
+      1000: {
+        items: 8
+      }
+    }
+  });
+});
+
+/***/ }),
+
 /***/ "./packages/theme/src/resources/js/_slider_single.js":
 /*!***********************************************************!*\
   !*** ./packages/theme/src/resources/js/_slider_single.js ***!
@@ -284,8 +314,6 @@ $(function () {
 /***/ (function(module, exports) {
 
 $(function () {
-  // Handler for .ready() called.
-  console.log('slider home');
   $('.slider_single').owlCarousel({
     loop: true,
     margin: 0,
@@ -320,12 +348,25 @@ __webpack_require__(/*! ./_navigation */ "./packages/theme/src/resources/js/_nav
 
 __webpack_require__(/*! ./_slider_single */ "./packages/theme/src/resources/js/_slider_single.js");
 
+__webpack_require__(/*! ./_slider_partners */ "./packages/theme/src/resources/js/_slider_partners.js");
+
 /***/ }),
 
 /***/ "./packages/theme/src/resources/sass/app.scss":
 /*!****************************************************!*\
   !*** ./packages/theme/src/resources/sass/app.scss ***!
   \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ "./packages/theme/src/resources/sass/pages/cloud-server_page.scss":
+/*!************************************************************************!*\
+  !*** ./packages/theme/src/resources/sass/pages/cloud-server_page.scss ***!
+  \************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -367,9 +408,9 @@ __webpack_require__(/*! ./_slider_single */ "./packages/theme/src/resources/js/_
 /***/ }),
 
 /***/ 0:
-/*!**************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** multi ./packages/theme/src/resources/js/app.js ./packages/theme/src/resources/sass/app.scss ./packages/theme/src/resources/sass/theme.scss ./packages/theme/src/resources/sass/pages/elements_layout.scss ./packages/theme/src/resources/sass/pages/home_page.scss ***!
-  \**************************************************************************************************************************************************************************************************************************************************************************/
+/*!*******************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** multi ./packages/theme/src/resources/js/app.js ./packages/theme/src/resources/sass/app.scss ./packages/theme/src/resources/sass/theme.scss ./packages/theme/src/resources/sass/pages/elements_layout.scss ./packages/theme/src/resources/sass/pages/home_page.scss ./packages/theme/src/resources/sass/pages/cloud-server_page.scss ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -377,7 +418,8 @@ __webpack_require__(/*! D:\VCCLOUD\HOMEBIZFLYCLOUD\Laravel\bizflycloud\packages\
 __webpack_require__(/*! D:\VCCLOUD\HOMEBIZFLYCLOUD\Laravel\bizflycloud\packages\theme\src\resources\sass\app.scss */"./packages/theme/src/resources/sass/app.scss");
 __webpack_require__(/*! D:\VCCLOUD\HOMEBIZFLYCLOUD\Laravel\bizflycloud\packages\theme\src\resources\sass\theme.scss */"./packages/theme/src/resources/sass/theme.scss");
 __webpack_require__(/*! D:\VCCLOUD\HOMEBIZFLYCLOUD\Laravel\bizflycloud\packages\theme\src\resources\sass\pages\elements_layout.scss */"./packages/theme/src/resources/sass/pages/elements_layout.scss");
-module.exports = __webpack_require__(/*! D:\VCCLOUD\HOMEBIZFLYCLOUD\Laravel\bizflycloud\packages\theme\src\resources\sass\pages\home_page.scss */"./packages/theme/src/resources/sass/pages/home_page.scss");
+__webpack_require__(/*! D:\VCCLOUD\HOMEBIZFLYCLOUD\Laravel\bizflycloud\packages\theme\src\resources\sass\pages\home_page.scss */"./packages/theme/src/resources/sass/pages/home_page.scss");
+module.exports = __webpack_require__(/*! D:\VCCLOUD\HOMEBIZFLYCLOUD\Laravel\bizflycloud\packages\theme\src\resources\sass\pages\cloud-server_page.scss */"./packages/theme/src/resources/sass/pages/cloud-server_page.scss");
 
 
 /***/ })

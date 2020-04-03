@@ -40,6 +40,19 @@ Author: VCCORP - Devteam
   -webkit-animation-fill-mode: forwards;
 }
 
+.btn.btn-second,
+.btn.btn-second.btn-solid {
+  -webkit-appearance: none;
+  background: #11a95e;
+  color: #fff;
+}
+
+.btn.btn-second:hover,
+.btn.btn-second.btn-solid:hover {
+  outline: none;
+  box-shadow: 0 6px 12px -4px #11a95e;
+}
+
 @-webkit-keyframes gradient {
   0% {
     background-position: 0% 50%;
@@ -246,8 +259,6 @@ nav {
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
-  background: #fff;
-  box-shadow: 0 0.125rem 0.1875rem 0 rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -988,6 +999,8 @@ nav {
   height: 100%;
   width: 100%;
   display: block;
+  background-color: transparent;
+  background-size: cover;
 }
 
 .slider_single .cover img,
@@ -1058,6 +1071,13 @@ nav {
   padding: 15px 0;
   color: #333;
   font-weight: 700;
+}
+
+header {
+  background: #fff;
+  box-shadow: 0 0.125rem 0.1875rem 0 rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 2;
 }
 
 .section-info {
@@ -1507,6 +1527,17 @@ nav.fix-top.isfixed {
 .hd-landscape {
   position: relative;
   padding-bottom: 56.25%;
+  display: block;
+}
+
+.hd-landscape img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
 }
 
 /* TYPO */

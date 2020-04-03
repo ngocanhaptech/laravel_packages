@@ -3,6 +3,11 @@
   opacity: 0;
 }
 
+.home-slider .owl-carousel .owl-nav button.owl-prev,
+.home-slider .owl-carousel .owl-nav button.owl-next {
+  font-size: 2em;
+}
+
 .home-slider .slide-content {
   pointer-events: none;
 }

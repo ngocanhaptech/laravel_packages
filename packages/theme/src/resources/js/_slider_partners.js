@@ -1,18 +1,19 @@
 $(function() {
-    $('.slider_single').owlCarousel({
+    $('.slider_partners').owlCarousel({
         loop:true,
         margin:0,
         nav:true,
+        dots:false,
         items: 1,
         responsive:{
             0:{
-                items:1
+                items:3
             },
             600:{
-                items:1
+                items:6
             },
             1000:{
-                items:1
+                items:8
             }
         }
     })

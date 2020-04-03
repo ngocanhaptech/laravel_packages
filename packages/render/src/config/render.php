@@ -5,6 +5,7 @@ return [
     'render_views' => [
         "index" => "theme::index",
         "elements" => "theme::elements",
+        "cloud-server" => "theme::pages.cloud-server",
         "ContactPage" => "contact::index"
     ]
 ];

@@ -18,4 +18,9 @@ class ThemeController extends Controller
         return view("theme::elements");
     }
 
+    public function cloudServer()
+    {
+        return view("theme::pages.cloud-server");
+    }
+
 }
