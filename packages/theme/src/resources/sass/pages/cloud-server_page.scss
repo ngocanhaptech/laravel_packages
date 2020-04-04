@@ -1,13 +1,28 @@
 /** CLOUD SERVER PAGE */
 @import '../variables';
 
+section {
+    padding: 30px 0;
+    .section-title {
+        font-size: 2em;
+        color: #031b4e;
+        padding-bottom: 10px;
+        font-weight: 600;
+    }
+    .section-description {
+        max-width: 650px;
+        margin: auto;
+        font-size: 1.125em
+    }
+}
+
 /** Slider cloud server */
 .slider-sloud-server {
-    .owl-nav {
-        display: none;
-    }
     .layout-slide-item {
         min-height: 380px;
+    }
+    .owl-nav {
+        display: none;
     }
     .title-image {
         display: flex;
@@ -32,7 +47,6 @@
     }
     @media (max-width: $screen-sm) {
         .layout-slide-item {
-            min-height: 0;
             padding: 30px 15px;
         }
         .title-image {
@@ -47,10 +61,36 @@
 .section-partners {
     &{
         padding: 20px 0;
+        background-color: #f6f5f5;
         .section-title {
             font-size: 1.2em;
             margin-bottom: 30px;
             color: #4b5c81;
+        }
+    }
+    .owl-item .partner-image{        
+        transform: scale(.8);
+        opacity: .8;
+        transition: all ease .2s;
+        &:hover {
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+
+    .partner-image {
+        position: relative;
+        padding-bottom: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        align-content: center;
+        height: 70px;
+        img {
+            display: block;
+            width: auto;
+            max-width: 100%;
+            margin: auto;
         }
     }
     .owl-carousel {        

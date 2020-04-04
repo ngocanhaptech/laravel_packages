@@ -20,6 +20,10 @@ class ThemeController extends Controller
 
     public function cloudServer()
     {
+        // $cloudServerPartners = [];
+        // foreach(glob('./assets/images/cloud-server/partners/*.*') as $filename) {
+        //     echo 'test : ' . $filename . "\r\n";
+        // }
         return view("theme::pages.cloud-server");
     }
 

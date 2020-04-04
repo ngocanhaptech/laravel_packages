@@ -45,13 +45,17 @@ block main
             //- .row
             //-         .col-sm-3
             .slider_partners.owl-carousel.owl-theme
-                each item in partners || [ { link: '/partner/dan-tri', img: '/assets/images/partners/dantri-logo.jpg', title: 'Dân trí'} ]
-                        a.link(href=item.link)
+                each item in cloudServerPartners || [ { link: '/partner/dan-tri', img: '/assets/images/partners/dantri-logo.jpg', title: 'Dân trí'} ]
+                        a.link.partner-image(href=item.link)
                             img(src=item.img || "/assets/images/partners/topica-logo.jpg", alt=item.title || "topica")
-block append styles
+    section.section-services
+        h2.section-title.text-center: span Trải nghiệm miễn phí
+        div.section-description.text-center Quý khách hàng có thể dùng thử sản phẩm <strong>Cloud Server</strong> bằng một trong hai cách: Chọn cấu hình dùng thử có sẵn hoặc tuỳ chỉnh cấu hình dùng thử.
+        .container
+block append styleLibs
     link(rel="stylesheet", href="/assets/OwlCarousel2/assets/owl.carousel.min.css")
     link(rel="stylesheet", href="/assets/OwlCarousel2/assets/owl.theme.default.min.css")
-block append scripts
-    script(src="/assets/OwlCarousel2/owl.carousel.min.js")
 block append styles
     link(rel="stylesheet", href="/assets/css/pages/cloud-server_page.css")
+block append scripts
+    script(src="/assets/OwlCarousel2/owl.carousel.min.js")
