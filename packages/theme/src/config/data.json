@@ -1,0 +1,48 @@
+{
+    "title": 'BizFly Cloud',
+    "menu": [
+        { title:'Sản phẩm', className: 'active mega-menu', url:'' ,
+            child: [
+                { title: '<div class="bf-icon"><img src="/assets/images/logo-servies/cloud-service.png" alt="cloud-service"></div> BizFly Cloud Server', className: '', url:'/cloud-server', child: [
+                    { title:'Bảng giá', className: '', url:'#' }
+                ] },
+                { title: '<div class="bf-icon"><img src="/assets/images/logo-servies/cdn-service.png" alt="cdn-service"></div> BizFly CDN', className: '', url:'#', child: [
+                    { title:'Bảng giá', className: '', url:'#' }
+                ] },
+                { title: '<div class="bf-icon"><img src="/assets/images/logo-servies/icon-email.png" alt="businness-emai"></div> BizFly Business Email', className: '', url:'#', child: [
+                    { title:'Bảng giá', className: '', url:'#' }
+                ] },
+                { title: '<div class="bf-icon"><img src="/assets/images/logo-servies/logo-simple.png" alt="simple-storage"></div> BizFly Load Balancer', className: '', url:'#', child: [
+                    { title:'Bảng giá', className: '', url:'#' }
+                ] },
+                { title: '<div class="bf-icon"><img src="/assets/images/logo-servies/logo-load-balancer.png" alt="load-balancer"></div> BizFly Simple Storage', className: '', url:'#', child: [
+                    { title:'Bảng giá', className: '', url:'#' }
+                ] },
+                { title: '<div class="bf-icon"><img src="/assets/images/logo-servies/logo-prebuild.png" alt="prebuild"></div> BizFly Pre-built application', className: '', url:'#', child: [
+                    { title:'Bảng giá', className: '', url:'#' }
+                ] },
+                { title: '<div class="bf-icon"><img src="/assets/images/logo-servies/icon-VPN.png" alt="VPN"></div> BizFly VPN', className: '', url:'#', child: [
+                    { title:'Bảng giá', className: '', url:'#' }
+                ] },
+                { title: '<div class="bf-icon"><img src="/assets/images/logo-servies/container-registry.png" alt="container-registry"></div> BizFly Container Registry', className: '', url:'#', child: [
+                    { title:'Bảng giá', className: '', url:'#' }
+                ] },
+                { title: '<div class="bf-icon"><img src="/assets/images/logo-servies/call-center.png" alt="call-center"></div> BizFly Call Center', className: '', url:'#' }
+            ]
+        },
+        { title:'<i class="fa fa-home"></i> Khách hàng', className: '', url:'/' },  
+        { title:'Tech Blog', className: '', url:'.#' },          
+        { title:'Hỗ trợ', className: '', url:'#' ,
+            child: [
+                { title:'Tài liệu', className: '', url:'#', child: [
+                    { title:'Cách cài đặt', className: '', url:'#' }
+                ] },
+                { title:'FAQ', className: '', url:'#' },
+                { title:'Tin tức', className: '', url:'#' },
+                { title:'Elements', className: '', url:'/elements.html' }
+            ]
+        },
+        { title:'Giới thiệu', className: '', url:'.#' },
+        { title:'Liên hệ', className: '', url:'#' },
+    ]
+}
