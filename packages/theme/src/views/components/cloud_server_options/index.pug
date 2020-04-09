@@ -1,0 +1,26 @@
+include input_range
+mixin cloud_server_options
+    .cloud_server_options.form
+        .form-group
+            .row
+                .col-4
+                    label CPU
+                .col-8
+                    +input_range('fcpu')
+        .form-group.row
+                .col-4
+                    label RAM
+                .col-8
+                    +input_range('fram')
+        .form-group
+            .row
+                .col-4
+                    label ROOT DISH
+                .col-8
+                    +input_range('frootdisksize')
+        .form-group
+            .row
+                .col-4
+                    label ROOT DISH
+                .col-8
+                    +input_range('fssd')

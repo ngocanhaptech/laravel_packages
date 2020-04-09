@@ -1,0 +1,5 @@
+mixin slider_partners(cloudServerPartners)
+    .slider_partners.owl-carousel.owl-theme
+        each item in cloudServerPartners || [ { link: '/partner/dan-tri', img: '/assets/images/partners/dantri-logo.jpg', title: 'Dân trí'} ]
+                a.link.partner-image(href=item.link)
+                    img(src=item.img || "/assets/images/partners/topica-logo.jpg", alt=item.title || "topica")

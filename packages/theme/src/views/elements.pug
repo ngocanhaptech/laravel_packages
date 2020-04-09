@@ -163,6 +163,12 @@ block main
             .ui-title Footer
             .ui-wrapper
                 +footer
+            .ui-title Slider Partners
+            .ui-wrapper
+                +slider_partners(cloudServerPartners)
+            .ui-title Component: cloud_server_options
+            .ui-wrapper.form-custom-config(style="width: 620px; margin: auto")
+                +cloud_server_options
 
 
 block footer
@@ -170,7 +176,10 @@ block footer
 block append styles
     link(rel="stylesheet", href="/assets/OwlCarousel2/assets/owl.carousel.min.css")
     link(rel="stylesheet", href="/assets/OwlCarousel2/assets/owl.theme.default.min.css")
-    link(rel="stylesheet", href="/assets/css//pages/elements_layout.css")
+    link(rel="stylesheet", href="/assets/css/pages/elements_layout.css")
+    //- nouislider    
+    link(rel="stylesheet", href="/assets/nouislider/nouislider.min.css")
 block append scripts
     script(src="/assets/OwlCarousel2/owl.carousel.min.js")
+    script(src="/assets/nouislider/nouislider.min.js")
 

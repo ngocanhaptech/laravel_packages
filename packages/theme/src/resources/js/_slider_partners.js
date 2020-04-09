@@ -10,10 +10,10 @@ $(function() {
                 items:3
             },
             600:{
-                items:6
+                items:5
             },
             1000:{
-                items:8
+                items:7
             }
         }
     })

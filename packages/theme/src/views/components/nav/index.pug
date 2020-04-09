@@ -10,9 +10,9 @@ mixin child(item)
                                     +child(childitem)
 mixin navigation(className, _arrayMenu)
     if !className
-        -var className = 'navigation'
+        -const className = 'navigation'
     -
-        var defaultMenu = [
+        const defaultMenu = [
             { title:'<i class="fa fa-home"></i> Trang chủ', className: 'active', url:'/' },
             { title:'Giới thiệu', className: '', url:'./single.html' },
             { title:'Hướng dẫn', className: 'mega-menu', url:'/category.html' ,
@@ -26,7 +26,7 @@ mixin navigation(className, _arrayMenu)
             { title:'Liên hệ', className: '', url:'/single.html' },
             
         ]        
-    -var menu = _arrayMenu || defaultMenu
+    -const menu = _arrayMenu || defaultMenu
     
     // NAVIGATION 
     div(class=className)
