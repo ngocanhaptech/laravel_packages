@@ -206,15 +206,36 @@
   position: relative;
 }
 
+.cloud_server_options .input-range .label_disk_type {
+  position: absolute;
+  top: 0;
+  left: -50px;
+  width: 45px;
+  text-align: center;
+}
+
 .cloud_server_options .slider-range-valude {
   position: absolute;
   left: 15px;
   top: 3px;
+  letter-spacing: -0.085em;
 }
 
 .cloud_server_options label {
   white-space: nowrap;
   font-weight: 500;
+  line-height: 28px;
+  margin-bottom: 0;
+}
+
+.cloud_server_options .option-config-data {
+  border: 1px solid #eaeaea;
+  border-radius: 3px;
+  background: #fbfbfb;
+  text-align: center;
+  font-weight: 500;
+  margin-top: 30px;
+  padding: 15px 12px;
 }
 
 .cloud_server_options .switch {
@@ -239,7 +260,7 @@
 
 .cloud_server_options .switch input + label {
   padding: 2px;
-  width: 128px;
+  width: 130px;
   height: 32px;
   background-color: #e5e8ed;
   border-radius: 60px;
@@ -293,7 +314,7 @@
   left: 65px;
 }
 
-.cloud_server_options .frootdisk_label {
+.cloud_server_options .label_disk_type {
   background-color: #5161b9;
   color: #f5f5f5;
   padding: 3px 10px;
@@ -303,6 +324,21 @@
   float: right;
   margin-top: 3px;
   margin-right: -20px;
+  cursor: pointer;
+}
+
+.cloud_server_options .label_disk_type.frootdisk_label {
+  cursor: auto;
+}
+
+@media (max-width: 768px) {
+  .cloud_server_options label {
+    white-space: nowrap;
+    font-weight: 500;
+    font-size: smaller;
+    line-height: 30px;
+    margin-bottom: -11px;
+  }
 }
 
 section {
@@ -387,5 +423,52 @@ section .section-description {
   font-size: 1.2em;
   margin-bottom: 30px;
   color: #4b5c81;
+}
+
+/* SERVICES */
+
+.section-services .section-description {
+  max-width: 650px;
+  margin: auto;
+  font-size: 1.125em;
+  margin-bottom: 30px;
+  display: block;
+}
+
+.section-services .title {
+  font-size: large;
+  font-weight: 500;
+  padding: 0 0 30px 0;
+}
+
+.form-options-config,
+.form-custom-config {
+  padding: 30px;
+}
+
+.form-options-config .btn,
+.form-custom-config .btn {
+  padding: 0.375rem 1.75rem;
+  margin-top: 30px;
+}
+
+.form-options-config {
+  box-shadow: 0 3px 15px rgba(64, 142, 224, 0.47);
+}
+
+.form-options-config p {
+  font-weight: 500;
+  font-size: 1.1em;
+}
+
+.form-options-config ul li {
+  padding: 5px 0;
+  color: fade(#427cff, 30);
+}
+
+@media (min-width: 768px) {
+  .form-custom-config {
+    padding-top: 0;
+  }
 }
 

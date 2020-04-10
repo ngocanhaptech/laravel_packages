@@ -42,8 +42,26 @@ block main
         h2.section-title.text-center: span Trải nghiệm miễn phí
         div.section-description.text-center Quý khách hàng có thể dùng thử sản phẩm <strong>Cloud Server</strong> bằng một trong hai cách: Chọn cấu hình dùng thử có sẵn hoặc tuỳ chỉnh cấu hình dùng thử.
         .container
-            .form-custom-config(style="width: 620px; max-width: 100%; margin: auto")
-                +cloud_server_options
+            .row
+                .col-sm-5.form-options-config.align-self-start
+                    .title CẤU HÌNH DÙNG THỬ CÓ SẴN
+                    .block-body
+                        p
+                            | Cấu hình:
+                            span.text-primary &nbsp;2 Core(s) - 2GB RAM - 100GB HDD + 60GB SSD
+                        ul
+                            li Sử dụng được mọi tính năng
+                            li Khởi tạo nhanh chóng
+                            li An toàn - Bảo mật cao
+                        .form-group
+                            button.btn.btn-sm.btn-second.btn-solid.btn-radius Khởi tạo ngay
+                .col-sm-7.form-custom-config
+                    .title TÙY CHỈNH CẤU HÌNH DÙNG THỬ
+                    +cloud_server_options
+    section.section-services.section-gray
+        h2.section-title.text-center: span Bảng giá dịch vụ
+        div.section-description.text-center *Bảng giá chưa bao gồm 10% VAT
+        
 block append styleLibs
     link(rel="stylesheet", href="/assets/OwlCarousel2/assets/owl.carousel.min.css")
     link(rel="stylesheet", href="/assets/OwlCarousel2/assets/owl.theme.default.min.css")

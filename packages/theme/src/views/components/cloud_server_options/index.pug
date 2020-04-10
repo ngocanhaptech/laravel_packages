@@ -16,22 +16,37 @@ mixin cloud_server_options
         .form-group
             .row
                 .col-4
-                    label ROOT DISH TYPE
+                    label ROOT DISK TYPE
                 .col-8
                     +switch('frootdisktype')
         .form-group
             .row
                 .col-4
-                    label ROOT DISH
-                    span.frootdisk_label HDD
+                    label ROOT DISK
                 .col-8
                     +input_range('frootdisksize')
+                        span.label_disk_type.frootdisk_label HDD
         .form-group
             .row
                 .col-4
-                    label DATA DISH
-                    span.frootdisk_label SSD
+                    label DATA DISK
                 .col-8
                     +input_range('fdatadisk')
+                        span.label_disk_type#fdatadisktype SSD
+        .option-config-data Cấu hình: &nbsp; 
+            span.text-primary
+                span.cpu-value 2 
+                span.cpu-unit &nbsp;Core(s) 
+                | - 
+                span.ram-value 2 
+                span.ram-unit GB 
+                | RAM -  
+                span.root-disk-value 100 
+                span.root-disk-unit GB 
+                span.root-disk-type HDD
+                | &nbsp;+ 
+                span.data-disk-value 60 
+                span.data-disk-unit &nbsp;GB 
+                span.data-disk-type SSD
         .form-group
-            .text-center: button.btn.btn-second.btn-solid.btn-radius(style="padding: .375rem .175rem") Khởi tạo ngay
+            .text-center: button.btn.btn-sm.btn-second.btn-solid.btn-radius Khởi tạo ngay

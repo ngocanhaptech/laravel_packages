@@ -85,15 +85,37 @@ $cloud_server_options_second-color: #4CAF50;
         padding-left: 90px;
         position: relative;
     }
+    .input-range {
+        .label_disk_type {
+            position: absolute;
+            top: 0;
+            left: -50px;
+            width: 45px;
+            text-align: center;
+        }
+    }
     .slider-range-valude {
         position: absolute;
         left: 15px;
         top: 3px;
+        letter-spacing: -.085em;
     }
 
     label{
         white-space: nowrap;
         font-weight: 500;
+        line-height: 28px;
+        margin-bottom: 0;
+    }
+
+    .option-config-data {
+        border: 1px solid #eaeaea;
+        border-radius: 3px;
+        background: #fbfbfb;
+        text-align: center;
+        font-weight: 500;
+        margin-top: 30px;
+        padding: 15px 12px;
     }
     /** switch */
     .switch {
@@ -112,7 +134,7 @@ $cloud_server_options_second-color: #4CAF50;
 
         input + label {
             padding: 2px;
-            width: 128px;
+            width: 130px;
             height: 32px;
             background-color: #e5e8ed;
             border-radius: 60px;
@@ -164,7 +186,7 @@ $cloud_server_options_second-color: #4CAF50;
         }
     }
     /** Label root disk */
-    .frootdisk_label {
+    .label_disk_type {
         background-color: $cloud_server_options_primary-color;
         color: #f5f5f5;
         padding: 3px 10px;
@@ -174,5 +196,18 @@ $cloud_server_options_second-color: #4CAF50;
         float: right;
         margin-top: 3px;
         margin-right: -20px;
+        cursor: pointer;
+        &.frootdisk_label {
+            cursor: auto;
+        }
+    }
+    @media (max-width: $screen-sm) {
+        label {
+            white-space: nowrap;
+            font-weight: 500;
+            font-size: smaller;
+            line-height: 30px;
+            margin-bottom: -11px;
+        }
     }
 }

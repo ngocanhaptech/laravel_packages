@@ -69,5 +69,48 @@ section {
             margin-bottom: 30px;
             color: #4b5c81;
         }
+        
+    }
+}
+
+/* SERVICES */
+.section-services {
+    .section-description {
+        max-width: 650px;
+        margin: auto;
+        font-size: 1.125em;
+        margin-bottom: 30px;
+        display: block;
+    }
+    .title {
+        font-size: large;
+        font-weight: 500;
+        padding: 0 0 30px 0;
+    }
+}
+
+.form-options-config,
+.form-custom-config {
+    padding: 30px;
+    .btn {
+        padding: .375rem 1.75rem;
+        margin-top: 30px;
+    }
+}
+.form-options-config  {
+    box-shadow: 0 3px 15px rgba(64, 142, 224, 0.47);
+    p {
+        font-weight: 500;
+        font-size: 1.1em;
+    }
+    ul li {
+        padding: 5px 0;
+        color: fade($primary-color, 30);
+    }
+}
+
+@media (min-width: $screen-sm) {
+    .form-custom-config {
+        padding-top: 0;
     }
 }
