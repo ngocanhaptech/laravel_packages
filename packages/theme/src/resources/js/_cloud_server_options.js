@@ -49,9 +49,10 @@ document.addEventListener('DOMContentLoaded', function(ev) {
     }
     /** Custom Event */
     const cloud_server_options = document.querySelector('.cloud_server_options')
-    const event = document.createEvent('Event')
-    event.initEvent('server_config_change', true, true, optionConfig)
-    cloud_server_options.addEventListener('server_config_change', function (e) {
+    // const event = document.createEvent('Event')
+    const event = new CustomEvent('change', { detail: optionConfig })
+    event.initEvent('change', true, true, optionConfig)
+    cloud_server_options.addEventListener('change', function (e) {
         showInfoData(optionConfig)
     }, false)
 

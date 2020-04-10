@@ -169,6 +169,10 @@ block main
             .ui-title Component: cloud_server_options
             .ui-wrapper.form-custom-config(style="width: 620px; margin: auto")
                 +cloud_server_options
+                .ui-code 
+                    pre $('.cloud_server_options').on('change', (e) => {
+                    pre    console.log(e.detail)
+                    pre })
 
 
 block footer

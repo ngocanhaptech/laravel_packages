@@ -174,10 +174,13 @@ document.addEventListener('DOMContentLoaded', function (ev) {
   };
   /** Custom Event */
 
-  var cloud_server_options = document.querySelector('.cloud_server_options');
-  var event = document.createEvent('Event');
-  event.initEvent('server_config_change', true, true, optionConfig);
-  cloud_server_options.addEventListener('server_config_change', function (e) {
+  var cloud_server_options = document.querySelector('.cloud_server_options'); // const event = document.createEvent('Event')
+
+  var event = new CustomEvent('change', {
+    detail: optionConfig
+  });
+  event.initEvent('change', true, true, optionConfig);
+  cloud_server_options.addEventListener('change', function (e) {
     showInfoData(optionConfig);
   }, false);
   /** Show data config */
