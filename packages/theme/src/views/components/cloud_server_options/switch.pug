@@ -1,0 +1,7 @@
+mixin switch(_switch_id)
+    - const switch_id = _switch_id || 'switch_input'
+    .switch
+        input(type="checkbox", id=switch_id)
+        label(for=switch_id)
+            span.label-off HDD
+            span.label-on SSD

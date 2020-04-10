@@ -30,6 +30,7 @@ const OPTIONS_CONFIG_CPU_RAM = {
 24: [12, 16, 24, 32, 48, 64],
 32: [64]
 }
+
 window.slider = {
     updatedBy :'CPU'
 }
@@ -37,8 +38,11 @@ window.optionConfig = {
     RAM: 1,
     CPU: 1,
     ROOT_DISK_TYPE: 'HDD',
-    ROOT_DISK_SIZE: 20
+    DATA_DISK_SIZE: 60
 }
+
+const event = document.createEvent('Event')
+event.initEvent('server_config_change', true, true)
 
 function updateCPU(key, value) {
     const currentRAMValue = RAM_VALUE[parseInt(value)]
@@ -96,8 +100,8 @@ function setValue(key, value) {
         case 'ROOT_DISK_SIZE':
             return { value: ROOT_DISK_SIZE_VALUE[parseInt(value)], unit: ' GB' }
             break;
-        case 'SDD':
-            return { value: SSD_VALUE[parseInt(value)], unit: ' GB' }
+        case 'DATA_DISK_SIZE':
+            return { value: ROOT_DISK_SIZE_VALUE[parseInt(value)], unit: ' GB' }
             break;
         default:
             break;
@@ -121,6 +125,7 @@ function createSlider(id = 'slider', key = 'ROOT', options = {
         console.log(key, value)
         const nextValue = setValue(key, value)
         field.innerHTML = nextValue ? nextValue.value + ' ' + nextValue.unit : '-'
+        window.optionConfig[key] = nextValue.value
     })
     if (['RAM', 'CPU'].indexOf(key) !== -1)
         slider.addEventListener('mouseenter', e => {
@@ -137,8 +142,6 @@ createSlider('fcpu', 'CPU', {
     }
 })
 
-
-
 createSlider('fram', 'RAM', {
     start: [1],
     step: 1,
@@ -149,13 +152,29 @@ createSlider('fram', 'RAM', {
     }
 })
 createSlider('frootdisksize', 'ROOT_DISK_SIZE', {
-    start: [0],
+    start: [8],
     step: 1,
     connect: [true, false],
     range: {
         'min': 0,
         'max': ROOT_DISK_SIZE_VALUE.length - 1
     }
+})
+createSlider('fdatadisk', 'DATA_DISK_SIZE', {
+    start: [4],
+    step: 1,
+    connect: [true, false],
+    range: {
+        'min': 0,
+        'max': ROOT_DISK_SIZE_VALUE.length - 1
+    }
+})
+
+/** Select type */
+const rootDiskType = document.getElementById('frootdisktype')
+rootDiskType.addEventListener('change', () => {
+    optionConfig.ROOT_DISK_TYPE = rootDiskType.checked ? 'SSD': 'HDD'
+    document.querySelector('.frootdisk_label').textContent = optionConfig.ROOT_DISK_TYPE
 })
 
 console.log('optionConfig', optionConfig)

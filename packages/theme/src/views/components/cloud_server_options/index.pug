@@ -1,4 +1,5 @@
 include input_range
+include switch
 mixin cloud_server_options
     .cloud_server_options.form
         .form-group
@@ -15,12 +16,22 @@ mixin cloud_server_options
         .form-group
             .row
                 .col-4
+                    label ROOT DISH TYPE
+                .col-8
+                    +switch('frootdisktype')
+        .form-group
+            .row
+                .col-4
                     label ROOT DISH
+                    span.frootdisk_label HDD
                 .col-8
                     +input_range('frootdisksize')
         .form-group
             .row
                 .col-4
-                    label ROOT DISH
+                    label DATA DISH
+                    span.frootdisk_label SSD
                 .col-8
-                    +input_range('fssd')
+                    +input_range('fdatadisk')
+        .form-group
+            .text-center: button.btn.btn-second.btn-solid.btn-radius(style="padding: .375rem .175rem") Khởi tạo ngay
