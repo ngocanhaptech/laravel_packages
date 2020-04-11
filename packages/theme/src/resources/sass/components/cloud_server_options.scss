@@ -2,6 +2,23 @@
 $cloud_server_options_primary-color: #5161b9;
 $cloud_server_options_second-color: #4CAF50;
 .cloud_server_options {
+    /** Layout options config */
+    .col-label {
+        max-width: 100%;
+        width: 140px;
+    }
+    .col-input {
+        max-width: 100%;
+        width: #{'calc(100% - 140px )'};
+    }
+    @media (max-width: $screen-sm) {
+        .col-label {
+            width: 110px;
+        }
+        .col-input {
+            width: #{'calc(100% - 110px )'};
+        }
+    }
 
     input[type='range'] {
     -webkit-appearance: none;
@@ -197,8 +214,8 @@ $cloud_server_options_second-color: #4CAF50;
         margin-top: 3px;
         margin-right: -20px;
         cursor: pointer;
-        &.frootdisk_label {
-            cursor: auto;
+        &:hover {
+            background-color: $cloud_server_options_second-color;
         }
     }
     @media (max-width: $screen-sm) {

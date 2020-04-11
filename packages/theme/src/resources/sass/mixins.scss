@@ -1,0 +1,40 @@
+@mixin ribbon($color, $ribbon-thickness, $notch-color, $notch-side) {
+    background: linear-gradient(0deg, darken($color, 8.5%) 0%, $color 100%);    
+    transition: all ease .3s;
+    position: absolute;
+    padding-#{$notch-side}: $ribbon-thickness;
+    @if $notch-side == left {
+      height: $ribbon-thickness;
+      line-height: $ribbon-thickness;
+      right: -2px;
+      padding-right: 10px;
+      text-align: right;
+    } @else if $notch-side == right {
+      height: $ribbon-thickness;
+      line-height: $ribbon-thickness;
+      left: -2px;
+      padding-left: 10px;
+    } @else if $notch-side == bottom {
+      text-align: center;
+      width: $ribbon-thickness;
+      top: -2px;
+      padding-top: 10px;
+    } @else {
+      text-align: center;
+      width: $ribbon-thickness;
+      bottom: -2px;
+      padding-bottom: 10px;
+    }
+    &:before {
+      content: '';
+      display: block;
+      height: 0;
+      width: 0;
+      border-style: solid;
+      border-width: $ribbon-thickness/2;
+      border-color: transparent;
+      border-#{$notch-side}-color: $notch-color;
+      position: absolute;
+      #{$notch-side}: -1px;
+    }
+  }

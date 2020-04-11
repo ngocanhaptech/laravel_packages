@@ -1,6 +1,6 @@
-mixin switch(_switch_id)
+mixin switch(_switch_id, data = { className: 'md' })
     - const switch_id = _switch_id || 'switch_input'
-    .switch
+    .switch(class = data.className )
         input(type="checkbox", id=switch_id)
         label(for=switch_id)
             span.label-off HDD

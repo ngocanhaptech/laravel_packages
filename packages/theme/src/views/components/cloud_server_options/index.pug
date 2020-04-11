@@ -1,36 +1,36 @@
 include input_range
-include switch
+include ../../elements/switch
 mixin cloud_server_options
     .cloud_server_options.form
         .form-group
             .row
-                .col-4
+                .col-auto.col-label
                     label CPU
-                .col-8
+                .col-auto.col-input
                     +input_range('fcpu')
         .form-group.row
-                .col-4
+                .col-auto.col-label
                     label RAM
-                .col-8
+                .col-auto.col-input
                     +input_range('fram')
         .form-group
             .row
-                .col-4
+                .col-auto.col-label
                     label ROOT DISK TYPE
-                .col-8
+                .col-auto.col-input
                     +switch('frootdisktype')
         .form-group
             .row
-                .col-4
+                .col-auto.col-label
                     label ROOT DISK
-                .col-8
+                .col-auto.col-input
                     +input_range('frootdisksize')
                         span.label_disk_type.frootdisk_label HDD
         .form-group
             .row
-                .col-4
+                .col-auto.col-label
                     label DATA DISK
-                .col-8
+                .col-auto.col-input
                     +input_range('fdatadisk')
                         span.label_disk_type#fdatadisktype SSD
         .option-config-data Cấu hình: &nbsp; 
@@ -49,4 +49,4 @@ mixin cloud_server_options
                 span.data-disk-unit &nbsp;GB 
                 span.data-disk-type SSD
         .form-group
-            .text-center: button.btn.btn-sm.btn-second.btn-solid.btn-radius Khởi tạo ngay
+            .text-center: button.btn.btn-sm.btn-second.btn-solid.btn-radius.text-bold Khởi tạo ngay

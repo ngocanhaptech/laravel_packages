@@ -3,16 +3,19 @@ Name: BizFlyCloudTheme
 Author: VCCORP - Devteam
 */
 @import 'variables';
+@import 'mixins';
 // ELEMENTS
 @import 'elements/buttons';
 @import 'elements/icons';
 @import 'elements/testimonial_block';
 @import 'elements/office_block';
+@import 'elements/switch';
 
 // COMPONENTS
 @import 'components/nav';
 @import 'components/slider_single';
 @import 'components/block_content';
+@import 'components/pricing_block';
 
 @import 'commons/header';
 @import 'commons/footer';

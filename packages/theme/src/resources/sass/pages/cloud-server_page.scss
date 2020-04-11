@@ -114,3 +114,28 @@ section {
         padding-top: 0;
     }
 }
+
+/** SECTION PRICING */
+.slide_pricing {
+    @media (min-width: $screen-sm) {        
+    
+        .owl-item {
+            padding: 20px;
+            .pricing_block {
+                .ribbon {
+                    top: 20px;                    
+                }
+                &:hover .ribbon{
+                    top: 15px;
+                }
+                // transform: scale(.9);
+                box-shadow: 0px 0px 2px 3px transparent;
+                transition: all ease .3s;
+            }
+            &.active.center .pricing_block{
+                // transform: scale(1);
+                box-shadow: 0px 4px 20px 2px #56565624;
+            }
+        }
+    } /** End media */
+}

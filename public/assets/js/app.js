@@ -131,7 +131,7 @@ document.addEventListener('DOMContentLoaded', function (ev) {
   /** cloud_server_options */
   var CPU_VALUE = [1, 2, 3, 4, 6, 8, 12, 16, 24];
   var RAM_VALUE = [1, 2, 3, 4, 6, 8, 10, 12, 16, 24, 32, 48, 64];
-  var ROOT_DISK_SIZE_VALUE = [20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200, 210, 220, 230, 240, 250, 260, 270, 280, 290, 300, 310, 320, 330, 340, 350, 360, 370, 380, 390, 400, 410, 420, 430, 440, 450, 460, 470, 480, 490, 500, 510, 520, 530, 540, 550, 560, 570, 580, 590, 600, 610, 620, 630, 640, 650, 660, 670, 680, 690, 700, 710, 720, 730, 740, 750, 760, 770, 780, 790, 800, 810, 820, 830, 840, 850, 860, 870, 880, 890, 900, 910, 920, 930, 940, 950, 960, 970, 980, 990, 1000, 1010, 1020, 1030, 1040, 1050, 1060, 1070, 1080, 1090, 1100, 1110, 1120, 1130, 1140, 1150, 1160, 1170, 1180, 1190, 1200, 1210, 1220, 1230, 1240, 1250, 1260, 1270, 1280, 1290, 1300, 1310, 1320, 1330, 1340, 1350, 1360, 1370, 1380, 1390, 1400, 1410, 1420, 1430, 1440, 1450, 1460, 1470, 1480, 1490, 1500, 1510, 1520, 1530, 1540, 1550, 1560, 1570, 1580, 1590, 1600, 1610, 1620, 1630, 1640, 1650, 1660, 1670, 1680, 1690, 1700, 1710, 1720, 1730, 1740, 1750, 1760, 1770, 1780, 1790, 1800, 1810, 1820, 1830, 1840, 1850, 1860, 1870, 1880, 1890, 1900, 1910, 1920, 1930, 1940, 1950, 1960, 1970, 1980, 1990, 2000];
+  var ROOT_DISK_SIZE_VALUE = [0, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200, 210, 220, 230, 240, 250, 260, 270, 280, 290, 300, 310, 320, 330, 340, 350, 360, 370, 380, 390, 400, 410, 420, 430, 440, 450, 460, 470, 480, 490, 500, 510, 520, 530, 540, 550, 560, 570, 580, 590, 600, 610, 620, 630, 640, 650, 660, 670, 680, 690, 700, 710, 720, 730, 740, 750, 760, 770, 780, 790, 800, 810, 820, 830, 840, 850, 860, 870, 880, 890, 900, 910, 920, 930, 940, 950, 960, 970, 980, 990, 1000, 1010, 1020, 1030, 1040, 1050, 1060, 1070, 1080, 1090, 1100, 1110, 1120, 1130, 1140, 1150, 1160, 1170, 1180, 1190, 1200, 1210, 1220, 1230, 1240, 1250, 1260, 1270, 1280, 1290, 1300, 1310, 1320, 1330, 1340, 1350, 1360, 1370, 1380, 1390, 1400, 1410, 1420, 1430, 1440, 1450, 1460, 1470, 1480, 1490, 1500, 1510, 1520, 1530, 1540, 1550, 1560, 1570, 1580, 1590, 1600, 1610, 1620, 1630, 1640, 1650, 1660, 1670, 1680, 1690, 1700, 1710, 1720, 1730, 1740, 1750, 1760, 1770, 1780, 1790, 1800, 1810, 1820, 1830, 1840, 1850, 1860, 1870, 1880, 1890, 1900, 1910, 1920, 1930, 1940, 1950, 1960, 1970, 1980, 1990, 2000];
   var DATA_DISK_SIZE_VALUE = [0].concat(ROOT_DISK_SIZE_VALUE);
   var OPTIONS_CONFIG_RAM_CPU = {
     1: [1, 2],
@@ -349,7 +349,7 @@ document.addEventListener('DOMContentLoaded', function (ev) {
       'max': DATA_DISK_SIZE_VALUE.length - 1
     }
   });
-  /** Select type */
+  /** ROOT DISK TYPE */
 
   var rootDiskType = document.getElementById('frootdisktype');
   rootDiskType.addEventListener('change', onChangeRootDiskType);
@@ -365,8 +365,6 @@ document.addEventListener('DOMContentLoaded', function (ev) {
     document.querySelector('.frootdisk_label').textContent = optionConfig.ROOT_DISK_TYPE;
   }
   /** DATA DISK TYPE */
-
-  /** Select type */
 
 
   var dataDiskType = document.getElementById('fdatadisktype');
@@ -536,6 +534,38 @@ $(function () {
 
 /***/ }),
 
+/***/ "./packages/theme/src/resources/js/_slide_pricing.js":
+/*!***********************************************************!*\
+  !*** ./packages/theme/src/resources/js/_slide_pricing.js ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+$(function () {
+  $('.slide_pricing').owlCarousel({
+    loop: true,
+    margin: 0,
+    nav: true,
+    dots: false,
+    items: 1,
+    responsive: {
+      0: {
+        items: 1,
+        margin: 0
+      },
+      600: {
+        items: 2
+      },
+      1000: {
+        items: 3,
+        center: true
+      }
+    }
+  });
+});
+
+/***/ }),
+
 /***/ "./packages/theme/src/resources/js/_slider_partners.js":
 /*!*************************************************************!*\
   !*** ./packages/theme/src/resources/js/_slider_partners.js ***!
@@ -611,6 +641,8 @@ __webpack_require__(/*! ./_slider_single */ "./packages/theme/src/resources/js/_
 __webpack_require__(/*! ./_slider_partners */ "./packages/theme/src/resources/js/_slider_partners.js");
 
 __webpack_require__(/*! ./_cloud_server_options */ "./packages/theme/src/resources/js/_cloud_server_options.js");
+
+__webpack_require__(/*! ./_slide_pricing */ "./packages/theme/src/resources/js/_slide_pricing.js");
 
 /***/ }),
 
