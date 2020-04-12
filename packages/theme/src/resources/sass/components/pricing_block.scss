@@ -2,8 +2,23 @@
 /** PRICING BLOCK */
 .pricing_block {
     padding: 30px 15px;
+    margin-bottom: 30px;
     background-color: #fff;
     text-align: center;
+    position: relative;
+    &.border-block {
+        border: 1px solid $primary-color;
+        border-radius: 5px;
+        .title {
+            background: $primary-color;
+            color: #fff;
+            margin-top: -30px;
+            border-radius: 0 0 5px 5px;
+            margin-bottom: 15px;
+        }
+        .title-bg > svg { display: none; }
+        
+    }
     .title-bg, svg {
         max-width: 100%;
         width: 190px;
@@ -12,8 +27,8 @@
         left: 0;
         top: 0;
         right: 0;
-        bottom: 0;
-        height: 100%;
+        bottom: auto;
+        height: 125px;
         margin: auto;
     }
     .ribbon {

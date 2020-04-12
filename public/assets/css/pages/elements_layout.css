@@ -127,6 +127,12 @@
   width: calc(100% - 140px );
 }
 
+.cloud_server_options .group-label .title {
+  font-size: 1.2em;
+  font-weight: 500;
+  padding: 15px 0 15px 0;
+}
+
 @media (max-width: 768px) {
   .cloud_server_options .col-label {
     width: 110px;

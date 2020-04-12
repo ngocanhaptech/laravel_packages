@@ -129,6 +129,12 @@
   width: calc(100% - 140px );
 }
 
+.cloud_server_options .group-label .title {
+  font-size: 1.2em;
+  font-weight: 500;
+  padding: 15px 0 15px 0;
+}
+
 @media (max-width: 768px) {
   .cloud_server_options .col-label {
     width: 110px;
@@ -497,6 +503,20 @@ section .section-description {
   .form-custom-config {
     padding-top: 0;
   }
+}
+
+@media (min-width: 768px) {
+  .group-label .bf-icon {
+    margin-left: -30px;
+  }
+
+  .show-group-label {
+    padding-left: 60px;
+  }
+}
+
+.hide-group-label .group-label {
+  display: none;
 }
 
 /** SECTION PRICING */

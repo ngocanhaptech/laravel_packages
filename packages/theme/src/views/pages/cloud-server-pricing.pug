@@ -1,5 +1,57 @@
 extends ../layouts/default
 block main
+    section.section-heading.section-testimonials.light-text
+        h2.section-title.text-center: span BẢNG GIÁ DỊCH VỤ BIZFLY CLOUD SERVER
+        div.section-description.text-center Chi phí tính đến từng giờ, bạn chỉ trả cho những gì thực tế sử dụng.
+        div.section-description.text-center: strong  *Bảng giá chưa bao gồm 10% VAT
+    section.section-services.section-gray
+        .container
+            .row
+                //- .slide_pricing.slider-arrow.owl-carousel.owl-theme
+                each item, index in [
+                    { title: 'Micro', price: '209,686' },
+                    { title: 'Tiny', price: '373,949' },
+                    { title: 'Small', price: '469,234' },
+                    { title: 'Medium', price: '650,558' },
+                    { title: 'Large', price: '1,169,651' },
+                    { title: 'Larger', price: '1,618,149' },
+                    { title: 'ExtLarge', price: '3,816,916' },
+                    { title: 'Huge', price: '4,268,117' }
+                ]
+                    .col-sm-3: +pricing_block('border-block price-block-' + index, item)  
+            .text-center
+                div Bạn mua số lượng lớn, ký hợp đồng dài hạn?
+                div Liên hệ <a href="sales@bizflycloud.vn">sales@bizflycloud.vn</a> để có báo giá tốt hơn. 
+    section.section-services
+        h2.section-title.text-center: span Tùy chỉnh cấu hình
+        div.section-description.text-center Quý khách hàng có thể lựa chọn kiểu cấu hình khác bằng cách tùy chỉnh cấu hình.
+        .container
+            .row
+                .col-sm-7.form-custom-config.show-group-label
+                    +cloud_server_options
+                .col-sm-5.form-options-config
+                    .block-body
+                        .title Ước tính giá Cloud Server hàng tháng
+                            div: small ( Giá chưa bao gồm 10% VAT )
+                        .option-config-data Cấu hình: &nbsp; 
+                            ul.text-primary
+                                li
+                                    span.cpu-value 2 
+                                    span.cpu-unit &nbsp;Core(s) 
+                                li
+                                    span.ram-value 2 
+                                    span.ram-unit GB 
+                                    | RAM 
+                                li
+                                    span.root-disk-value 100 
+                                    span.root-disk-unit GB 
+                                    span.root-disk-type HDD
+                                li
+                                    span.data-disk-value 60 
+                                    span.data-disk-unit &nbsp;GB 
+                                    span.data-disk-type SSD
+                        .form-group.text-center
+                            button.btn.btn-sm.btn-second.btn-solid.btn-radius.text-bold Khởi tạo ngay
     .slider-sloud-server
         mixin cls-1
             .cls-mainslide-1
@@ -34,165 +86,33 @@ block main
                             img(src="/assets/images/banner_home/users-t8-2019-2.svg", alt="users-t8-2019", style="width: 100%")
         
         +slider_single(cloud_server_slider, 'owl-theme','layout-slide-item', 'container slide-item')
-    section.section-partners
-        h2.section-title.text-center: span KHÁCH HÀNG TIN DÙNG BIZFLY CLOUD SERVER
-        .container.our-partners
-            +slider_partners(cloudServerPartners)
-    section.section-services
-        h2.section-title.text-center: span Trải nghiệm miễn phí
-        div.section-description.text-center Quý khách hàng có thể dùng thử sản phẩm <strong>Cloud Server</strong> bằng một trong hai cách: Chọn cấu hình dùng thử có sẵn hoặc tuỳ chỉnh cấu hình dùng thử.
-        .container
-            .row
-                .col-sm-5.form-options-config.align-self-start
-                    .title CẤU HÌNH DÙNG THỬ CÓ SẴN
-                    .block-body
-                        p
-                            | Cấu hình:
-                            span.text-primary &nbsp;2 Core(s) - 2GB RAM - 100GB HDD + 60GB SSD
-                        ul
-                            li Sử dụng được mọi tính năng
-                            li Khởi tạo nhanh chóng
-                            li An toàn - Bảo mật cao
-                        .form-group
-                            button.btn.btn-sm.btn-second.btn-solid.btn-radius.text-bold Khởi tạo ngay
-                .col-sm-7.form-custom-config
-                    .title TÙY CHỈNH CẤU HÌNH DÙNG THỬ
-                    +cloud_server_options
-    section.section-services.section-gray
-        h2.section-title.text-center: span Bảng giá dịch vụ
-        div.section-description.text-center *Bảng giá chưa bao gồm 10% VAT
-        .container
-            .slide_pricing.slider-arrow.owl-carousel.owl-theme
-                each item, index in cloudServerPartners
-                    +pricing_block('price-block-' + index)    
-    section.section-services
-        h2.section-title.text-center: span Tuỳ chỉnh cấu hình
-        div.section-description.text-center Chúng tôi có 3 gói giá cho cùng 1 cấu hình, giúp khách hàng có phương án chi tiêu tối ưu hơn.
-        .container
-            .cloud-package-layout.row
-                each item, index in [
-                    {
-                        title: 'Enterprise',
-                        description: 'Dòng cao cấp phục vụ cho các dịch vụ đòi hỏi hiệu năng cao.',
-                        icon: '/assets/images/cloud-server/cloud-server-enterprise.svg'
-                    },
-                    {
-                        title: 'Premium',
-                        description: 'Dòng giá tầm trung, đáp ứng hầu hết mọi nhu cầu.',
-                        icon: '/assets/images/cloud-server/cloud-server-premium.svg'
-                    },
-                    {
-                        title: 'Basic',
-                        description: 'Dòng giá rẻ, đáp ứng nhu cầu chạy các ứng dụng cơ bản, cho cá nhân',
-                        icon: '/assets/images/cloud-server/cloud-server-basic.svg'
-                    }
-                ]
-                    .col-sm-4: +block_content('text-center', item)
-    section.section-features.light-text
-        h2.section-title.text-center: span Hạ tầng mạnh mẽ
-        .container.features-body
-            .row
-                .col-sm-6.align-self-center
-                    .media-item: img.img-responsive(src="/assets/images/cloud-server/features-cloud.svg", alt="features-cloud")
-                .col-sm-6
-                    each item in [
-                            {
-                                icon: '/assets/images/cloud-server/icon-feature-1.svg',
-                                title: 'TRUESSD',
-                                description: 'Ổ cứng SSD đáp ứng tiêu chuẩn Datacenter: <strong>Intel SSD DC S3700-Series</strong>'
-                            },
-                            {
-                                icon: '/assets/images/cloud-server/icon-feature-2.svg',
-                                title: '10Gbps Switching',
-                                description: 'Toàn bộ server được kết nối mạng 10Gbps sử dụng các Switch Layer-3 hàng đầu hiện nay: <strong>Cisco Nexus 9300 Series Flatform</strong>'
-                            },
-                            {
-                                icon: '/assets/images/cloud-server/icon-feature-3.svg',
-                                title: 'CPU Intel E5',
-                                description: 'Tất cả Server được trang bị Intel Xeon Processor E5-2600 v4. BizFly Cloud có khả năng cung cấp BizFly Cloud server lên tới 24 cores CPU'
-                            },
-                            {
-                                icon: '/assets/images/cloud-server/icon-feature-4.svg',
-                                title: '32Gbit network',
-                                description: 'Băng thông đầu vào lớn và có thể mở rộng theo nhu cầu, hạ tầng mạng giúp website <strong>chống đỡ tốt hơn với các đợt tấn công DDoS</strong>'
-                            }
-                        ]
-                        .block-item
-                            .row
-                                .col-2.align-self-center.text-center: .bf-icon.size32: img(src=item.icon, alt=item.title)
-                                .col-10
-                                    .title=item.title
-                                    .description!=item.description
+    
     section.section-benefits
-        h2.section-title.text-center: span Ưu điểm vượt trội
+        h2.section-title.text-center: span Ưu đãi X4
         .container
             .row.benefits-body
                 each item, index in [
                     {
-                        title: 'Khởi tạo nhanh chóng',
-                        description: 'Khởi tạo một server mới chỉ trong 45 giây. Tạo và gắn thêm ổ cứng vào server chỉ với 2 giây.'
+                        title: 'Miễn phí 01 IP với mỗi server'
                     },
                     {
-                        title: 'Khởi tạo nhanh chóng',
-                        description: 'Thay đổi cấu hình CPU/RAM chỉ trong 60 giây. Tăng dung lượng ổ cứng chỉ với 2 giây.'
+                        title: 'Miễn phí cài đặt VestaCP'
                     },
                     {
-                        title: 'Live snapshot',
-                        description: 'Tạo bản sao của ổ cứng với dung lượng bất kỳ chỉ trong 1 giây.'
+                        title: 'Miễn phí dịch vụ khôi phục dữ liệu'
                     },
                     {
-                        title: 'Tốc độ cao',
-                        description: 'Mỗi server băng thông ra internet khởi tạo là 100Mbps, đảm bảo Server luôn chạy ở tốc độ cao và ổn định.'
-                    },
-                    {
-                        title: 'Độ ổn định cao',
-                        description: 'Cam kết mức độ sẵn sàng của server ở mức 99.99% đi kèm chính sách bồi thường rõ ràng.'
-                    },
-                    {
-                        title: 'Toàn vẹn dữ liệu',
-                        description: 'Hệ thống Storage chạy replicate-3 và được backup hàng ngày sang một Datacenter khác.'
-                    },
-                    {
-                        title: 'An toàn - Bảo mật',
-                        description: 'Phòng Security được thành lập từ các chuyên gia hàng đầu trong lĩnh vực, luôn nỗ lực mang đến môi trường làm việc an toàn nhất cho khách hàng.'
-                    },
-                    {
-                        title: 'Giao diện thân thiện',
-                        description: 'Khách hàng được giao toàn quyền quản trị và điều chỉnh cấu hình server, với giao diện Dashboard thân thiện và dễ sử dụng.'
-                    },
-                    {
-                        title: 'Chi phí hợp lý',
-                        description: 'Chi phí tính đến từng giờ, khách hàng chỉ phải trả đúng theo nhu cầu sử dụng. Khả năng tuỳ chỉnh cấu hình giúp hạn chế lãng phí tài nguyên.'
+                        title: 'Miễn phí cảnh báo bảo mật'
                     }
                 ]
-                    - item.icon = '/assets/images/cloud-server/icon-benefits-' + (index + 1)
-                    .col-sm-4
+                    - item.icon = '/assets/images/cloud-server-pricing/x4-icon-' + (index + 1)
+                    .col-sm-3
                         .block-item
                             .block-header
                                 .bf-icon: img(src=item.icon + '.svg', alt=item.title)
-                                .bf-icon.bf-icon-hover: img(src=item.icon + '-white.svg', alt=item.title)
+                                .bf-icon.bf-icon-hover: img(src=item.icon + '.svg', alt=item.title)
                             .block-body
                                 .title=item.title
-                                .description!=item.description
-                .col-12
-                    .block-os
-                        .module-title.text-center CÁC OS ĐƯỢC HỖ TRỢ:
-                        .row.list-os
-                            each item in [
-                                { title: 'Ubuntu', img: '/assets/images/cloud-server/os-ubuntu.png' },
-                                { title: 'Debian', img: '/assets/images/cloud-server/os-debian.png' },
-                                { title: 'CentOS', img: '/assets/images/cloud-server/os-centos.png' },
-                                { title: 'Window', img: '/assets/images/cloud-server/os-window.png' }
-                            ]
-                                .col-sm-3.os-item
-                                    span.os-image: img(src=item.img, alt=item.title)
-                                    span.os-hover=item.title
-    section.section.section-testimonials.light-text
-        h2.module-title.text-center.text-uppercase: span Câu chuyện thành công
-        .container.testimonial-section
-            .slide_pricing.slider-arrow.owl-carousel.owl-theme
-                each item, index in testimonials
-                    +testimonial_block('testimonial-cloud', item)
 block append styleLibs
     link(rel="stylesheet", href="/assets/OwlCarousel2/assets/owl.carousel.min.css")
     link(rel="stylesheet", href="/assets/OwlCarousel2/assets/owl.theme.default.min.css")

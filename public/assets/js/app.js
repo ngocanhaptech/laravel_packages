@@ -186,19 +186,26 @@ document.addEventListener('DOMContentLoaded', function (ev) {
   /** Show data config */
 
   function showInfoData(config) {
-    var showPanel = document.querySelector('.option-config-data');
-    var cpu = showPanel.querySelector('.cpu-value');
-    var ram = showPanel.querySelector('.ram-value');
-    var rootDisk = showPanel.querySelector('.root-disk-value');
-    var rootType = showPanel.querySelector('.root-disk-type');
-    var dataDisk = showPanel.querySelector('.data-disk-value');
-    var dataType = showPanel.querySelector('.data-disk-type');
-    if (cpu) cpu.textContent = config.CPU;
-    if (ram) ram.textContent = config.RAM;
-    if (rootDisk) rootDisk.textContent = config.ROOT_DISK_SIZE;
-    if (rootType) rootType.textContent = config.ROOT_DISK_TYPE;
-    if (dataDisk) dataDisk.textContent = config.DATA_DISK_SIZE;
-    if (dataType) dataType.textContent = config.DATA_DISK_TYPE;
+    var showPanel = document.querySelectorAll('.option-config-data');
+
+    var PrintData = function PrintData(showPanel, config) {
+      var cpu = showPanel.querySelector('.cpu-value');
+      var ram = showPanel.querySelector('.ram-value');
+      var rootDisk = showPanel.querySelector('.root-disk-value');
+      var rootType = showPanel.querySelector('.root-disk-type');
+      var dataDisk = showPanel.querySelector('.data-disk-value');
+      var dataType = showPanel.querySelector('.data-disk-type');
+      if (cpu) cpu.textContent = config.CPU;
+      if (ram) ram.textContent = config.RAM;
+      if (rootDisk) rootDisk.textContent = config.ROOT_DISK_SIZE;
+      if (rootType) rootType.textContent = config.ROOT_DISK_TYPE;
+      if (dataDisk) dataDisk.textContent = config.DATA_DISK_SIZE;
+      if (dataType) dataType.textContent = config.DATA_DISK_TYPE;
+    };
+
+    showPanel.forEach(function (element) {
+      PrintData(element, config);
+    });
   }
 
   function updateCPU(key, value) {
@@ -657,6 +664,17 @@ __webpack_require__(/*! ./_slide_pricing */ "./packages/theme/src/resources/js/_
 
 /***/ }),
 
+/***/ "./packages/theme/src/resources/sass/pages/cloud-server_page.scss":
+/*!************************************************************************!*\
+  !*** ./packages/theme/src/resources/sass/pages/cloud-server_page.scss ***!
+  \************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ "./packages/theme/src/resources/sass/pages/elements_layout.scss":
 /*!**********************************************************************!*\
   !*** ./packages/theme/src/resources/sass/pages/elements_layout.scss ***!
@@ -691,9 +709,9 @@ __webpack_require__(/*! ./_slide_pricing */ "./packages/theme/src/resources/js/_
 /***/ }),
 
 /***/ 0:
-/*!**************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** multi ./packages/theme/src/resources/js/app.js ./packages/theme/src/resources/sass/app.scss ./packages/theme/src/resources/sass/theme.scss ./packages/theme/src/resources/sass/pages/elements_layout.scss ./packages/theme/src/resources/sass/pages/home_page.scss ***!
-  \**************************************************************************************************************************************************************************************************************************************************************************/
+/*!*******************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** multi ./packages/theme/src/resources/js/app.js ./packages/theme/src/resources/sass/app.scss ./packages/theme/src/resources/sass/theme.scss ./packages/theme/src/resources/sass/pages/elements_layout.scss ./packages/theme/src/resources/sass/pages/home_page.scss ./packages/theme/src/resources/sass/pages/cloud-server_page.scss ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -701,7 +719,8 @@ __webpack_require__(/*! D:\VCCLOUD\HOMEBIZFLYCLOUD\Laravel\bizflycloud\packages\
 __webpack_require__(/*! D:\VCCLOUD\HOMEBIZFLYCLOUD\Laravel\bizflycloud\packages\theme\src\resources\sass\app.scss */"./packages/theme/src/resources/sass/app.scss");
 __webpack_require__(/*! D:\VCCLOUD\HOMEBIZFLYCLOUD\Laravel\bizflycloud\packages\theme\src\resources\sass\theme.scss */"./packages/theme/src/resources/sass/theme.scss");
 __webpack_require__(/*! D:\VCCLOUD\HOMEBIZFLYCLOUD\Laravel\bizflycloud\packages\theme\src\resources\sass\pages\elements_layout.scss */"./packages/theme/src/resources/sass/pages/elements_layout.scss");
-module.exports = __webpack_require__(/*! D:\VCCLOUD\HOMEBIZFLYCLOUD\Laravel\bizflycloud\packages\theme\src\resources\sass\pages\home_page.scss */"./packages/theme/src/resources/sass/pages/home_page.scss");
+__webpack_require__(/*! D:\VCCLOUD\HOMEBIZFLYCLOUD\Laravel\bizflycloud\packages\theme\src\resources\sass\pages\home_page.scss */"./packages/theme/src/resources/sass/pages/home_page.scss");
+module.exports = __webpack_require__(/*! D:\VCCLOUD\HOMEBIZFLYCLOUD\Laravel\bizflycloud\packages\theme\src\resources\sass\pages\cloud-server_page.scss */"./packages/theme/src/resources/sass/pages/cloud-server_page.scss");
 
 
 /***/ })

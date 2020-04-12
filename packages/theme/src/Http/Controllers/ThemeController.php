@@ -36,8 +36,8 @@ class ThemeController extends Controller
     }
     public function cloudServerPricing()
     {
-        $view = "theme::pages.cloud-server";
-        $template = 'cloud-server';
+        $view = "theme::pages.cloud-server-pricing";
+        $template = 'cloud-server-pricing';
         return view($view);
     }
 

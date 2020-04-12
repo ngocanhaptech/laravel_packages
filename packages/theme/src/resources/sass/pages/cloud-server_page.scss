@@ -120,6 +120,20 @@ section {
     }
 }
 
+@media (min-width: $screen-sm) {
+    .group-label .bf-icon{
+        margin-left: -30px;
+    }
+    .show-group-label {
+        padding-left: 60px;
+    }
+}
+.hide-group-label {
+    .group-label {
+        display: none;
+    }
+}
+
 /** SECTION PRICING */
 .slide_pricing {
     @media (min-width: $screen-sm) {        

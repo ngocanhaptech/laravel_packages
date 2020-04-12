@@ -78,19 +78,24 @@ document.addEventListener('DOMContentLoaded', function(ev) {
 
     /** Show data config */
     function showInfoData(config) {    
-        const showPanel = document.querySelector('.option-config-data')
-        const cpu = showPanel.querySelector('.cpu-value')    
-        const ram = showPanel.querySelector('.ram-value')  
-        const rootDisk = showPanel.querySelector('.root-disk-value')
-        const rootType = showPanel.querySelector('.root-disk-type')
-        const dataDisk = showPanel.querySelector('.data-disk-value')
-        const dataType = showPanel.querySelector('.data-disk-type')
-        if (cpu) cpu.textContent = config.CPU
-        if (ram) ram.textContent = config.RAM
-        if (rootDisk) rootDisk.textContent = config.ROOT_DISK_SIZE
-        if (rootType) rootType.textContent = config.ROOT_DISK_TYPE
-        if (dataDisk) dataDisk.textContent = config.DATA_DISK_SIZE
-        if (dataType) dataType.textContent = config.DATA_DISK_TYPE
+        const showPanel = document.querySelectorAll('.option-config-data')
+        const PrintData = (showPanel, config) => {        
+            const cpu = showPanel.querySelector('.cpu-value')    
+            const ram = showPanel.querySelector('.ram-value')  
+            const rootDisk = showPanel.querySelector('.root-disk-value')
+            const rootType = showPanel.querySelector('.root-disk-type')
+            const dataDisk = showPanel.querySelector('.data-disk-value')
+            const dataType = showPanel.querySelector('.data-disk-type')
+            if (cpu) cpu.textContent = config.CPU
+            if (ram) ram.textContent = config.RAM
+            if (rootDisk) rootDisk.textContent = config.ROOT_DISK_SIZE
+            if (rootType) rootType.textContent = config.ROOT_DISK_TYPE
+            if (dataDisk) dataDisk.textContent = config.DATA_DISK_SIZE
+            if (dataType) dataType.textContent = config.DATA_DISK_TYPE
+        }
+        showPanel.forEach(element => {
+            PrintData(element, config)            
+        })
     }
 
     function updateCPU(key, value) {

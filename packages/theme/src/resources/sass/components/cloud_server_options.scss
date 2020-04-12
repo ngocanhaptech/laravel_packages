@@ -11,6 +11,13 @@ $cloud_server_options_second-color: #4CAF50;
         max-width: 100%;
         width: #{'calc(100% - 140px )'};
     }
+    .group-label {
+        .title {
+            font-size: 1.2em;
+            font-weight: 500;
+            padding: 15px 0 15px 0;
+        }
+    }
     @media (max-width: $screen-sm) {
         .col-label {
             width: 110px;

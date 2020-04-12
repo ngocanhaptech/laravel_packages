@@ -55,9 +55,11 @@ block main
                             li An toàn - Bảo mật cao
                         .form-group
                             button.btn.btn-sm.btn-second.btn-solid.btn-radius.text-bold Khởi tạo ngay
-                .col-sm-7.form-custom-config
+                .col-sm-7.form-custom-config.hide-group-label
                     .title TÙY CHỈNH CẤU HÌNH DÙNG THỬ
-                    +cloud_server_options
+                    +cloud_server_options                        
+                        .form-group
+                            .text-center: button.btn.btn-sm.btn-second.btn-solid.btn-radius.text-bold Khởi tạo ngay
     section.section-services.section-gray
         h2.section-title.text-center: span Bảng giá dịch vụ
         div.section-description.text-center *Bảng giá chưa bao gồm 10% VAT

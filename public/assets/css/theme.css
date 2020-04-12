@@ -1307,8 +1307,27 @@ nav {
 
 .pricing_block {
   padding: 30px 15px;
+  margin-bottom: 30px;
   background-color: #fff;
   text-align: center;
+  position: relative;
+}
+
+.pricing_block.border-block {
+  border: 1px solid #427cff;
+  border-radius: 5px;
+}
+
+.pricing_block.border-block .title {
+  background: #427cff;
+  color: #fff;
+  margin-top: -30px;
+  border-radius: 0 0 5px 5px;
+  margin-bottom: 15px;
+}
+
+.pricing_block.border-block .title-bg > svg {
+  display: none;
 }
 
 .pricing_block .title-bg,
@@ -1320,8 +1339,8 @@ nav {
   left: 0;
   top: 0;
   right: 0;
-  bottom: 0;
-  height: 100%;
+  bottom: auto;
+  height: 125px;
   margin: auto;
 }
 

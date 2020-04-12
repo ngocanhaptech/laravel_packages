@@ -18,9 +18,9 @@ mixin pricing_block(className, props)
     .pricing_block(class=className)
         if ((className ==='price-block-' + 1) || data.featured)
             .ribbon: .star
-        span.title=data.title
-            i.title-bg!= titleBg
-        .price=data.price
+        span.title=(data.title || defaultProps.title)
+        span.title-bg!= titleBg
+        .price=(data.price || defaultProps.price)
         .price-unit
             span.unit VNĐ/Tháng
             span.sale-off &nbsp;(Giảm 8%)
@@ -33,7 +33,7 @@ mixin pricing_block(className, props)
             span.billing-cycle-unit tháng
         +switch('sw-' + className, { className: 'xs' })
         ul.list-features
-            each item in data.features || [{ label: 'RAM', value: '16 GB'}]
+            each item in data.features || defaultProps.features
                 li 
                     .row
                         .col-6.list-label=item.label
