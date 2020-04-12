@@ -1726,6 +1726,10 @@ body {
   font-size: 0.875rem;
 }
 
+img {
+  max-width: 100%;
+}
+
 @media (min-width: 768px) {
   .logo img {
     -webkit-transform: translateY(-6px);
@@ -2010,6 +2014,14 @@ section.section-gray {
   margin: 15px auto;
   height: 2px;
   background-color: #427cff;
+}
+
+.section-description {
+  max-width: 680px;
+  margin: auto;
+  font-size: 1.125em;
+  margin-bottom: 30px;
+  display: block;
 }
 
 .light-text,

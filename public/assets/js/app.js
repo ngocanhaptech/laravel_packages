@@ -664,6 +664,17 @@ __webpack_require__(/*! ./_slide_pricing */ "./packages/theme/src/resources/js/_
 
 /***/ }),
 
+/***/ "./packages/theme/src/resources/sass/pages/cdn_page.scss":
+/*!***************************************************************!*\
+  !*** ./packages/theme/src/resources/sass/pages/cdn_page.scss ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ "./packages/theme/src/resources/sass/pages/cloud-server_page.scss":
 /*!************************************************************************!*\
   !*** ./packages/theme/src/resources/sass/pages/cloud-server_page.scss ***!
@@ -709,9 +720,9 @@ __webpack_require__(/*! ./_slide_pricing */ "./packages/theme/src/resources/js/_
 /***/ }),
 
 /***/ 0:
-/*!*******************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** multi ./packages/theme/src/resources/js/app.js ./packages/theme/src/resources/sass/app.scss ./packages/theme/src/resources/sass/theme.scss ./packages/theme/src/resources/sass/pages/elements_layout.scss ./packages/theme/src/resources/sass/pages/home_page.scss ./packages/theme/src/resources/sass/pages/cloud-server_page.scss ***!
-  \*******************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** multi ./packages/theme/src/resources/js/app.js ./packages/theme/src/resources/sass/app.scss ./packages/theme/src/resources/sass/theme.scss ./packages/theme/src/resources/sass/pages/elements_layout.scss ./packages/theme/src/resources/sass/pages/home_page.scss ./packages/theme/src/resources/sass/pages/cloud-server_page.scss ./packages/theme/src/resources/sass/pages/cdn_page.scss ***!
+  \***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -720,7 +731,8 @@ __webpack_require__(/*! D:\VCCLOUD\HOMEBIZFLYCLOUD\Laravel\bizflycloud\packages\
 __webpack_require__(/*! D:\VCCLOUD\HOMEBIZFLYCLOUD\Laravel\bizflycloud\packages\theme\src\resources\sass\theme.scss */"./packages/theme/src/resources/sass/theme.scss");
 __webpack_require__(/*! D:\VCCLOUD\HOMEBIZFLYCLOUD\Laravel\bizflycloud\packages\theme\src\resources\sass\pages\elements_layout.scss */"./packages/theme/src/resources/sass/pages/elements_layout.scss");
 __webpack_require__(/*! D:\VCCLOUD\HOMEBIZFLYCLOUD\Laravel\bizflycloud\packages\theme\src\resources\sass\pages\home_page.scss */"./packages/theme/src/resources/sass/pages/home_page.scss");
-module.exports = __webpack_require__(/*! D:\VCCLOUD\HOMEBIZFLYCLOUD\Laravel\bizflycloud\packages\theme\src\resources\sass\pages\cloud-server_page.scss */"./packages/theme/src/resources/sass/pages/cloud-server_page.scss");
+__webpack_require__(/*! D:\VCCLOUD\HOMEBIZFLYCLOUD\Laravel\bizflycloud\packages\theme\src\resources\sass\pages\cloud-server_page.scss */"./packages/theme/src/resources/sass/pages/cloud-server_page.scss");
+module.exports = __webpack_require__(/*! D:\VCCLOUD\HOMEBIZFLYCLOUD\Laravel\bizflycloud\packages\theme\src\resources\sass\pages\cdn_page.scss */"./packages/theme/src/resources/sass/pages/cdn_page.scss");
 
 
 /***/ })

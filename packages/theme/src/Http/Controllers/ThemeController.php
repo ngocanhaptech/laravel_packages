@@ -31,13 +31,19 @@ class ThemeController extends Controller
     public function cloudServer()
     {
         $view = "theme::pages.cloud-server";
-        $template = 'cloud-server';
+        $template = 'cloud-server/index';
         return view($view);
     }
     public function cloudServerPricing()
     {
         $view = "theme::pages.cloud-server-pricing";
-        $template = 'cloud-server-pricing';
+        $template = 'cloud-server/bang-gia';
+        return view($view);
+    }
+    public function cdn()
+    {
+        $view = "theme::pages.cdn";
+        $template = 'cdn/index';
         return view($view);
     }
 

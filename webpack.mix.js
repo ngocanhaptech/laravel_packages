@@ -18,4 +18,5 @@ mix
     .sass('packages/theme/src/resources/sass/pages/elements_layout.scss', 'public/assets/css/pages/')
     .sass('packages/theme/src/resources/sass/pages/home_page.scss', 'public/assets/css/pages/')
     .sass('packages/theme/src/resources/sass/pages/cloud-server_page.scss', 'public/assets/css/pages/')
+    .sass('packages/theme/src/resources/sass/pages/cdn_page.scss', 'public/assets/css/pages/')
     .copyDirectory('packages/theme/src/assets', 'public/assets');

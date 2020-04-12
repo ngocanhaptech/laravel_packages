@@ -1,0 +1,110 @@
+extends ../layouts/default
+block main
+    .slider-section.home-slider
+        mixin cdn-mainslide-1     
+            .row.align-items-center
+                .col-sm-6
+                    img(src="/assets/images/banner/cdn/x16-image.svg", alt="x16")
+                .col-sm-6.d-none.d-sm-block
+                    img(src="/assets/images/banner/cdn/x16-title.svg", alt="x16")
+        mixin cdn-mainslide-2    
+            .row.align-items-center
+                .col-sm-6
+                    img(src="/assets/images/banner/cdn/speed-image.svg", alt="speed")
+                .col-sm-6.d-none.d-sm-block
+                    img(src="/assets/images/banner/cdn/speed-title.svg", alt="speed")
+        mixin cdn-mainslide-3 
+            .row.align-items-center
+                .col-sm-6
+                    img(src="/assets/images/banner/cdn/power-vccorp-image.svg", alt="power-vccorp")
+                .col-sm-6.d-none.d-sm-block
+                    img(src="/assets/images/banner/cdn/power-vccorp-title.svg", alt="power-vccorp")
+        mixin cdn-mainslide-4
+            .row.align-items-center
+                .col-sm-6
+                    img(src="/assets/images/banner/thang-3-ruc-ro.svg", alt="thang-3-ruc-ro")
+                .col-sm-6.d-none.d-sm-block
+                    img(src="/assets/images/banner/thang-3-ruc-ro-2.svg", alt="thang-3-ruc-ro")
+        - 
+            const HOME_SLIDER = [
+                { link: '', type: 'css', cover: '/assets/images/banner/cdn/x16-bg.svg', unique_block: 'cdn-mainslide-1' },
+                { link: '', type: 'css', cover: '/assets/images/banner/cdn/speed-bg.svg', unique_block: 'cdn-mainslide-2' },
+                { link: '', type: 'css', cover: '/assets/images/banner/cdn/power-vccorp-bg.svg', unique_block: 'cdn-mainslide-3' },
+                { link: '', type: 'css', cover: '/assets/images/banner/thang-3-ruc-ro-bg.png', unique_block: 'cdn-mainslide-4' }
+            ]
+        +slider_single(HOME_SLIDER, 'owl-theme','layout-slide-item', 'container slide-item')
+    section.section
+        h2.section-title.text-center: span BizFly CDN là gì?        
+        div.section-description.text-center BizFly Cloud CDN là dịch vụ hỗ trợ tăng tốc, tối ưu và bảo vệ website tại Việt Nam.
+        .container.list-services
+            .row
+                -
+                    const services = [
+                        {
+                            title: 'Tăng tốc website',
+                            description: 'Các file được cache lại ở cụm server Hà Nội, TP. Hồ Chí Minh và cụm Server - POP tại Đà Nẵng, giúp tăng tốc độ trả file cho user ở khắp Việt Nam.',
+                            icon: '/assets/images/cdn_page/vccloud_tangtoc.png'
+                        },
+                        {
+                            title: 'Tối ưu website',
+                            description: 'Tự động tối ưu, nén và giảm dung lượng file ảnh, css, javascript, giúp tăng tốc độ tải file và tăng tốc cho toàn bộ website.',
+                            icon: '/assets/images/cdn_page/vccloud_toiuu.png'
+                        },
+                        {
+                            title: 'Giảm tải server gốc',
+                            description: 'Các file ảnh, css, javascript... được cache lại ở cụm server của BizFly Cloud CDN, giúp giảm hơn 80% băng thông ở server gốc của bạn.',
+                            icon: '/assets/images/cdn_page/vccloud_giamtai.png'
+                        }
+                    ]
+                .row.d-flex.align-items-stretch
+                    each item in services
+                        +block_content('col-sm-4 text-center', item)
+        //- section.section
+        h2.section-title.text-center.gap-line: span Tại sao nên sử dụng BizFly CDN của BizFly Cloud??        
+        .container.list-services
+            .row
+                .row.d-flex.align-items-stretch
+                    each item in services
+                        +block_content('col-sm-4 text-center', item)
+                    each item in services
+                        +block_content('col-sm-4 text-center', item)
+    section.section.section-gray
+        h2.section-title.text-center.gap-line: span Tích hợp đơn giản và nhanh chóng
+        .container.why-us
+            .row.justify-content-md-center
+                .col-sm-auto.why-us-left
+                    .row.d-flex.align-items-stretch
+                        -var path_cnd_intergr = 'https://bizflycloud.vn/images/cdn/integrations/'
+                        each item in [
+                            { title: 'wordpress', icon: path_cnd_intergr + 'wordpress.png' },
+                            { title: 'Joomla', icon: path_cnd_intergr + 'joomla.png' },
+                            { title: 'Drupal', icon: path_cnd_intergr + 'drupal.png' },
+                            { title: 'Magento', icon: path_cnd_intergr + 'magento.png' },
+                            { title: 'Prestashop', icon: path_cnd_intergr + 'prestashop.png' },
+                            { title: 'Custom', icon: path_cnd_intergr + 'custom.png' }
+                        ]
+                            +block_content('cover-width-50 col-sm-2 text-center', item)
+    section.section.section-gradient-1.light-text
+        h2.section-title.text-center.gap-line: span Đăng ký trải nghiệm miễn phí dịch vụ BizFly CDN
+        .container.register-section.text-center
+            p Dùng thử BizFly CDN miễn phí <strong>100GB dung lượng trong vòng 30 ngày</strong>
+        .text-center
+            +button('btn-md btn-solid', 'Đăng ký dùng thử ngay')
+            
+        .container.register-section.text-center
+            p <strong>Xem bảng giá chi tiết và tuỳ chỉnh cấu hình tại đây</strong>
+    section.section
+        h2.section-title.text-center.gap-line: span Được tin dùng bởi
+        .container.our-partners
+            .row
+                each item in partners || [ { link: '/partner/dan-tri', img: '/assets/images/partners/dantri-logo.jpg', title: 'Dân trí'} ]
+                    .col-sm-3
+                        a.link(href=item.link)
+                            img(src=item.img || "/assets/images/partners/topica-logo.jpg", alt=item.title || "topica")
+block append styleLibs
+    link(rel="stylesheet", href="/assets/OwlCarousel2/assets/owl.carousel.min.css")
+    link(rel="stylesheet", href="/assets/OwlCarousel2/assets/owl.theme.default.min.css")
+block append styles
+    link(rel="stylesheet", href="/assets/css/pages/cdn_page.css")
+block append scripts
+    script(src="/assets/OwlCarousel2/owl.carousel.min.js")
