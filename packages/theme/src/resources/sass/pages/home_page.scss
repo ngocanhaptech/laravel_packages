@@ -1,6 +1,14 @@
 @import '../variables';
 
 .home-slider {
+    .owl-dots {
+        display: none;
+        opacity: 0;
+    }
+    .owl-carousel .owl-nav button.owl-prev,
+    .owl-carousel .owl-nav button.owl-next {
+        font-size: 2em;
+    }
     .slide-content {
         pointer-events: none;
         @media (min-width: $screen-sm) {

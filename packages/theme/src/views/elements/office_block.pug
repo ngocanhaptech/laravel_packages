@@ -1,0 +1,26 @@
+mixin office_block(_data)
+    -
+        const data = _data || {
+            title: 'Trụ sở chính',
+            items: [
+                {
+                    icon: { className: 'sm', mediaSrc: '/assets/images/icons/marker.svg', text: ''},
+                    label : 'Địa chỉ:',
+                    value: 'Tầng 4, Tòa 21T2 Hapulico Complex, Số 83 Vũ Trọng Phụng , Thanh Xuân, Hà Nội.'
+                }
+            ]
+        }
+    .office_block
+        if (data.title)
+            .title=data.title
+        if (data.items && data.items.length > 0)
+            .office-body
+                each item in data.items
+                    .office-attr
+                        if (item.icon)
+                            +icon(item.icon.className, item.icon.mediaSrc, item.icon.text)
+                        if (item.label)
+                            .label=item.label
+                        if (item.value)
+                            span.info-data=item.value
+        block

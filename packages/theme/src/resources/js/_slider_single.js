@@ -1,6 +1,4 @@
 $(function() {
-    // Handler for .ready() called.
-    console.log('slider home')
     $('.slider_single').owlCarousel({
         loop:true,
         margin:0,

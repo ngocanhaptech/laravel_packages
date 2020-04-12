@@ -1,0 +1,42 @@
+//- pricing_block
+mixin pricing_block(className, props)
+    -
+        const defaultProps = {
+            title: 'Small',
+            price: '1,618,149',
+            featured: false,
+            features: [
+                { label: 'RAM', value: '16', unit: 'GB'},
+                { label: 'CPU', value: '4', unit: 'CORE(S)'},
+                { label: 'Ổ CỨNG', value: '100', unit: 'GB'},
+                { label: 'BANDWIDTH', value: '100', unit: 'Mbps'},
+                { label: 'DATA TRANSFER', value: 'Unlimited', unit: ''}
+            ] 
+        }
+        const data = props || defaultProps
+        const titleBg = '<svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 194.3 38.31"><path class="cls-1" d="M182.1,38.31h-168l0-.05L0,19.16l.05-.07L14.08,0h168l0,.06,12.17,19.1ZM14.21,38.06H182l12-18.91L182,.25H14.21L.31,19.16Z"/></svg>'
+    .pricing_block(class=className)
+        if ((className ==='price-block-' + 1) || data.featured)
+            .ribbon: .star
+        span.title=data.title
+            i.title-bg!= titleBg
+        .price=data.price
+        .price-unit
+            span.unit VNĐ/Tháng
+            span.sale-off &nbsp;(Giảm 8%)
+        .description
+            span Thanh toán trước
+            select.billing-cycle
+                option(value='1') 1
+                option(value='6') 6
+                option(value='12') 12
+            span.billing-cycle-unit tháng
+        +switch('sw-' + className, { className: 'xs' })
+        ul.list-features
+            each item in data.features || [{ label: 'RAM', value: '16 GB'}]
+                li 
+                    .row
+                        .col-6.list-label=item.label
+                        .col-6.list-value=item.value + ' ' + item.unit
+        .bottom-block
+            button.btn.btn-sm.btn-solid.btn-second.btn-radius.text-bold Đăng ký

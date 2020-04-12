@@ -1,0 +1,126 @@
+@import '../mixins';
+/** PRICING BLOCK */
+.pricing_block {
+    padding: 30px 15px;
+    background-color: #fff;
+    text-align: center;
+    .title-bg, svg {
+        max-width: 100%;
+        width: 190px;
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        height: 100%;
+        margin: auto;
+    }
+    .ribbon {
+        @include ribbon(#11a95e, 36px, #fff, bottom);
+        box-shadow: 3px -0.1rem 0.1875rem 0 rgba(0, 0, 0, 0.1);
+        right: 30px;
+        color: #fff;
+        z-index: 1;
+        &:hover {
+            @include ribbon($primary-color, 36px, #fff, bottom);
+            top: -6px;
+        }
+        .star{
+            margin: 15px auto 0;
+            position:relative;
+            height:0px;
+            width:0px;            
+            border-right:  10px solid transparent;
+            border-bottom: 7px  solid #fff;
+            border-left:   10px solid transparent;            
+            transform:    rotate(35deg);
+            &:before{
+                position:absolute;
+                top: -4.5px;
+                left: -6.5px;
+                content:"";
+                border-bottom: 8px solid #fff;
+                border-left: 3px solid transparent;
+                border-right: 3px solid transparent;
+                transform: rotate(-35deg);        }
+            
+            &:after{
+                position:absolute;
+                top: 0px;
+                left: -10.5px;
+                content:"";
+                border-right: 10px solid transparent;
+                border-bottom: 7px solid #fff;
+                border-left: 10px solid transparent;            
+                transform: rotate(-70deg);
+            }
+        }       
+    }
+.switch input {
+    position: absolute;
+    opacity: 0;
+    z-index: 3;
+    width: 100%;
+    height: 30px;
+    margin: auto;
+    left: 0;
+    right: 0;
+    visibility: visible;
+    cursor: pointer;
+}
+    .switch > label{
+        margin: 30px auto;
+    }
+    span.title , a.title{
+        display: block;
+        color: #4e4e4e;
+        font-size: 1.8em;
+        font-weight: 400;
+        padding: 15px 30px;
+        position: relative;
+    }
+    .price {
+        font-size: 1.85em;
+        color: $primary-color;
+        font-weight: 700;
+        margin-bottom: 4px;
+    }
+    .price-unit {
+        margin-bottom: 10px;
+    }
+    .unit {
+        font-size: smaller;
+    }
+    .sale-off {
+        font-weight: 500;
+        color: $primary-color;
+    }
+    .billing-cycle {
+        border: none;
+        margin: 0 15px;
+    }
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    .list-features {
+        margin-bottom: 30px;
+    }
+    .list-label,
+    .list-value {
+        padding: 5px 15px;
+    }
+    .list-label {
+        text-align: right;
+    }
+    .list-value {
+        text-align: left;
+        color: $primary-color;
+    }
+    .btn {
+        min-width: 160px;
+        text-transform: uppercase;
+    }
+}

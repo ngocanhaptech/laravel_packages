@@ -1,12 +1,112 @@
 extends ./layouts/default
 block top
 
-block append header
-
+block prepend header
+    div(style="z-index: 999;")
 block main
     .ui-main-page
         .container
-            h1 Elements
+            h1 
+            h2 Hướng dẫn 
+            .ui-title Giới thiệu cấu trúc
+            .col.ui-wrapper 
+                ul
+                    li Packages : Chứa các module chức năng ví dụ: Render, Theme
+                    li Packages/Render: Chứa hàm thực thi render view thành html tĩnh trong thư mục storage/
+                    li Packages/Theme: Chứa toàn bộ code js, scss, assets (bao gồm các thư viện, hình ảnh sẽ dùng cho dự án)
+            .ui-title Cài đặt
+            .col.ui-wrapper 
+                ul
+                    li Chạy lệnh : composer install
+                    li Chạy lệnh : composer php artisan serve
+                    li Mở của sổ dòng lệnh mới để chạy watch của laravel mix
+                    li Chạy lệnh trên cửa sổ mới: npm install
+                    li Chạy lệnh : npm run watch
+                    li Vào địa chỉ http://localhost:8000
+            .ui-title Deploye dự án
+            .ui-wrapper
+                ul
+                    li Tạo view html, truy cập địa chỉ: http://localhost:8000/render
+                    li Copy toàn html(trong thư mục: app/storage/), và thư mục /public lên server
+                    li Lưu ý html copy chung vào cùng thư mục public/
+            
+            .ui-title Tạo một page mới
+            .ui-wrapper
+                ul
+                    li Thư mục làm việc là app/packages/theme
+                    li Tạo router mới trong app/packages/theme/routes/web.php    
+                        div Với nội dung: 
+                        div app/packages/theme/routes/web.php
+                        .ui-code  
+                            pre Route::group(['namespace' => 'Vccorp\Theme\Http\Controllers'], function () {
+                            pre    ...
+                            pre    Route::get('/ten-page', function () {
+                            pre        return view('theme::pages.ten-page');
+                            pre    })->name('ten-page');
+                            pre });  
+                    li Khai báo router mới trong app/packages/config/render.php    
+                        div Với nội dung:  
+                        div app/packages/render/config/render.php
+                        .ui-code  
+                            pre ...
+                            pre 'render_views' => [
+                            pre    ...
+                            pre    "ten-page" => "theme::pages.ten-page",
+                            pre ] 
+                            pre ...             
+                    li Để tạo scss của page mới: tạo file scss mới là app/packages/theme/resources/sass/pages/ten-page_page.scss
+                        div Với nội dung: 
+                        div resources/sass/elements/ten-page_page.scss
+                        .ui-code
+                            pre .ten-page {
+                            pre     // Nội dung sẽ thực hiện...
+                            pre }
+                        div Đăng ký file scss mới tạo vào file /webpack.mix.js
+                        .ui-code
+                            pre mix
+                            pre     ...
+                            pre     .sass('packages/theme/src/resources/sass/pages/ten-page_page.scss', 'public/assets/css/pages/')
+                            pre     ...
+                    li Để tạo mới html page: tạo file view mới là app/packages/theme/views/pages/ten-page.pug
+                        div Với nội dung: 
+                        div pages/ten-page.pug
+                        .ui-code
+                            pre extends ../layouts/default
+                            pre block main
+                            pre   // Nội dung sẽ thực hiện...
+                            pre block append styleLibs
+                            pre    // Thư viện nếu có ví dụ: link(rel="stylesheet", href="/assets/OwlCarousel2/assets/owl.carousel.min.css")
+                            pre block append styles
+                            pre    //- *** File css của page sẽ nhúng ở đây ***
+                            pre    link(rel="stylesheet", href="/assets/css/pages/ten-page_page.css")
+                            pre block append scripts
+                            pre    // Thư viện js nếu có ví dụ: script(src="/assets/OwlCarousel2/owl.carousel.min.js")
+            .ui-title Tạo một elements mới
+            .ui-wrapper
+                ul
+                    li Thư mục làm việc là app/packages/theme
+                    li Để tạo mới nội dung html của element mới: tạo file view mới là app/packages/theme/views/elements/ten-element.pug
+                        div Với nội dung: 
+                        div views/elements/ten-element.pug
+                        .ui-code
+                            pre mixin tenElement(className, props)
+                            pre   .tenElement(class=className)
+                            pre     // Nội dung sẽ thực hiện... Ví dụ hiển thị các biến truyền vào
+                            pre     p=JSON.stringify(className)
+                            pre     p=JSON.stringify(props)
+                    li Để tạo scss của element mới: tạo file scss mới là app/packages/theme/resources/sass/elements/ten-element.scss
+                        div Với nội dung: 
+                        div resources/sass/elements/ten-element.scss
+                        .ui-code
+                            pre .ten-element {
+                            pre     // Nội dung sẽ thực hiện...
+                            pre }
+                        div Import file scss mới tạo vào file app/packages/theme/resources/sass/theme.scss
+                        .ui-code
+                            pre // ELEMENTS
+                            pre ...
+                            pre @import 'elements/ten-element';
+            h2 Các Elements dựng sẵn
             .ui-title Button 
             .ui-wrapper 
                 .ui-inline
@@ -60,12 +160,38 @@ block main
                     .col.ui-wrapper 
                         +block_content('text-left')
             .ui-wrapper: +block_floaticon('')
+            .ui-title Slider Partners
+            .ui-wrapper
+                +slider_partners(cloudServerPartners)
+            .ui-title Component: cloud_server_options
+            .ui-wrapper.form-custom-config(style="width: 620px; margin: auto")
+                +cloud_server_options
+                .ui-code 
+                    pre $('.cloud_server_options').on('change', (e) => {
+                    pre    console.log(e.detail)
+                    pre })
+            .ui-title Prcicing Block
+            .ui-wrapper(style="max-width: 320px; margin: auto;"): +pricing_block('pricing-block-id')
+            .ui-title Testimonial
+            .ui-wrapper
+                .ui-inline(style="background: #fff; padding: 60px 15px;max-width: 420px;margin: 15px auto;vertical-align: top;")
+                    +testimonial_block('')
+                .ui-inline(style="background: #9e9e9e; padding: 60px 15px;max-width: 420px;margin: 15px auto;")
+                    +testimonial_block('testimonial-cloud')
+            .ui-title Footer
+            .ui-wrapper
+                +footer
+
+
 block footer
 
 block append styles
     link(rel="stylesheet", href="/assets/OwlCarousel2/assets/owl.carousel.min.css")
     link(rel="stylesheet", href="/assets/OwlCarousel2/assets/owl.theme.default.min.css")
-    link(rel="stylesheet", href="/assets/css//pages/elements_layout.css")
+    link(rel="stylesheet", href="/assets/css/pages/elements_layout.css")
+    //- nouislider    
+    link(rel="stylesheet", href="/assets/nouislider/nouislider.min.css")
 block append scripts
     script(src="/assets/OwlCarousel2/owl.carousel.min.js")
+    script(src="/assets/nouislider/nouislider.min.js")
 

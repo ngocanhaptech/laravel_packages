@@ -1,6 +1,4 @@
 extends ./layouts/default
-block top
-    //- +top
 block main
     .slider-section.home-slider
         mixin home-mainslide-1     
@@ -123,33 +121,6 @@ block main
     section.section.section-gradient-2.light-text
         h2.section-title.text-center.gap-line: span Trải nghiệm
         .container.testimonial-section
-            - 
-                const testimonials = [
-                    {
-                        link: '#',
-                        unique_block: 'testimonial_block',
-                        name: 'Anh Nguyễn Mạnh',
-                        position: 'Enbac.com',
-                        avartar: '/assets/images/testimonials/manh_nguyen_enbac.jpg',
-                        para: 'BizFly Cloud server tốt nhất và đơn giản nhất cho dự án của tôi. Chưa bao giờ thiết lập server của tôi dễ dàng tới vậy.'
-                    },
-                    {
-                        link: '#',
-                        unique_block: 'testimonial_block',
-                        name: 'Anh Đặng Thái Sơn',
-                        position: 'Cafef.vn',
-                        avartar: '/assets/images/testimonials/dang_thai_son_cafef.jpg',
-                        para: 'Tôi đã từng dùng các dịch vụ khác bên ngoài, tuy nhiên việc reboot rất mất thời gian, support lằng nhằng, BizFly Cloud Server của BizFly Cloud gây ngạc nhiên khi cung cấp toàn quyền điều khiển trên Dashboard cho người dùng.'
-                    },
-                    {
-                        link: '#',
-                        unique_block: 'testimonial_block',
-                        name: 'Anh Nguyễn Thanh Hải',
-                        position: 'Soha.vn',
-                        avartar: '/assets/images/testimonials/nguyen_thanh_hai_soha.jpg',
-                        para: 'Là người làm báo, tôi mong muốn người đọc truy cập không bị gián đoạn, đây là một vấn đề lớn mà công nghệ đóng vai trò đột biến. BizFly Cloud đã đảm đương tốt nền tảng công nghệ của chúng tôi.'
-                    }
-                ]
             +slider_single(testimonials, 'owl-theme','layout-slide-item', 'container slide-item')
             .text-center
                 a(href="/user-stories").link-stories.text-uppercase Câu chuyện thành công
@@ -159,11 +130,10 @@ block main
             img(src="/assets/images/homepage/speedtest2.gif", alt="speedtest2")
         .text-center
             +button('btn-md btn-solid', 'Tới trang kiểm tra')
-block footer
-    +footer
-block append styles
+block append styleLibs
     link(rel="stylesheet", href="/assets/OwlCarousel2/assets/owl.carousel.min.css")
     link(rel="stylesheet", href="/assets/OwlCarousel2/assets/owl.theme.default.min.css")
+block append styles
     link(rel="stylesheet", href="/assets/css/pages/home_page.css")
 block append scripts
     script(src="/assets/OwlCarousel2/owl.carousel.min.js")

@@ -30,6 +30,17 @@
     -webkit-animation-fill-mode: forwards;
     }
 }
+
+.btn.btn-second,
+.btn.btn-second.btn-solid {
+  -webkit-appearance: none ; 
+  background: $second-color;
+  color: $white; 
+  &:hover {
+    outline: none;
+    box-shadow: 0 6px 12px -4px $second-color;
+  }
+}
     
 @keyframes gradient {
   0% { background-position: 0% 50% }

@@ -1,46 +1,34 @@
 -
-    const icon = {
-        cl: '<div class="bf-icon"><img src="/assets/images/logo-servies/cloud-service.png" alt="cloud-service"></div>',
-        cn: '<div class="bf-icon"><img src="/assets/images/logo-servies/cdn-service.png" alt="cdn-service"></div>',
-        be: '<div class="bf-icon"><img src="/assets/images/logo-servies/icon-email.png" alt="businness-emai"></div>',
-        ss: '<div class="bf-icon"><img src="/assets/images/logo-servies/logo-simple.png" alt="simple-storage"></div>',
-        lb: '<div class="bf-icon"><img src="/assets/images/logo-servies/logo-load-balancer.png" alt="load-balancer"></div>',
-        pb: '<div class="bf-icon"><img src="/assets/images/logo-servies/logo-prebuild.png" alt="prebuild"></div>',
-        vp: '<div class="bf-icon"><img src="/assets/images/logo-servies/icon-VPN.png" alt="VPN"></div>',
-        cr: '<div class="bf-icon"><img src="/assets/images/logo-servies/container-registry.png" alt="container-registry"></div>',
-        cc: '<div class="bf-icon"><img src="/assets/images/logo-servies/call-center.png" alt="call-center"></div>'
-    }
--
     const page = {
         title: 'BizFly Cloud',
         menu: [
             { title:'Sản phẩm', className: 'active mega-menu', url:'' ,
                 child: [
-                    { title: icon.cl +'BizFly Cloud Server', className: '', url:'#', child: [
+                    { title: '<div class="bf-icon"><img src="/assets/images/logo-servies/cloud-service.png" alt="cloud-service"></div> BizFly Cloud Server', className: '', url:'/cloud-server', child: [
                         { title:'Bảng giá', className: '', url:'#' }
                     ] },
-                    { title: icon.cn + 'BizFly CDN', className: '', url:'#', child: [
+                    { title: '<div class="bf-icon"><img src="/assets/images/logo-servies/cdn-service.png" alt="cdn-service"></div> BizFly CDN', className: '', url:'#', child: [
                         { title:'Bảng giá', className: '', url:'#' }
                     ] },
-                    { title: icon.be + 'BizFly Business Email', className: '', url:'#', child: [
+                    { title: '<div class="bf-icon"><img src="/assets/images/logo-servies/icon-email.png" alt="businness-emai"></div> BizFly Business Email', className: '', url:'#', child: [
                         { title:'Bảng giá', className: '', url:'#' }
                     ] },
-                    { title: icon.lb + 'BizFly Load Balancer', className: '', url:'#', child: [
+                    { title: '<div class="bf-icon"><img src="/assets/images/logo-servies/logo-simple.png" alt="simple-storage"></div> BizFly Load Balancer', className: '', url:'#', child: [
                         { title:'Bảng giá', className: '', url:'#' }
                     ] },
-                    { title: icon.ss + 'BizFly Simple Storage', className: '', url:'#', child: [
+                    { title: '<div class="bf-icon"><img src="/assets/images/logo-servies/logo-load-balancer.png" alt="load-balancer"></div> BizFly Simple Storage', className: '', url:'#', child: [
                         { title:'Bảng giá', className: '', url:'#' }
                     ] },
-                    { title: icon.pb + 'BizFly Pre-built application', className: '', url:'#', child: [
+                    { title: '<div class="bf-icon"><img src="/assets/images/logo-servies/logo-prebuild.png" alt="prebuild"></div> BizFly Pre-built application', className: '', url:'#', child: [
                         { title:'Bảng giá', className: '', url:'#' }
                     ] },
-                    { title: icon.vp + 'BizFly VPN', className: '', url:'#', child: [
+                    { title: '<div class="bf-icon"><img src="/assets/images/logo-servies/icon-VPN.png" alt="VPN"></div> BizFly VPN', className: '', url:'#', child: [
                         { title:'Bảng giá', className: '', url:'#' }
                     ] },
-                    { title: icon.cr + 'BizFly Container Registry', className: '', url:'#', child: [
+                    { title: '<div class="bf-icon"><img src="/assets/images/logo-servies/container-registry.png" alt="container-registry"></div> BizFly Container Registry', className: '', url:'#', child: [
                         { title:'Bảng giá', className: '', url:'#' }
                     ] },
-                    { title: icon.cc + 'BizFly Call Center', className: '', url:'#' }
+                    { title: '<div class="bf-icon"><img src="/assets/images/logo-servies/call-center.png" alt="call-center"></div> BizFly Call Center', className: '', url:'#' }
                 ]
             },
             { title:'<i class="fa fa-home"></i> Khách hàng', className: '', url:'/' },  
@@ -59,6 +47,35 @@
             { title:'Liên hệ', className: '', url:'#' },
         ]
     }
+//- Home page
+
+- 
+    const testimonials = [
+        {
+            link: '#',
+            unique_block: 'testimonial_block',
+            name: 'Anh Nguyễn Mạnh',
+            position: 'Enbac.com',
+            avartar: '/assets/images/testimonials/manh_nguyen_enbac.jpg',
+            para: 'BizFly Cloud server tốt nhất và đơn giản nhất cho dự án của tôi. Chưa bao giờ thiết lập server của tôi dễ dàng tới vậy.'
+        },
+        {
+            link: '#',
+            unique_block: 'testimonial_block',
+            name: 'Anh Đặng Thái Sơn',
+            position: 'Cafef.vn',
+            avartar: '/assets/images/testimonials/dang_thai_son_cafef.jpg',
+            para: 'Tôi đã từng dùng các dịch vụ khác bên ngoài, tuy nhiên việc reboot rất mất thời gian, support lằng nhằng, BizFly Cloud Server của BizFly Cloud gây ngạc nhiên khi cung cấp toàn quyền điều khiển trên Dashboard cho người dùng.'
+        },
+        {
+            link: '#',
+            unique_block: 'testimonial_block',
+            name: 'Anh Nguyễn Thanh Hải',
+            position: 'Soha.vn',
+            avartar: '/assets/images/testimonials/nguyen_thanh_hai_soha.jpg',
+            para: 'Là người làm báo, tôi mong muốn người đọc truy cập không bị gián đoạn, đây là một vấn đề lớn mà công nghệ đóng vai trò đột biến. BizFly Cloud đã đảm đương tốt nền tảng công nghệ của chúng tôi.'
+        }
+    ]
 -
     const partners = [
         { link: '/partner/dan-tri', img: '/assets/images/partners/topica-logo.jpg', title: 'Topica'},
@@ -74,3 +91,29 @@
         { link: '/partner/dan-tri', img: '/assets/images/partners/muachung-logo.jpg', title: 'Mua chung'},
         { link: '/partner/dan-tri', img: '/assets/images/partners/anandi-logo.jpg', title: 'Anandi'}
     ]
+
+//- Cloud server page
+- 
+    const cloud_server_slider = [
+        { link: '', type: 'svg', cover: '/assets/images/banner_home/thang-3-ruc-ro-bg.png', unique_block: 'cls-1' },
+        { link: '', type: 'css', cover: '/assets/images/banner_home/pay-as-you-go-bg.svg', unique_block: 'cls-2' },
+        { link: '', type: 'css', cover: '/assets/images/banner_home/users-t8-2019-bg.svg', unique_block: 'cls-3' }
+    ]
+-
+    const cloudServerPartners = [
+        { link: '/partner/dan-tri', img: '/assets/images/cloud-server/partners/logo-topica.png', title: 'Dân trí'},
+        { link: '/partner/dan-tri', img: '/assets/images/cloud-server/partners/logo-VTV.png', title: 'Kenh14'},
+        { link: '/partner/dan-tri', img: '/assets/images/cloud-server/partners/logo-sohagame.png', title: 'Sohagame'},
+        { link: '/partner/dan-tri', img: '/assets/images/cloud-server/partners/logo-genk.png', title: 'Mua chung'},
+        { link: '/partner/dan-tri', img: '/assets/images/cloud-server/partners/logo-7eleven.png', title: 'Topica'},
+        { link: '/partner/dan-tri', img: '/assets/images/cloud-server/partners/logo-thucuc.png', title: 'Kenh14'},
+        { link: '/partner/dan-tri', img: '/assets/images/cloud-server/partners/logo-kenh14.png', title: 'Anandi'},
+        { link: '/partner/dan-tri', img: '/assets/images/cloud-server/partners/logo-datxanh.png', title: 'Sage'},
+        { link: '/partner/dan-tri', img: '/assets/images/cloud-server/partners/logo-Tuoitre.png', title: 'Sohagame'},
+        { link: '/partner/dan-tri', img: '/assets/images/cloud-server/partners/logo-F88.png', title: 'GenK'},
+        { link: '/partner/dan-tri', img: '/assets/images/cloud-server/partners/logo-Dantri.png', title: 'Tuổi trẻ'},
+        { link: '/partner/dan-tri', img: '/assets/images/cloud-server/partners/logo-Sage.png', title: 'F88'},
+        { link: '/partner/dan-tri', img: '/assets/images/cloud-server/partners/logo-Muachung.png', title: '7eleven'},
+        { link: '/partner/dan-tri', img: '/assets/images/cloud-server/partners/logo-Anandi.png', title: 'VTC'}
+    ]
+    
