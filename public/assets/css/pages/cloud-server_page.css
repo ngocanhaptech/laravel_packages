@@ -374,9 +374,15 @@ section .section-title {
 }
 
 section .section-description {
-  max-width: 650px;
+  max-width: 680px;
   margin: auto;
   font-size: 1.125em;
+}
+
+.module-title {
+  font-size: 1.4em;
+  font-weight: 500;
+  margin-bottom: 15px;
 }
 
 /** Slider cloud server */
@@ -449,7 +455,7 @@ section .section-description {
 /* SERVICES */
 
 .section-services .section-description {
-  max-width: 650px;
+  max-width: 680px;
   margin: auto;
   font-size: 1.125em;
   margin-bottom: 30px;
@@ -521,5 +527,177 @@ section .section-description {
   .slide_pricing .owl-item.active.center .pricing_block {
     box-shadow: 0px 4px 20px 2px #56565624;
   }
+}
+
+/** CLOUD SERVER PACKAGE */
+
+.cloud-package-layout .block-content img {
+  width: 100px;
+  height: 80px;
+}
+
+.cloud-package-layout .block-content .title {
+  font-size: large;
+  text-transform: none;
+  font-weight: 500;
+  padding: 30px 15px 10px;
+}
+
+.cloud-package-layout .block-content p {
+  max-width: 220px;
+  margin: auto;
+  display: block;
+}
+
+/** SECTION FEATURES */
+
+.section-features {
+  background-image: -o-linear-gradient(left, #1960ff 0%, #003bc2 100%);
+  background-image: linear-gradient(90deg, #1960ff 0%, #003bc2 100%);
+}
+
+.section-features .features-body {
+  padding: 30px 15px;
+}
+
+.section-features .media-item {
+  padding-top: 30px;
+}
+
+.section-features .block-item {
+  padding: 0;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+  font-size: 1.125em;
+}
+
+.section-features .block-item .title {
+  display: block;
+  padding: 0 0 15px;
+  font-size: 1.25em;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .section-features .media-item {
+    padding-right: 50px;
+  }
+}
+
+/** SECTION BENEFITS */
+
+.section-benefits .benefits-body {
+  padding-top: 30px;
+}
+
+.section-benefits .block-item {
+  padding: 30px;
+  margin-bottom: 30px;
+  font-size: 1em;
+  text-align: center;
+  border: 1px solid rgba(66, 124, 255, 0.05);
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: calc(100% - 30px);
+}
+
+.section-benefits .block-item .bf-icon-hover {
+  opacity: 0;
+}
+
+.section-benefits .block-item:hover,
+.section-benefits .block-item:active,
+.section-benefits .block-item:focus {
+  background-color: #427cff;
+}
+
+.section-benefits .block-item:hover,
+.section-benefits .block-item:hover .title,
+.section-benefits .block-item:active,
+.section-benefits .block-item:active .title,
+.section-benefits .block-item:focus,
+.section-benefits .block-item:focus .title {
+  color: #fff;
+}
+
+.section-benefits .block-item:hover .bf-icon:not(.bf-icon-hover),
+.section-benefits .block-item:active .bf-icon:not(.bf-icon-hover),
+.section-benefits .block-item:focus .bf-icon:not(.bf-icon-hover) {
+  opacity: 0;
+}
+
+.section-benefits .block-item:hover .bf-icon-hover,
+.section-benefits .block-item:active .bf-icon-hover,
+.section-benefits .block-item:focus .bf-icon-hover {
+  opacity: 1;
+}
+
+.section-benefits .block-item .block-header {
+  text-align: center;
+  margin-bottom: 25px;
+  position: relative;
+  padding-bottom: 80px;
+}
+
+.section-benefits .block-item .block-header .bf-icon,
+.section-benefits .block-item .block-header .bf-icon-hover {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  margin: auto;
+}
+
+.section-benefits .block-item .bf-icon {
+  width: 80px;
+  height: 80px;
+}
+
+.section-benefits .block-item .title {
+  display: block;
+  padding: 0 0 15px;
+  font-size: 1.25em;
+  font-weight: 500;
+}
+
+.block-os {
+  margin-top: 30px;
+}
+
+.block-os .module-title {
+  margin-bottom: 60px;
+}
+
+.block-os .os-image,
+.block-os .os-hover {
+  display: block;
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 1.4em;
+}
+
+.block-os .os-item .os-hover {
+  opacity: 0;
+}
+
+.block-os .os-item:hover .os-hover,
+.block-os .os-item:focus .os-hover,
+.block-os .os-item:active .os-hover {
+  opacity: 1;
+}
+
+/* Section testimanial */
+
+.section-testimonials {
+  background-image: -o-linear-gradient(top, #5068ee 0%, #0d0719 100%);
+  background-image: linear-gradient(to bottom, #5068ee 0%, #0d0719 100%);
+  background: transparent url(/assets/images/cloud-server/testimonial-bg.jpg);
+  background-size: 100% 100%;
+  position: relative;
 }
 

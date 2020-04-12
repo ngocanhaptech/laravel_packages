@@ -18,7 +18,6 @@ class ThemeController extends Controller
     {
         $view = "theme::index";
         $template = 'index';
-        // Render::save($view, $template);
         return view($view);
     }
 
@@ -26,19 +25,19 @@ class ThemeController extends Controller
     {
         $view = "theme::elements";
         $template = 'elements';
-        // Render::save($view, $template);
         return view($view);
     }
 
     public function cloudServer()
     {
-        // $cloudServerPartners = [];
-        // foreach(glob('./assets/images/cloud-server/partners/*.*') as $filename) {
-        //     echo 'test : ' . $filename . "\r\n";
-        // }
         $view = "theme::pages.cloud-server";
         $template = 'cloud-server';
-        // Render::save($view, $template);
+        return view($view);
+    }
+    public function cloudServerPricing()
+    {
+        $view = "theme::pages.cloud-server";
+        $template = 'cloud-server';
         return view($view);
     }
 

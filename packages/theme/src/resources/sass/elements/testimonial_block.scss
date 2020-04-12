@@ -1,4 +1,20 @@
 /* TESTIMONIAL BLOCK */
+.section-testimonials {
+    .slide_pricing .owl-item {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+    @media (min-width: 768px) {
+        .slide_pricing .owl-item {
+            padding: 30px 10px;
+            transition: all ease .3s;
+        }
+        .owl-item.active:not(.center) {
+            padding: 30px 0;
+            transform: scale(.88);
+        }
+    }
+}
 .testimonial_block {
     .avatar {
         width: 120px;
@@ -51,6 +67,95 @@
             font-weight: 700;
             color: $primary-color;
             margin-top: 10px;
+        }
+    }
+    &.testimonial-cloud {
+        background: #fff;
+        border-radius: 1em;
+        color: #505050;
+        padding: 30px 15px;
+        position: relative;
+        &::before, &::after {
+            content: '';
+            display: block;
+            background-color: #fff;
+            border-radius: 1em;
+            position: absolute;
+            width: 94%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            pointer-events: none;
+            opacity: .4;
+            margin: auto;
+            z-index: 0;
+            transition: all ease .3s;
+        }
+        &::before {
+            margin-top: -10px;
+        }
+        &::after {
+            margin-top: -17px;
+            width: 90%;
+            opacity: .2;
+        }
+        &:hover {
+            &::before {
+                margin-top: -4px;
+                opacity: .6;
+            }
+            &::after {
+                margin-top: -6px;
+                opacity: .4;
+            }
+        }
+        >p, >div {
+            position: relative;
+            z-index: 1;
+        }
+        .testimonial-para {
+            text-align: left;
+            font-size: 1.125em;
+            line-height: 1.4;
+            font-style: normal;
+            display: block;
+            min-height: 10em;
+
+            height: 4em;
+            min-height: 4em;
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
+
+        .blog-info {
+            display:flex;    
+            &::after {
+                content: "";
+                display: inline-block;
+                width: 32px;
+                height: 32px;
+                opacity: .5;
+                background-image: url(/assets/images/testimonials/quote.svg);
+                background-size: 100% 100%;
+                margin-left: 10px;
+                transform: rotate(0deg) translateY(5px);
+            }
+        }
+        .avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 30px;
+        }
+        .name {
+            font-size: 1.2em;
+            font-weight: 500;
+        }
+        .position {
+            opacity: .8;
         }
     }
 }

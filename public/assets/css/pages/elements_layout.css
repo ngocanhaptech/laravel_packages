@@ -108,6 +108,258 @@
   }
 }
 
+/* RESTET INPUT RANGE STYLE */
+
+.cloud_server_options {
+  /** Layout options config */
+  /* END RESET INPUT RANGE STYLE */
+  /** switch */
+  /** Label root disk */
+}
+
+.cloud_server_options .col-label {
+  max-width: 100%;
+  width: 140px;
+}
+
+.cloud_server_options .col-input {
+  max-width: 100%;
+  width: calc(100% - 140px );
+}
+
+@media (max-width: 768px) {
+  .cloud_server_options .col-label {
+    width: 110px;
+  }
+
+  .cloud_server_options .col-input {
+    width: calc(100% - 110px );
+  }
+}
+
+.cloud_server_options input[type=range] {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 25px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -o-transition: opacity 0.2s;
+  transition: opacity 0.2s;
+}
+
+.cloud_server_options input[type=range]:hover {
+  opacity: 1;
+}
+
+.cloud_server_options input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 65px;
+  height: 25px;
+  background: #4CAF50;
+  cursor: pointer;
+}
+
+.cloud_server_options input[type=range]::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  background: #4CAF50;
+  cursor: pointer;
+}
+
+.cloud_server_options .noUi-horizontal {
+  height: 26px;
+  border-radius: 0;
+  border: none;
+  box-shadow: none;
+  background: #e5e8ed;
+}
+
+.cloud_server_options .noUi-connects {
+  border-radius: 0;
+}
+
+.cloud_server_options .noUi-horizontal .noUi-handle {
+  top: 0;
+  right: 0;
+  height: 26px;
+  background: #3fb8af;
+  box-shadow: none;
+  border: none;
+  border-right: 8px solid #5161b9;
+  border-radius: 0;
+}
+
+.cloud_server_options .noUi-horizontal .noUi-handle:focus {
+  outline: none;
+}
+
+.cloud_server_options .noUi-horizontal .noUi-handle::before {
+  content: "";
+  position: absolute;
+  right: 6px;
+  top: calc(40%);
+  -webkit-transform: rotate(90deg) translateY(-50%);
+      -ms-transform: rotate(90deg) translateY(-50%);
+          transform: rotate(90deg) translateY(-50%);
+  width: 0;
+  height: 0;
+  display: inline-block;
+  margin-left: 4px;
+  vertical-align: middle;
+  border-top: 4px dashed;
+  border-top: 4px solid\9;
+  border-color: #5161b9;
+  border-right: 4px solid transparent;
+  border-left: 4px solid transparent;
+  z-index: 2;
+  background: transparent;
+}
+
+.cloud_server_options .input-range {
+  display: block;
+  background: #3fb8af;
+  color: #fff;
+  padding-left: 90px;
+  position: relative;
+}
+
+.cloud_server_options .input-range .label_disk_type {
+  position: absolute;
+  top: 0;
+  left: -50px;
+  width: 45px;
+  text-align: center;
+}
+
+.cloud_server_options .slider-range-valude {
+  position: absolute;
+  left: 15px;
+  top: 3px;
+  letter-spacing: -0.085em;
+}
+
+.cloud_server_options label {
+  white-space: nowrap;
+  font-weight: 500;
+  line-height: 28px;
+  margin-bottom: 0;
+}
+
+.cloud_server_options .option-config-data {
+  border: 1px solid #eaeaea;
+  border-radius: 3px;
+  background: #fbfbfb;
+  text-align: center;
+  font-weight: 500;
+  margin-top: 30px;
+  padding: 15px 12px;
+}
+
+.cloud_server_options .switch {
+  position: relative;
+}
+
+.cloud_server_options .switch input {
+  position: absolute;
+  visibility: hidden;
+}
+
+.cloud_server_options .switch input + label {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  outline: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.cloud_server_options .switch input + label {
+  padding: 2px;
+  width: 130px;
+  height: 32px;
+  background-color: #e5e8ed;
+  border-radius: 60px;
+  -o-transition: background 0.4s;
+  transition: background 0.4s;
+}
+
+.cloud_server_options .switch .label-off,
+.cloud_server_options .switch .label-on {
+  display: inline-block;
+  width: 62px;
+  height: 28px;
+  background: transparent;
+  border-radius: 15px;
+  line-height: 28px;
+  text-align: center;
+  color: #333;
+  position: relative;
+  z-index: 2;
+}
+
+.cloud_server_options .switch input + label .label-off {
+  color: #f5f5f5;
+}
+
+.cloud_server_options .switch input:checked + label .label-on {
+  color: #f5f5f5;
+}
+
+.cloud_server_options .switch input:checked + label .label-off {
+  background-color: transparent;
+  color: #333;
+}
+
+.cloud_server_options .switch input + label::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 3px;
+  top: 2px;
+  height: 28px;
+  width: 62px;
+  border-radius: 15px;
+  background-color: #5161b9;
+  z-index: 1;
+  -o-transition: all ease 0.3s;
+  transition: all ease 0.3s;
+}
+
+.cloud_server_options .switch input:checked + label::before {
+  left: 65px;
+}
+
+.cloud_server_options .label_disk_type {
+  background-color: #5161b9;
+  color: #f5f5f5;
+  padding: 3px 10px;
+  line-height: 16px;
+  font-size: smaller;
+  border-radius: 10px;
+  float: right;
+  margin-top: 3px;
+  margin-right: -20px;
+  cursor: pointer;
+}
+
+.cloud_server_options .label_disk_type:hover {
+  background-color: #4CAF50;
+}
+
+@media (max-width: 768px) {
+  .cloud_server_options label {
+    white-space: nowrap;
+    font-weight: 500;
+    font-size: smaller;
+    line-height: 30px;
+    margin-bottom: -11px;
+  }
+}
+
 /** Theme layout */
 
 .ui-main-page {
