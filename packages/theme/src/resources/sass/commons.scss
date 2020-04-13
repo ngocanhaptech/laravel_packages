@@ -225,7 +225,7 @@ section {
 }
 
 .light-text {
-    &, .section-title {
+    &, .section-title, .section-description {
         color: $white;
         &.gap-line::after {
             background-color: $white;

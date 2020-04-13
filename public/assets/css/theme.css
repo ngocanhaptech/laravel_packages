@@ -2027,12 +2027,14 @@ section.section-gray {
 }
 
 .light-text,
-.light-text .section-title {
+.light-text .section-title,
+.light-text .section-description {
   color: #fff;
 }
 
 .light-text.gap-line::after,
-.light-text .section-title.gap-line::after {
+.light-text .section-title.gap-line::after,
+.light-text .section-description.gap-line::after {
   background-color: #fff;
 }
 

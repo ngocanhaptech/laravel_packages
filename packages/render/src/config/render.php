@@ -7,7 +7,8 @@ return [
         "elements" => "theme::elements",
         "cloud-server/index" => "theme::pages.cloud-server",
         "cloud-server/bang-gia" => "theme::pages.cloud-server-pricing",
-        "cdn/index" => "theme::pages.cloud-server-pricing",
+        "cdn/index" => "theme::pages.cdn",
+        "cdn/bang-gia" => "theme::pages.cdn-pricing",
         "ContactPage" => "contact::index"
     ]
 ];

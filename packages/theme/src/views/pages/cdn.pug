@@ -26,13 +26,13 @@ block main
                 .col-sm-6.d-none.d-sm-block
                     img(src="/assets/images/banner/thang-3-ruc-ro-2.svg", alt="thang-3-ruc-ro")
         - 
-            const HOME_SLIDER = [
+            const CDN_SLIDER = [
                 { link: '', type: 'css', cover: '/assets/images/banner/cdn/x16-bg.svg', unique_block: 'cdn-mainslide-1' },
                 { link: '', type: 'css', cover: '/assets/images/banner/cdn/speed-bg.svg', unique_block: 'cdn-mainslide-2' },
                 { link: '', type: 'css', cover: '/assets/images/banner/cdn/power-vccorp-bg.svg', unique_block: 'cdn-mainslide-3' },
                 { link: '', type: 'css', cover: '/assets/images/banner/thang-3-ruc-ro-bg.png', unique_block: 'cdn-mainslide-4' }
             ]
-        +slider_single(HOME_SLIDER, 'owl-theme','layout-slide-item', 'container slide-item')
+        +slider_single(CDN_SLIDER, 'owl-theme','layout-slide-item', 'container slide-item')
     section.section
         h2.section-title.text-center: span BizFly CDN là gì?        
         div.section-description.text-center BizFly Cloud CDN là dịch vụ hỗ trợ tăng tốc, tối ưu và bảo vệ website tại Việt Nam.
