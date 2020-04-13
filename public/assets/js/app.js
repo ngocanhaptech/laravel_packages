@@ -180,7 +180,7 @@ document.addEventListener('DOMContentLoaded', function (ev) {
     detail: optionConfig
   });
   event.initEvent('change', true, true, optionConfig);
-  cloud_server_options.addEventListener('change', function (e) {
+  if (cloud_server_options) cloud_server_options.addEventListener('change', function (e) {
     showInfoData(optionConfig);
   }, false);
   /** Show data config */
@@ -359,9 +359,9 @@ document.addEventListener('DOMContentLoaded', function (ev) {
   /** ROOT DISK TYPE */
 
   var rootDiskType = document.getElementById('frootdisktype');
-  rootDiskType.addEventListener('change', onChangeRootDiskType);
+  if (rootDiskType) rootDiskType.addEventListener('change', onChangeRootDiskType);
   var frootdiskLabel = document.querySelector('.frootdisk_label');
-  frootdiskLabel.addEventListener('click', function () {
+  if (frootdiskLabel) frootdiskLabel.addEventListener('click', function () {
     rootDiskType.checked = !rootDiskType.checked;
     onChangeRootDiskType();
   });
@@ -375,7 +375,7 @@ document.addEventListener('DOMContentLoaded', function (ev) {
 
 
   var dataDiskType = document.getElementById('fdatadisktype');
-  dataDiskType.addEventListener('click', function () {
+  if (dataDiskType) dataDiskType.addEventListener('click', function () {
     optionConfig.DATA_DISK_TYPE = optionConfig.DATA_DISK_TYPE && optionConfig.DATA_DISK_TYPE == 'HDD' ? 'SSD' : 'HDD';
     cloud_server_options.dispatchEvent(event);
     document.querySelector('#fdatadisktype').textContent = optionConfig.DATA_DISK_TYPE;

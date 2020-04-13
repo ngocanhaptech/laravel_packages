@@ -64,7 +64,38 @@ block main
         .container.list-services
             .row
                 .row.d-flex.align-items-stretch
-                    each item in services
+                    each item in [
+                            {
+                                title: 'Tăng hiệu suất website',
+                                description: 'Duy trì tốc độ cao của website khi có nhiều khách truy cập đồng thời một lúc. Giúp website được Google Ranking đánh giá cao hơn, hỗ trợ SEO tốt hơn.',
+                                icon: '/assets/images/cdn_page/benefit-hieusuat.png'
+                            },
+                            {
+                                title: 'Tăng lượng khách đến website',
+                                description: 'Khi website truy cập nhanh, người dùng sẽ cảm thấy thoài mái hơn và ở lại website lâu hơn. Tăng lượt xem thêm các page khác. Giúp tăng doanh thu từ website.',
+                                icon: '/assets/images/cdn_page/benefit-khachhang.png'
+                            },
+                            {
+                                title: 'Tiết kiệm thời gian và tài chính',
+                                description: 'Sử dụng BizFly CDN, website của bạn sẽ tăng hiệu suất một cách dễ dàng, nhanh chóng mà không phải tốn thêm công sức, chi phí xây dựng giải pháp, mở rộng hạ tầng cũng như tuyển thêm đội ngũ kỹ thuật đi kèm.',
+                                icon: '/assets/images/cdn_page/benefit-thoigian.png'
+                            },
+                            {
+                                title: 'Chi phí hợp lý',
+                                description: 'Bạn chỉ phải thanh toán theo lưu lượng băng thông đã sử dụng, kiểm soát chi phí dễ dàng và hợp lý với mức giá chỉ từ 800 VND/GB.',
+                                icon: '/assets/images/cdn_page/benefit-chiphi.png'
+                            },
+                            {
+                                title: 'Tích hợp dễ dàng',
+                                description: 'Bạn chỉ cần mất vài phút để triển khai tích hợp BizFly CDN mà không cần thay đổi cấu trúc của website. BizFly CDN hỗ trợ nhiều giải pháp tích hợp khác nhau giúp website của bạn có thể tích hợp theo cách thuận tiện nhất.',
+                                icon: '/assets/images/cdn_page/benefit-tichhop.png'
+                            },
+                            {
+                                title: 'Cam kết Uptime 99.99%',
+                                description: 'Với hạ tầng mạnh mẽ và đội ngũ chuyên gia nhiều năm kinh nghiệm, sẵn sàng hỗ trợ 24/7, website của bạn sẽ luôn được vận hành ổn dịnh và đạt hiệu quả cao nhất.',
+                                icon: '/assets/images/cdn_page/benefit-support24.png'
+                            }
+                        ]
                         +block_content('col-sm-4 text-center', item)
                     each item in services
                         +block_content('col-sm-4 text-center', item)
@@ -84,7 +115,7 @@ block main
                             { title: 'Custom', icon: path_cnd_intergr + 'custom.png' }
                         ]
                             +block_content('cover-width-50 col-sm-2 text-center', item)
-    section.section.section-gradient-1.light-text
+    section.section.section-gradient-bwave.light-text
         h2.section-title.text-center.gap-line: span Đăng ký trải nghiệm miễn phí dịch vụ BizFly CDN
         .container.register-section.text-center
             p Dùng thử BizFly CDN miễn phí <strong>100GB dung lượng trong vòng 30 ngày</strong>

@@ -50,6 +50,7 @@ Author: VCCORP - Devteam
 .btn.btn-second:hover,
 .btn.btn-second.btn-solid:hover {
   outline: none;
+  color: #fff;
   box-shadow: 0 6px 12px -4px #11a95e;
 }
 
@@ -2022,6 +2023,7 @@ section.section-gray {
   font-size: 1.125em;
   margin-bottom: 30px;
   display: block;
+  color: #646464;
 }
 
 .light-text,

@@ -37,6 +37,7 @@
         max-width: 100px;
     }
     &.cover-width-50 { 
+        min-width: 160px;
         .cover {
             max-width: 50px;
         } 
@@ -51,7 +52,7 @@
         font-weight: 700;
     }
 }
-/* HOME WHY_US */
+/* CDN WHY_US */
 .why-us {
     padding: 30px 15px;
     .block-content .title {
@@ -85,10 +86,24 @@
     }
 }
 
-/* HOMEPAGE SECTION */
-.section-gradient-1 {
+/* CDNPAGE SECTION */
+.section-gradient-bwave {
     background-image: linear-gradient(to bottom, #49dafe 0%, #1174d3 100%);
     position: relative;
+    &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        top: auto;
+        right: 0;
+        height: 240px;
+        max-height: 100%;
+        background: transparent url(/assets/images/cdn_page/bg-cloud-line.png) no-repeat center bottom / 100%;
+        pointer-events: none;
+    }
+    &>div, &>.section-title { position: relative; z-index: 1;}
 }
 .section-gradient-2 {
     background-image: linear-gradient(to bottom, #5068ee 0%, #0d0719 100%);
@@ -124,25 +139,26 @@
     }
 }
 
-/* TEST CONNECTION SECTION */
-.test-connecttion {
-    img { max-width: 100%; }
-}
 
-/* TESTIMONAIL */
-.testimonial-section {
-    padding: 30px 15px;
-    .owl-nav {
-        display: none;
+/* PRICING PAGE */
+.panel-heading-table {
+    padding: 20px;
+    background: $primary-color;
+    text-align: center;
+    color: #fff;
+    .title {
+        font-size: 1em;
     }
 }
-.link-stories {
-    color: #f1c40f;
-    font-weight: 700;
-    padding: 30px;
-    display: block;
-    text-decoration: underline;
-    &:hover, &:active,&:focus {
-        color: #f90;
-    }
+.panel-body-table {    
+    width: 680px;
+    max-width: 100%;
+    margin: auto;
+}
+.table-pricing tbody {
+    text-align:center;
+}
+.support-title {
+    font-size: 1.25em;
+    padding: 10px 0;
 }

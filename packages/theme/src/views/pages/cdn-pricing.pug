@@ -1,0 +1,96 @@
+extends ../layouts/default
+block main
+    section.section.section-gradient-bwave.light-text(style="min-height: 240px;").d-flex.align-items-center
+        .container
+            h2.section-title: span BẢNG GIÁ DỊCH VỤ BIZFLY CDN
+    section.section
+        div.section-title.section-description.text-center.gap-line Hãy liên hệ với chúng tôi qua (024) 7302 8888 ngay để nhận mức giá tốt nhất
+        .container
+            .row.justify-content-center
+                .col-auto
+                    // BẢNG GIÁ
+                    .panel-body-table
+                        .table-responsive-lg
+                            .panel-heading-table.col-xs-12
+                                h2.title.text-uppercase Giá datatransfer phát sinh theo tháng (chưa VAT)
+                            table.table.table-bordered.table-pricing
+                                thead
+                                    tr
+                                thead
+                                    tr
+                                    th(scope='col', style='text-align: center; color: #1174d4;') STT
+                                    th(scope='col', style='text-align: center; color: #1174d4;') Dung lượng (TB/Tháng)
+                                    th(scope='col', style='text-align: center; color: #1174d4;') Đơn giá (VNĐ/GB)
+                                tbody
+                                    tr(style='text-align: center;')
+                                    th(scope='row', style='text-align: center;') 1
+                                    td  <= 5
+                                    td 930
+                                    tr(style='text-align: center;')
+                                    th(scope='row', style='text-align: center;') 2
+                                    td > 5  - 10
+                                    td 800
+                                    tr(style='text-align: center;')
+                                    th(scope='row', style='text-align: center;') 3
+                                    td > 10 - 50
+                                    td 560
+                                    tr(style='text-align: center;')
+                                    th(scope='row', style='text-align: center;') 4
+                                    td > 50 - 100
+                                    td 330
+                                    tr(style='text-align: center;')
+                                    th(scope='row', style='text-align: center;') 5
+                                    td > 100  - 200
+                                    td 320
+                                    tr(style='text-align: center;')
+                                    th(scope='row', style='text-align: center;') 6
+                                    td > 200 - 300
+                                    td 310
+                                    tr(style='text-align: center;')
+                                    th(scope='row', style='text-align: center;') 7
+                                    td > 300 - 400
+                                    td 300
+                                    tr(style='text-align: center;')
+                                    th(scope='row', style='text-align: center;') 8
+                                    td > 400 - 500
+                                    td 290
+                                    tr(style='text-align: center;')
+                                    th(scope='row', style='text-align: center;') 9
+                                    td > 500 - 800
+                                    td 280
+                                    tr(style='text-align: center;')
+                                    th(scope='row', style='text-align: center;') 10
+                                    td > 800 - 1000
+                                    td 270
+                                    tr(style='text-align: center;')
+                                    th(scope='row', style='text-align: center;') 11
+                                    td > 1000
+                                    td 260
+
+                    // END BẢNG GIÁ  
+                .col-8
+                    ul.list-unstyled
+                        li • Giá trên chưa bao gồm 10% VAT 
+                        li
+                            span • Các lưu lượng này tính theo
+                            strong &nbsp;lượng dữ liệu truyền tải
+                            span &nbsp;(data transfer) qua CDN,
+                            strong &nbsp;không giới hạn 
+                            span &nbsp;băng thông trong nước, quốc tế và thời gian.
+                        li
+                            span • Nếu bạn có nhu cầu cao hơn, vui lòng liên hệ với chúng tôi qua số 
+                            strong &nbsp;(024) 7302 8888
+                            span  hoặc gửi email đến 
+                            a(href="mailto: sales@bizflycloud.vn") &nbsp;sales@bizflycloud.vn
+                            span &nbsp;để thảo luận thêm. 
+                .col-4
+                    .support-title Sales Support
+                    a.btn.btn-lg.btn-second.btn-block Lấy báo giá
+    
+block append styleLibs
+    link(rel="stylesheet", href="/assets/OwlCarousel2/assets/owl.carousel.min.css")
+    link(rel="stylesheet", href="/assets/OwlCarousel2/assets/owl.theme.default.min.css")
+block append styles
+    link(rel="stylesheet", href="/assets/css/pages/cdn_page.css")
+block append scripts
+    script(src="/assets/OwlCarousel2/owl.carousel.min.js")

@@ -46,5 +46,11 @@ class ThemeController extends Controller
         $template = 'cdn/index';
         return view($view);
     }
+    public function cdnPricing()
+    {
+        $view = "theme::pages.cdn-pricing";
+        $template = 'cdn/bang-gia';
+        return view($view);
+    }
 
 }

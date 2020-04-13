@@ -36,6 +36,10 @@
   max-width: 100px;
 }
 
+.block-content.cover-width-50 {
+  min-width: 160px;
+}
+
 .block-content.cover-width-50 .cover {
   max-width: 50px;
 }
@@ -50,7 +54,7 @@
   font-weight: 700;
 }
 
-/* HOME WHY_US */
+/* CDN WHY_US */
 
 .why-us {
   padding: 30px 15px;
@@ -92,12 +96,32 @@
   }
 }
 
-/* HOMEPAGE SECTION */
+/* CDNPAGE SECTION */
 
-.section-gradient-1 {
+.section-gradient-bwave {
   background-image: -o-linear-gradient(top, #49dafe 0%, #1174d3 100%);
   background-image: linear-gradient(to bottom, #49dafe 0%, #1174d3 100%);
   position: relative;
+}
+
+.section-gradient-bwave::before {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  top: auto;
+  right: 0;
+  height: 240px;
+  max-height: 100%;
+  background: transparent url(/assets/images/cdn_page/bg-cloud-line.png) no-repeat center bottom/100%;
+  pointer-events: none;
+}
+
+.section-gradient-bwave > div,
+.section-gradient-bwave > .section-title {
+  position: relative;
+  z-index: 1;
 }
 
 .section-gradient-2 {
@@ -140,33 +164,31 @@
           filter: grayscale(0);
 }
 
-/* TEST CONNECTION SECTION */
+/* PRICING PAGE */
 
-.test-connecttion img {
+.panel-heading-table {
+  padding: 20px;
+  background: #427cff;
+  text-align: center;
+  color: #fff;
+}
+
+.panel-heading-table .title {
+  font-size: 1em;
+}
+
+.panel-body-table {
+  width: 680px;
   max-width: 100%;
+  margin: auto;
 }
 
-/* TESTIMONAIL */
-
-.testimonial-section {
-  padding: 30px 15px;
+.table-pricing tbody {
+  text-align: center;
 }
 
-.testimonial-section .owl-nav {
-  display: none;
-}
-
-.link-stories {
-  color: #f1c40f;
-  font-weight: 700;
-  padding: 30px;
-  display: block;
-  text-decoration: underline;
-}
-
-.link-stories:hover,
-.link-stories:active,
-.link-stories:focus {
-  color: #f90;
+.support-title {
+  font-size: 1.25em;
+  padding: 10px 0;
 }
 

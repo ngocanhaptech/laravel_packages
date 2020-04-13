@@ -38,6 +38,7 @@
   color: $white; 
   &:hover {
     outline: none;
+    color: $white; 
     box-shadow: 0 6px 12px -4px $second-color;
   }
 }
