@@ -110,11 +110,17 @@
 
 /* RESTET INPUT RANGE STYLE */
 
+.show-group-label .data_disk_only,
+.show-group-label .option-config-data {
+  display: none;
+}
+
 .cloud_server_options {
   /** Layout options config */
   /* END RESET INPUT RANGE STYLE */
   /** switch */
   /** Label root disk */
+  /** DATA DISK ARRAY */
 }
 
 .cloud_server_options .col-label {
@@ -237,6 +243,21 @@
   left: -50px;
   width: 45px;
   text-align: center;
+}
+
+.cloud_server_options .input-range .label_disk_remove {
+  position: absolute;
+  top: 0;
+  right: -50px;
+  width: 45px;
+  text-align: center;
+  height: 26px;
+  line-height: 26px;
+  text-align: center;
+  background: #e22727;
+  border-radius: 10px;
+  font-size: smaller;
+  cursor: pointer;
 }
 
 .cloud_server_options .slider-range-valude {
@@ -364,6 +385,20 @@
     line-height: 30px;
     margin-bottom: -11px;
   }
+}
+
+.cloud_server_options .btn.addDataDisk {
+  margin: 0;
+  padding: 0.275rem 0.95rem;
+}
+
+.cloud_server_options .data-disk-panel {
+  margin-top: 15px;
+}
+
+.cloud_server_options .data-disk-panel .form-group .col-input {
+  width: calc(100% - 190px );
+  margin-left: 140px;
 }
 
 /** Theme layout */

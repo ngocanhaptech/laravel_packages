@@ -1,6 +1,9 @@
 /* RESTET INPUT RANGE STYLE */
 $cloud_server_options_primary-color: #5161b9;
 $cloud_server_options_second-color: #4CAF50;
+.show-group-label {
+    .data_disk_only, .option-config-data { display: none; }
+}
 .cloud_server_options {
     /** Layout options config */
     .col-label {
@@ -117,6 +120,20 @@ $cloud_server_options_second-color: #4CAF50;
             width: 45px;
             text-align: center;
         }
+        .label_disk_remove {
+            position: absolute;
+            top: 0;
+            right: -50px;
+            width: 45px;
+            text-align: center;
+            height: 26px;
+            line-height: 26px;
+            text-align: center;
+            background: #e22727;
+            border-radius: 10px;
+            font-size: smaller;
+            cursor: pointer;
+        }
     }
     .slider-range-valude {
         position: absolute;
@@ -232,6 +249,19 @@ $cloud_server_options_second-color: #4CAF50;
             font-size: smaller;
             line-height: 30px;
             margin-bottom: -11px;
+        }
+    }
+
+    /** DATA DISK ARRAY */
+    .btn.addDataDisk {
+        margin: 0;
+        padding: 0.275rem 0.95rem;
+    }
+    .data-disk-panel {        
+        margin-top: 15px;
+        .form-group .col-input{ 
+            width: #{'calc(100% - 190px )'}; 
+            margin-left: 140px;
         }
     }
 }

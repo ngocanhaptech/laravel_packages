@@ -69,7 +69,6 @@ document.addEventListener('DOMContentLoaded', function(ev) {
 
     /** Custom Event */
     const cloud_server_options = document.querySelector('.cloud_server_options')
-    // const event = document.createEvent('Event')
     const event = new CustomEvent('change', { detail: optionConfig })
     event.initEvent('change', true, true, optionConfig)
     if (cloud_server_options) cloud_server_options.addEventListener('change', function (e) {
@@ -151,6 +150,8 @@ document.addEventListener('DOMContentLoaded', function(ev) {
                 break;
             case 'DATA_DISK_SIZE':
                 return { value: DATA_DISK_SIZE_VALUE[parseInt(value)], unit: ' GB' }
+            case 'DATA_DISK':
+                return { value: DATA_DISK_SIZE_VALUE[parseInt(value)], unit: ' GB' }
                 break;
             default:
                 break;
@@ -173,7 +174,8 @@ document.addEventListener('DOMContentLoaded', function(ev) {
         sliderElement.noUiSlider.on('update', (value) => {
             const nextValue = setValue(key, value)
             field.innerHTML = nextValue ? nextValue.value + ' ' + nextValue.unit : '-'
-            optionConfig[key] = nextValue.value
+            if (key == 'DATA_DISK') optionConfig[key] = updateDataDiskValue({ nextValue, id }, optionConfig[key])
+            else optionConfig[key] = nextValue.value
             cloud_server_options.dispatchEvent(event)
         })
 
@@ -243,5 +245,100 @@ document.addEventListener('DOMContentLoaded', function(ev) {
         cloud_server_options.dispatchEvent(event)
         document.querySelector('#fdatadisktype').textContent = optionConfig.DATA_DISK_TYPE
     })
+    /** ADD DATA DISK */
+    const addDisks = document.querySelectorAll('.addDataDisk')
+    addDisks.forEach(element => {
+        if (!element) return false
+        element.addEventListener('click', addDataDisk)
+                    
+    })
+    function addDataDisk(e) {
+        const dataType = this.getAttribute('data-type')
+        const type = dataType || 'HDD'
+        optionConfig.DATA_DISK = toggleDataDisk(type)
+
+        const panels = document.querySelectorAll('.data-disk-panel')
+        panels.forEach(panel => {
+            renderDataDisk(panel)
+        })
+    }
+    function toggleDataDisk(type) {
+        const prefix = 'data_disk_'
+        const newDisk = { type: type, size: 60 }
+        if (optionConfig.DATA_DISK && optionConfig.DATA_DISK.length > 0) {
+            newDisk.id = getNextId(optionConfig.DATA_DISK, prefix)
+            optionConfig.DATA_DISK.push(newDisk)
+            return optionConfig.DATA_DISK
+        } else {
+            return optionConfig.DATA_DISK = [{ ...newDisk, id: prefix + '1' }]
+        }
+    }
+    function getNextId (arrayItem, prefix) {
+        const blackList = arrayItem.map(item => parseInt(item.id.replace(prefix, '')))
+        for (let i = 1; i <= (arrayItem.length + 1) || 100; i++)
+            if (blackList.indexOf(i) === -1) return prefix + i
+        return prefix + arrayItem.length
+    }
+    function renderDataDisk(panel) {
+        const diskArray = optionConfig.DATA_DISK
+        panel.innerHTML = '<center type="padding: 15px">Loadding disks</center>'
+        let stringHTML = ''
+        const diskIds = []
+        const addInput = (p, item) => {            
+            let dom = '<div class="form-group"><div class="row"><div class="col-auto col-input"><div class="input-range">'
+            dom += '<div class="slider-range-valude" id="' + item.id + '_value">' + item.size +'  GB</div>' 
+            dom += '<div class="slider-range"  id="' + item.id + '"></div>'
+            dom += '<span class="label_disk_type" id="' + item.id + 'type">' + item.type + '</span>'
+            dom += '<span class="label_disk_remove" id="' + item.id + 'remove">' + 'Xóa' + '</span>'
+            dom += '</div></div></div></div><!-- end input-range -->'
+            return dom
+        }
+        if (diskArray && diskArray.length > 0) {
+            diskArray.forEach( item => {
+                diskIds.push(item)
+                stringHTML += addInput(panel, item)
+            })
+        }
+        panel.innerHTML = stringHTML
+        diskArray.forEach(disk => {
+            createSlider(disk.id, 'DATA_DISK', {
+                start: [DATA_DISK_SIZE_VALUE.indexOf(disk.size)],
+                step: 1,
+                connect: [true, false],
+                range: {
+                    'min': 0,
+                    'max': DATA_DISK_SIZE_VALUE.length - 1
+                }
+            })
+            const dataDiskType = document.getElementById(disk.id + 'type')
+            if (dataDiskType) dataDiskType.addEventListener('click', () => {
+                const element = document.getElementById(disk.id + 'type')
+                const nextType = element.textContent === 'HDD' ? 'SSD': 'HDD'
+                optionConfig.DATA_DISK = optionConfig.DATA_DISK.map(item => {
+                    if (item.id === disk.id) item.type = nextType
+                    return item
+                })
+                cloud_server_options.dispatchEvent(event)
+                element.innerHTML = nextType
+            })
+            const dataDiskRemove = document.getElementById(disk.id + 'remove')
+            if (dataDiskRemove) dataDiskRemove.addEventListener('click', () => {
+                const element = document.getElementById(disk.id + 'remove')
+                optionConfig.DATA_DISK = optionConfig.DATA_DISK.filter(item => item.id !== disk.id)
+                cloud_server_options.dispatchEvent(event)
+                renderDataDisk(panel)
+            })
+        })
+    }
+    function updateDataDiskValue(payload, data) {
+        if (!data) return
+        nextData = data.map(item => {
+            if (item.id === payload.id)
+                return item.size = payload.nextValue.value
+            return item
+        })
+        return data
+    }
+
 
 }) /** end DOMContentLoaded */

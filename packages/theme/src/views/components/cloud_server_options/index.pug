@@ -36,7 +36,7 @@ mixin cloud_server_options
                 .col-auto.col-input
                     +input_range('frootdisksize')
                         span.label_disk_type.frootdisk_label HDD
-        .form-group
+        .form-group.data_disk_only
             .row
                 .col-auto.col-label
                     label DATA DISK
@@ -58,4 +58,13 @@ mixin cloud_server_options
                 span.data-disk-value 60 
                 span.data-disk-unit &nbsp;GB 
                 span.data-disk-type SSD
+        .group-label
+            .row
+                .col-auto.col-label: label DATA DISK
+                .col-auto.col-input
+                    button.btn.btn-sm.btn-radius.btn-primary.addDataDisk(data-type='HDD') Add HDD
+                    span &nbsp;
+                    button.btn.btn-sm.btn-radius.btn-primary.addDataDisk(data-type='SSD') Add SSD
+                    span &nbsp;(Nhấn để gắn thêm ổ cứng vào server)
+            .data-disk-panel
         block

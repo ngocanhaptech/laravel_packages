@@ -127,6 +127,12 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 document.addEventListener('DOMContentLoaded', function (ev) {
   /** cloud_server_options */
   var CPU_VALUE = [1, 2, 3, 4, 6, 8, 12, 16, 24];
@@ -174,8 +180,7 @@ document.addEventListener('DOMContentLoaded', function (ev) {
   };
   /** Custom Event */
 
-  var cloud_server_options = document.querySelector('.cloud_server_options'); // const event = document.createEvent('Event')
-
+  var cloud_server_options = document.querySelector('.cloud_server_options');
   var event = new CustomEvent('change', {
     detail: optionConfig
   });
@@ -280,6 +285,12 @@ document.addEventListener('DOMContentLoaded', function (ev) {
           value: DATA_DISK_SIZE_VALUE[parseInt(value)],
           unit: ' GB'
         };
+
+      case 'DATA_DISK':
+        return {
+          value: DATA_DISK_SIZE_VALUE[parseInt(value)],
+          unit: ' GB'
+        };
         break;
 
       default:
@@ -306,7 +317,10 @@ document.addEventListener('DOMContentLoaded', function (ev) {
     sliderElement.noUiSlider.on('update', function (value) {
       var nextValue = setValue(key, value);
       field.innerHTML = nextValue ? nextValue.value + ' ' + nextValue.unit : '-';
-      optionConfig[key] = nextValue.value;
+      if (key == 'DATA_DISK') optionConfig[key] = updateDataDiskValue({
+        nextValue: nextValue,
+        id: id
+      }, optionConfig[key]);else optionConfig[key] = nextValue.value;
       cloud_server_options.dispatchEvent(event);
     });
 
@@ -380,6 +394,119 @@ document.addEventListener('DOMContentLoaded', function (ev) {
     cloud_server_options.dispatchEvent(event);
     document.querySelector('#fdatadisktype').textContent = optionConfig.DATA_DISK_TYPE;
   });
+  /** ADD DATA DISK */
+
+  var addDisks = document.querySelectorAll('.addDataDisk');
+  addDisks.forEach(function (element) {
+    if (!element) return false;
+    element.addEventListener('click', addDataDisk);
+  });
+
+  function addDataDisk(e) {
+    var dataType = this.getAttribute('data-type');
+    var type = dataType || 'HDD';
+    optionConfig.DATA_DISK = toggleDataDisk(type);
+    var panels = document.querySelectorAll('.data-disk-panel');
+    panels.forEach(function (panel) {
+      renderDataDisk(panel);
+    });
+  }
+
+  function toggleDataDisk(type) {
+    var prefix = 'data_disk_';
+    var newDisk = {
+      type: type,
+      size: 60
+    };
+
+    if (optionConfig.DATA_DISK && optionConfig.DATA_DISK.length > 0) {
+      newDisk.id = getNextId(optionConfig.DATA_DISK, prefix);
+      optionConfig.DATA_DISK.push(newDisk);
+      return optionConfig.DATA_DISK;
+    } else {
+      return optionConfig.DATA_DISK = [_objectSpread({}, newDisk, {
+        id: prefix + '1'
+      })];
+    }
+  }
+
+  function getNextId(arrayItem, prefix) {
+    var blackList = arrayItem.map(function (item) {
+      return parseInt(item.id.replace(prefix, ''));
+    });
+
+    for (var i = 1; i <= arrayItem.length + 1 || 100; i++) {
+      if (blackList.indexOf(i) === -1) return prefix + i;
+    }
+
+    return prefix + arrayItem.length;
+  }
+
+  function renderDataDisk(panel) {
+    var diskArray = optionConfig.DATA_DISK;
+    panel.innerHTML = '<center type="padding: 15px">Loadding disks</center>';
+    var stringHTML = '';
+    var diskIds = [];
+
+    var addInput = function addInput(p, item) {
+      var dom = '<div class="form-group"><div class="row"><div class="col-auto col-input"><div class="input-range">';
+      dom += '<div class="slider-range-valude" id="' + item.id + '_value">' + item.size + '  GB</div>';
+      dom += '<div class="slider-range"  id="' + item.id + '"></div>';
+      dom += '<span class="label_disk_type" id="' + item.id + 'type">' + item.type + '</span>';
+      dom += '<span class="label_disk_remove" id="' + item.id + 'remove">' + 'Xóa' + '</span>';
+      dom += '</div></div></div></div><!-- end input-range -->';
+      return dom;
+    };
+
+    if (diskArray && diskArray.length > 0) {
+      diskArray.forEach(function (item) {
+        diskIds.push(item);
+        stringHTML += addInput(panel, item);
+      });
+    }
+
+    panel.innerHTML = stringHTML;
+    diskArray.forEach(function (disk) {
+      createSlider(disk.id, 'DATA_DISK', {
+        start: [DATA_DISK_SIZE_VALUE.indexOf(disk.size)],
+        step: 1,
+        connect: [true, false],
+        range: {
+          'min': 0,
+          'max': DATA_DISK_SIZE_VALUE.length - 1
+        }
+      });
+      var dataDiskType = document.getElementById(disk.id + 'type');
+      if (dataDiskType) dataDiskType.addEventListener('click', function () {
+        var element = document.getElementById(disk.id + 'type');
+        var nextType = element.textContent === 'HDD' ? 'SSD' : 'HDD';
+        optionConfig.DATA_DISK = optionConfig.DATA_DISK.map(function (item) {
+          if (item.id === disk.id) item.type = nextType;
+          return item;
+        });
+        cloud_server_options.dispatchEvent(event);
+        element.innerHTML = nextType;
+      });
+      var dataDiskRemove = document.getElementById(disk.id + 'remove');
+      if (dataDiskRemove) dataDiskRemove.addEventListener('click', function () {
+        var element = document.getElementById(disk.id + 'remove');
+        optionConfig.DATA_DISK = optionConfig.DATA_DISK.filter(function (item) {
+          return item.id !== disk.id;
+        });
+        cloud_server_options.dispatchEvent(event);
+        renderDataDisk(panel);
+      });
+    });
+  }
+
+  function updateDataDiskValue(payload, data) {
+    if (!data) return;
+    nextData = data.map(function (item) {
+      if (item.id === payload.id) return item.size = payload.nextValue.value;
+      return item;
+    });
+    return data;
+  }
 });
 /** end DOMContentLoaded */
 
