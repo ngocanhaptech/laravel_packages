@@ -99,7 +99,6 @@ section {
     padding: 30px;
     .btn {
         padding: .375rem 1.75rem;
-        margin-top: 30px;
     }
 }
 .form-options-config  {
@@ -283,4 +282,28 @@ section {
     background: transparent url(/assets/images/cloud-server/testimonial-bg.jpg);
     background-size: 100% 100%;
     position: relative;
+}
+
+/* SHOW PRICING */
+.list-price-config {
+    .head {
+        font-weight: 500;
+    }
+    li:not(.price-data-disks) {
+        border-bottom: 1px solid #eaeaea;
+        padding: 5px 15px;
+    }
+    // price-data-disks
+    .premium {
+        color: $primary-color;
+        font-weight: 500;
+    }
+    .stt {
+        font-weight: 500;
+    }
+    .total-price {
+        background-color: #eaeaea;
+        margin-top: 10px;
+        font-weight: 500;
+    }
 }

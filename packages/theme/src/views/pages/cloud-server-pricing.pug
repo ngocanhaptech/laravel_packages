@@ -33,23 +33,47 @@ block main
                     .block-body
                         .title Ước tính giá Cloud Server hàng tháng
                             div: small ( Giá chưa bao gồm 10% VAT )
-                        .option-config-data Cấu hình: &nbsp; 
-                            ul.text-primary
+                        ul.list-price-config.list-unstyled
+                                li.head
+                                    .row
+                                        .col-3.stt 
+                                        .col-3.basic Basic
+                                        .col-3.premium Premium
+                                        .col-3.enterprise Enterprise
+                                li 
+                                    .row
+                                        .col-3.stt CPU <small>(COREs)</small>
+                                        .col-3.basic: span.basic-cpu -
+                                        .col-3.premium: span.premium-cpu -
+                                        .col-3.enterprise: span.enterprise-cpu -
+                                li 
+                                    .row
+                                        .col-3.stt RAM <small>(GB)</small>
+                                        .col-3.basic: span.basic-ram -
+                                        .col-3.premium: span.premium-ram -
+                                        .col-3.enterprise: span.enterprise-ram -
+                                li 
+                                    .row
+                                        .col-3.stt WAN IP
+                                        .col-3.basic: span.basic-wanip Miễn phí
+                                        .col-3.premium: span.premium-wanip Miễn phí
+                                        .col-3.enterprise: span.enterprise-wanip Miễn phí
                                 li
-                                    span.cpu-value 2 
-                                    span.cpu-unit &nbsp;Core(s) 
-                                li
-                                    span.ram-value 2 
-                                    span.ram-unit GB 
-                                    | RAM 
-                                li
-                                    span.root-disk-value 100 
-                                    span.root-disk-unit GB 
-                                    span.root-disk-type HDD
-                                li
-                                    span.data-disk-value 60 
-                                    span.data-disk-unit &nbsp;GB 
-                                    span.data-disk-type SSD
+                                    span ROOT DISK <small>(GB)</small>
+                                li 
+                                    .row
+                                        .col-3.stt: .span.rootdisk-type HDD  
+                                        .col-3.basic: span.basic-rootdisk -
+                                        .col-3.premium: span.premium-rootdisk -
+                                        .col-3.enterprise: span.enterprise-rootdisk -
+                                li.price-data-disks
+                                li.total-price 
+                                    .row
+                                        .col-3.stt TỔNG <small>(VNĐ)</small>
+                                        .col-3.basic: span.basic-total +
+                                        .col-3.premium: span.premium-total +
+                                        .col-3.enterprise: span.enterprise-total +
+                                
                         .form-group.text-center
                             button.btn.btn-sm.btn-second.btn-solid.btn-radius.text-bold Khởi tạo ngay
     .slider-sloud-server
@@ -123,3 +147,5 @@ block append styles
 block append scripts
     script(src="/assets/OwlCarousel2/owl.carousel.min.js")
     script(src="/assets/nouislider/nouislider.min.js")
+    script(src="/assets/js/price.js")
+    script(src="/assets/js/bang-gia-cloud-server.js")

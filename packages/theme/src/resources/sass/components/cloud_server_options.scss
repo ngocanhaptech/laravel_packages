@@ -18,7 +18,7 @@ $cloud_server_options_second-color: #4CAF50;
         .title {
             font-size: 1.2em;
             font-weight: 500;
-            padding: 15px 0 15px 0;
+            padding: 25px 0 25px 0;
         }
     }
     @media (max-width: $screen-sm) {
@@ -156,6 +156,7 @@ $cloud_server_options_second-color: #4CAF50;
         text-align: center;
         font-weight: 500;
         margin-top: 30px;
+        margin-bottom: 30px;
         padding: 15px 12px;
     }
     /** switch */
@@ -256,6 +257,25 @@ $cloud_server_options_second-color: #4CAF50;
     .btn.addDataDisk {
         margin: 0;
         padding: 0.275rem 0.95rem;
+        .rounder-icon {
+            font-style: normal;
+            border: 1px solid #ffffff;
+            color: $cloud_server_options_primary-color;
+            background: #fff;
+            padding: 0px;
+            width: 14px;
+            height: 14px;
+            line-height: 11px;
+            font-size: 0.8em;
+            font-weight: 700;
+            border-radius: 50%;
+            vertical-align: middle;
+            margin-top: -2px;
+            margin-left: -7px;
+            display: inline-block;
+            text-align: center;
+            margin-right: 2px;
+        }
     }
     .data-disk-panel {        
         margin-top: 15px;
