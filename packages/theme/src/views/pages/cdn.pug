@@ -33,7 +33,13 @@ block main
                 { link: '', type: 'css', cover: '/assets/images/banner/thang-3-ruc-ro-bg.png', unique_block: 'cdn-mainslide-4' }
             ]
         +slider_single(CDN_SLIDER, 'owl-theme','layout-slide-item', 'container slide-item')
-    section.section
+    .section-subnav.justify-content-center
+        ul.sub-navigation.fix-top
+            li: a(href="#page-section_what") BizFly CDN là gì?
+            li: a(href="#page-section_feature") Tích hợp đơn giản?
+            li: a(href="#page-section_register") Đăng ký dùng thử
+            li: a(href="/cdn/bang-gia.html") Bảng giá
+    section.section(section_name='what')
         h2.section-title.text-center: span BizFly CDN là gì?        
         div.section-description.text-center BizFly Cloud CDN là dịch vụ hỗ trợ tăng tốc, tối ưu và bảo vệ website tại Việt Nam.
         .container.list-services
@@ -99,7 +105,7 @@ block main
                         +block_content('col-sm-4 text-center', item)
                     each item in services
                         +block_content('col-sm-4 text-center', item)
-    section.section.section-gray
+    section.section.section-gray(section_name='feature')
         h2.section-title.text-center.gap-line: span Tích hợp đơn giản và nhanh chóng
         .container.why-us
             .row.justify-content-md-center
@@ -114,8 +120,8 @@ block main
                             { title: 'Prestashop', icon: path_cnd_intergr + 'prestashop.png' },
                             { title: 'Custom', icon: path_cnd_intergr + 'custom.png' }
                         ]
-                            +block_content('cover-width-50 col-sm-2 text-center', item)
-    section.section.section-gradient-bwave.light-text
+                            +block_content('col-6 cover-width-50 col-sm-2 text-center', item)
+    section.section.section-gradient-bwave.light-text(section_name='register')
         h2.section-title.text-center.gap-line: span Đăng ký trải nghiệm miễn phí dịch vụ BizFly CDN
         .container.register-section.text-center
             p Dùng thử BizFly CDN miễn phí <strong>100GB dung lượng trong vòng 30 ngày</strong>
@@ -123,13 +129,13 @@ block main
             +button('btn-md btn-solid', 'Đăng ký dùng thử ngay')
             
         .container.register-section.text-center
-            p <strong>Xem bảng giá chi tiết và tuỳ chỉnh cấu hình tại đây</strong>
-    section.section
+            a(href="/cdn/bang-gia.html") <strong>Xem bảng giá chi tiết tại đây</strong>
+    section.section(section_name='partner')
         h2.section-title.text-center.gap-line: span Được tin dùng bởi
         .container.our-partners
             .row
                 each item in partners || [ { link: '/partner/dan-tri', img: '/assets/images/partners/dantri-logo.jpg', title: 'Dân trí'} ]
-                    .col-sm-3
+                    .col-6.col-sm-3
                         a.link(href=item.link)
                             img(src=item.img || "/assets/images/partners/topica-logo.jpg", alt=item.title || "topica")
 block append styleLibs

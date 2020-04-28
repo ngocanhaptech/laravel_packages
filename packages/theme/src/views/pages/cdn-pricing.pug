@@ -1,9 +1,15 @@
 extends ../layouts/default
 block main
+    .section-subnav.justify-content-center
+        ul.sub-navigation.fix-top
+            li: a(href="/cdn/index.html") BizFly CDN là gì?
+            li: a(href="/cdn/index.html") Tích hợp đơn giản?
+            li: a(href="/cdn/index.html") Đăng ký dùng thử
+            li: a(href="#page-section_pricing") Bảng giá
     section.section.section-gradient-bwave.light-text(style="min-height: 240px;").d-flex.align-items-center
         .container
             h2.section-title: span BẢNG GIÁ DỊCH VỤ BIZFLY CDN
-    section.section
+    section.section(section_name='pricing')
         div.section-title.section-description.text-center.gap-line Hãy liên hệ với chúng tôi qua (024) 7302 8888 ngay để nhận mức giá tốt nhất
         .container
             .row.justify-content-center

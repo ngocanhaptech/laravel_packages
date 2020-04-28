@@ -1739,14 +1739,19 @@ img {
   }
 }
 
+nav {
+  -o-transition: all ease 0.3s;
+  transition: all ease 0.3s;
+}
+
 .fix-top {
   position: relative;
 }
 
 .fix-top,
 .fix-top .logo {
-  -o-transition: all ease 0.3s;
-  transition: all ease 0.3s;
+  -o-transition: all ease 0.2s;
+  transition: all ease 0.2s;
 }
 
 .fix-top.isfixed {
@@ -1762,8 +1767,8 @@ img {
   max-width: 128px;
 }
 
-nav.fix-top.isfixed {
-  padding: 0.5rem 1.5rem;
+.fix-top.isfixed nav {
+  padding: 0.45rem 1.5rem;
 }
 
 /* ICONS LAYOUT */
@@ -2027,14 +2032,85 @@ section.section-gray {
 }
 
 .light-text,
+.light-text a,
 .light-text .section-title,
 .light-text .section-description {
   color: #fff;
 }
 
 .light-text.gap-line::after,
+.light-text a.gap-line::after,
 .light-text .section-title.gap-line::after,
 .light-text .section-description.gap-line::after {
   background-color: #fff;
+}
+
+/** SUB NAVIGATION */
+
+.sub-navigation {
+  background-color: #427cff;
+  box-shadow: 0 0.125rem 0.1875rem 0 rgba(0, 0, 0, 0.07);
+  position: relative;
+  z-index: 9;
+}
+
+.sub-navigation,
+.sub-navigation a {
+  color: #fff;
+}
+
+.sub-navigation,
+.sub-navigation > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.sub-navigation > li,
+.sub-navigation > ul > li {
+  display: inline-block;
+}
+
+.sub-navigation > li > a,
+.sub-navigation > li > span,
+.sub-navigation > ul > li > a,
+.sub-navigation > ul > li > span {
+  display: block;
+  padding: 4px 15px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  font-weight: 500;
+  border-radius: 3px;
+  border: 1px solid transparent;
+}
+
+.sub-navigation > li:hover > a,
+.sub-navigation > li:hover > span,
+.sub-navigation > li:focus > a,
+.sub-navigation > li:focus > span,
+.sub-navigation > li:active > a,
+.sub-navigation > li:active > span,
+.sub-navigation > li.active > a,
+.sub-navigation > li.active > span,
+.sub-navigation > ul > li:hover > a,
+.sub-navigation > ul > li:hover > span,
+.sub-navigation > ul > li:focus > a,
+.sub-navigation > ul > li:focus > span,
+.sub-navigation > ul > li:active > a,
+.sub-navigation > ul > li:active > span,
+.sub-navigation > ul > li.active > a,
+.sub-navigation > ul > li.active > span {
+  color: #427cff;
+  background-color: #fff;
+  border: 1px solid #fff;
+}
+
+.sub-navigation.isfixed {
+  top: 60px;
+  position: fixed;
+  left: 0;
+  right: 0;
 }
 

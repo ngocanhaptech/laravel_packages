@@ -96,7 +96,7 @@ $(function (){
 
 
 	/* FIX TOP */
-	var fixtop = function (topfix){
+	var fixtop = function (topfix, offsetTop = 0){
 		var top;
 		if (topfix === undefined) {
 			top = $('.top');
@@ -105,7 +105,7 @@ $(function (){
 			top = topfix;
 		}
 		if (top.length === 0) return;
-		var topPosition = top.offset().top;
+		var topPosition = top.offset().top + offsetTop;
 
 		var fixed = function() {
 			if (!top.hasClass('isfixed')) {
