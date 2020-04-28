@@ -1167,6 +1167,7 @@ nav {
   .navigation > ul > li > a,
   .navigation > ul > li > span {
     font-weight: 500;
+    letter-spacing: -0.5px;
   }
 
   .navigation > ul > li > ul li:hover > a,
